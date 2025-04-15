@@ -1,15 +1,22 @@
 #include "llist.h"
-#include "compare.h"
-#include "structs.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 
+/* Add a node to the head of the linked list. */
 void
-ll_add_to_start (Linked_List *list, Node *node)
+ll_push_front (Linked_List *list, void *val)
 {
-  node->next = list->head;
-  list->head = node;
+  Node *new = malloc (sizeof (Node));
+  if (!new)
+    {
+      perror ("ll_add_: couldn't alloc memory for new node!");
+      exit (EXIT_FAILURE);
+    }
+  new->value = val;
+
+  new->next = list->head;
+  list->head = new;
 
   if (list->length == 0)
     {
@@ -19,12 +26,29 @@ ll_add_to_start (Linked_List *list, Node *node)
   list->length++;
 }
 
+/* Add a node to the tail of the linked list. If list is empty, calls
+ * ll_push_front().
+ */
 void
-ll_add_to_end (Linked_List *list, Node *node)
+ll_push_back (Linked_List *list, void *val)
 {
-  Node *current = list->tail;
+  if (list->length == 0)
+    {
+      ll_push_front (list, val);
+      return;
+    }
 
-  current->next = node;
+  Node *current = list->tail;
+  Node *new = malloc (sizeof (Node));
+  if (!new)
+    {
+      perror ("ll_add_to_end: couldn't alloc memory for new node!");
+      exit (EXIT_FAILURE);
+    }
+
+  new->value = val;
+
+  current->next = new;
   list->tail = current->next;
 
   current->next->next = NULL;
@@ -32,6 +56,7 @@ ll_add_to_end (Linked_List *list, Node *node)
   list->length++;
 }
 
+/* Initialize a new linked list */
 Linked_List *
 ll_init (void)
 {
@@ -54,34 +79,39 @@ ll_init (void)
 }
 
 void *
-ll_get_key (Linked_List *list, Node *node)
+ll_front (const Linked_List *list)
 {
-  Node *current = list->head;
-
-  while (current != NULL)
+  if (list != NULL && list->head != NULL)
     {
-      if (compare_key (current, node->pair->Key) == 0)
-        return current->pair->Value;
-
-      current = current->next;
+      return list->head->value;
     }
   return NULL;
 }
 
+void *
+ll_back (const Linked_List *list)
+{
+  if (list != NULL && list->tail != NULL)
+    {
+      return list->tail->value;
+    }
+  return NULL;
+}
+
+/* Print the whole linked list */
 void
-ll_print (Linked_List *list)
+ll_print (const Linked_List *list)
 {
   Node *current = list->head;
   int len = list->length;
 
-  if (len == 0)
+  if (len == 0 || !list->head || !list)
     {
       return;
     }
-
   do
     {
-      printf ("[%p]->", (void *)current);
+      printf ("[%s]->", (char *)current->value);
       if (current->next == NULL)
         printf ("%p", (void *)current->next);
       current = current->next;
@@ -90,25 +120,53 @@ ll_print (Linked_List *list)
 }
 
 void
+ll_delete (Linked_List *list, const int index)
+{
+  if (index == 0)
+    {
+      Node *new_head = list->head->next;
+      free (list->head);
+      list->head = new_head;
+    }
+  else
+    {
+      Node *current = list->head;
+      int i = 0;
+      while (current != list->tail || i++ < index)
+        {
+          if (current->next == list->tail || i == index - 1)
+            {
+              if (i == index)
+                {
+                  current->next = current->next->next;
+                  free (current->next);
+                }
+              free (list->tail);
+              list->tail = NULL;
+              current->next = NULL;
+            }
+        }
+    }
+  list->length--;
+}
+
+/* Free the whole linked list */
+void
 ll_free_list (Linked_List *list)
 {
-  Node *current = list->head;
-
-  while (current != NULL)
+  if (!list)
     {
-      if (current->pair->Key != NULL && current->key_type == STRING)
-        {
-          free (current->pair->Key);
-        }
-      if (current->pair->Value != NULL
-          && infer_type (current->pair->Value) == STRING)
-        {
-          free (current->pair->Value);
-        }
-      Node *nextNode = current->next;
-      free (current->pair);
-      free (current);
-      current = nextNode;
+      return;
+    }
+  if (list && !list->head)
+    {
+      free (list);
+      return;
+    }
+
+  for (int len = list->length; len > 0; len--)
+    {
+      ll_delete (list, 0);
     }
   free (list);
 }
