@@ -1,4 +1,6 @@
 #include "llist.h"
+#include "compare.h"
+#include "structs.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -148,6 +150,20 @@ ll_delete (Linked_List *list, const int index)
         }
     }
   list->length--;
+}
+
+void *
+ll_get_key (Linked_List *list, void *value)
+{
+  HT_Node *current = list->head;
+
+  while (current->next != NULL)
+    {
+      if (compare_key (current, value) == 0)
+        return current->pair->Value;
+      current = current->next;
+    }
+  return NULL;
 }
 
 /* Free the whole linked list */
