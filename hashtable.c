@@ -2,13 +2,14 @@
 #include "compare.h"
 #include "llist.h"
 #include "murmur.h"
+#include "structs.h"
 #include <stddef.h>
 #include <stdint.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 
-static void hash_and_add (Node *, Linked_List **, int, Hash_Table *);
+static void hash_and_add (HT_Node *, Linked_List **, int, Hash_Table *);
 
 Hash_Table *
 ht_init ()
@@ -43,7 +44,7 @@ ht_get (void *key, Hash_Table *ht)
       return NULL;
     }
 
-  Node *current = ht->array[index]->head;
+  HT_Node *current = ht->array[index]->head;
 
   if (compare_key (current, key) == 0)
     {
@@ -66,7 +67,7 @@ ht_put (void *key, void *value, Hash_Table *ht)
       ht_reallocate (ht);
     }
 
-  Node *newNode = calloc (1, sizeof (Node));
+  HT_Node *newNode = calloc (1, sizeof (HT_Node));
 
   if (!newNode)
     {
@@ -113,12 +114,12 @@ ht_reallocate (Hash_Table *ht)
     {
       if (ht->array[i] != NULL)
         {
-          Node *current = ht->array[i]->head;
+          HT_Node *current = ht->array[i]->head;
 
           do
             {
               /* FIXME: this alloc isn't free'd!!*/
-              Node *newNode = calloc (1, sizeof (Node));
+              HT_Node *newNode = calloc (1, sizeof (HT_Node));
 
               if (!newNode)
                 {
@@ -162,7 +163,7 @@ ht_reallocate (Hash_Table *ht)
 }
 
 static void
-hash_and_add (Node *src, Linked_List **dst, int capacity, Hash_Table *ht)
+hash_and_add (HT_Node *src, Linked_List **dst, int capacity, Hash_Table *ht)
 {
   uint32_t hash = murmur3_32 (src->pair->Key, strlen (src->pair->Key), 0);
   int index = (hash & 0x7fffffff) % capacity;
@@ -170,7 +171,7 @@ hash_and_add (Node *src, Linked_List **dst, int capacity, Hash_Table *ht)
   if (dst[index] == NULL)
     {
       dst[index] = ll_init ();
-      ll_add_to_start (dst[index], src);
+      ll_push_front (dst[index], src);
     }
   else
     {
@@ -184,7 +185,7 @@ hash_and_add (Node *src, Linked_List **dst, int capacity, Hash_Table *ht)
           return;
         }
       ht->collisions++;
-      ll_add_to_end (dst[index], src);
+      ll_push_back (dst[index], src);
     }
 }
 

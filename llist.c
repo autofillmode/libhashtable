@@ -7,13 +7,13 @@
 void
 ll_push_front (Linked_List *list, void *val)
 {
-  Node *new = malloc (sizeof (Node));
+  HT_Node *new = malloc (sizeof (HT_Node));
   if (!new)
     {
       perror ("ll_add_: couldn't alloc memory for new node!");
       exit (EXIT_FAILURE);
     }
-  new->value = val;
+  new->pair = val;
 
   new->next = list->head;
   list->head = new;
@@ -38,15 +38,15 @@ ll_push_back (Linked_List *list, void *val)
       return;
     }
 
-  Node *current = list->tail;
-  Node *new = malloc (sizeof (Node));
+  HT_Node *current = list->tail;
+  HT_Node *new = malloc (sizeof (HT_Node));
   if (!new)
     {
       perror ("ll_add_to_end: couldn't alloc memory for new node!");
       exit (EXIT_FAILURE);
     }
 
-  new->value = val;
+  new->pair = val;
 
   current->next = new;
   list->tail = current->next;
@@ -83,7 +83,7 @@ ll_front (const Linked_List *list)
 {
   if (list != NULL && list->head != NULL)
     {
-      return list->head->value;
+      return list->head->pair;
     }
   return NULL;
 }
@@ -93,7 +93,7 @@ ll_back (const Linked_List *list)
 {
   if (list != NULL && list->tail != NULL)
     {
-      return list->tail->value;
+      return list->tail->pair;
     }
   return NULL;
 }
@@ -102,7 +102,7 @@ ll_back (const Linked_List *list)
 void
 ll_print (const Linked_List *list)
 {
-  Node *current = list->head;
+  HT_Node *current = list->head;
   int len = list->length;
 
   if (len == 0 || !list->head || !list)
@@ -111,7 +111,7 @@ ll_print (const Linked_List *list)
     }
   do
     {
-      printf ("[%s]->", (char *)current->value);
+      printf ("[%s]->", (char *)current->pair);
       if (current->next == NULL)
         printf ("%p", (void *)current->next);
       current = current->next;
@@ -124,13 +124,13 @@ ll_delete (Linked_List *list, const int index)
 {
   if (index == 0)
     {
-      Node *new_head = list->head->next;
+      HT_Node *new_head = list->head->next;
       free (list->head);
       list->head = new_head;
     }
   else
     {
-      Node *current = list->head;
+      HT_Node *current = list->head;
       int i = 0;
       while (current != list->tail || i++ < index)
         {

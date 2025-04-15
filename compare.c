@@ -4,7 +4,7 @@
 #include <string.h>
 
 int
-compare_key (Node *node, void *value)
+compare_key (HT_Node *node, void *value)
 {
   switch (node->key_type)
     {
