@@ -6,7 +6,6 @@
 
 /* THIS NEEDS cJSON TO BE INSTALLED! */
 
-
 void read_from_file (const char *);
 
 int
@@ -73,6 +72,8 @@ read_from_file (const char *filename)
 
   printf ("%d collisions, %d reallocs, %d elements.\n", ht->collisions,
           ht->reallocs, ht->size);
+
+  ht_print (ht);
 
   ht_free (ht);
 }
