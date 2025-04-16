@@ -10,6 +10,7 @@
 #include <string.h>
 
 static void hash_and_add (HT_Node *, Linked_List **, int, Hash_Table *);
+static HT_Node *ht_get_node (Node *);
 
 Hash_Table *
 ht_init ()
@@ -44,14 +45,14 @@ ht_get (void *key, Hash_Table *ht)
       return NULL;
     }
 
-  HT_Node *current = ht->array[index]->head;
+  Node *current = ht->array[index]->head;
 
-  if (compare_key (current, key) == 0)
+  if (compare_key (current->value, key) == 0)
     {
-      return current->pair->Value;
+      return ht_get_node (current)->pair->Value;
     }
 
-  if (compare_key (current->pair->Key, key) != 0)
+  if (compare_key (ht_get_node (current)->pair->Key, key) != 0)
     {
       return ll_get_key (ht->array[index], key);
     }
@@ -114,7 +115,7 @@ ht_reallocate (Hash_Table *ht)
     {
       if (ht->array[i] != NULL)
         {
-          HT_Node *current = ht->array[i]->head;
+          Node *current = ht->array[i]->head;
 
           do
             {
@@ -128,24 +129,27 @@ ht_reallocate (Hash_Table *ht)
                 }
               newNode->pair = calloc (1, sizeof (Pair));
 
-              newNode->key_type = infer_type (current->pair->Key);
+              newNode->key_type
+                  = infer_type (ht_get_node (current)->pair->Key);
               newNode->pair = malloc (sizeof (Pair));
 
               if (newNode->key_type == STRING)
                 {
-                  newNode->pair->Key = strdup (current->pair->Key);
+                  newNode->pair->Key
+                      = strdup (ht_get_node (current)->pair->Key);
                 }
               else
                 {
-                  newNode->pair->Key = current->pair->Key;
+                  newNode->pair->Key = ht_get_node (current)->pair->Key;
                 }
-              if (infer_type (current->pair->Value) == STRING)
+              if (infer_type (ht_get_node (current)->pair->Value) == STRING)
                 {
-                  newNode->pair->Value = strdup (current->pair->Value);
+                  newNode->pair->Value
+                      = strdup (ht_get_node (current)->pair->Value);
                 }
               else
                 {
-                  newNode->pair->Value = current->pair->Value;
+                  newNode->pair->Value = ht_get_node (current)->pair->Value;
                 }
               hash_and_add (newNode, newArr, newCapacity, ht);
 
@@ -176,10 +180,11 @@ hash_and_add (HT_Node *src, Linked_List **dst, int capacity, Hash_Table *ht)
   else
     {
       /* Update a Value */
-      if (compare_key (dst[index]->head, src->pair->Key)
+      if (compare_key (dst[index]->head->value, src->pair->Key)
           == 0) /* if the keys match... */
         {
-          dst[index]->head->pair->Value = strdup (src->pair->Value);
+          ht_get_node (dst[index]->head)->pair->Value
+              = strdup (src->pair->Value);
           free (src->pair);
           free (src);
           return;
@@ -187,6 +192,12 @@ hash_and_add (HT_Node *src, Linked_List **dst, int capacity, Hash_Table *ht)
       ht->collisions++;
       ll_push_back (dst[index], src);
     }
+}
+
+static HT_Node *
+ht_get_node (Node *node)
+{
+  return node->value;
 }
 
 void

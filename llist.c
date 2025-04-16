@@ -5,17 +5,23 @@
 #include <stdlib.h>
 #include <string.h>
 
+static HT_Node *
+ht_get_node (Node *node)
+{
+  return node->value;
+}
+
 /* Add a node to the head of the linked list. */
 void
 ll_push_front (Linked_List *list, void *val)
 {
-  HT_Node *new = malloc (sizeof (HT_Node));
+  Node *new = malloc (sizeof (Node));
   if (!new)
     {
       perror ("ll_add_: couldn't alloc memory for new node!");
       exit (EXIT_FAILURE);
     }
-  new->pair = val;
+  new->value = val;
 
   new->next = list->head;
   list->head = new;
@@ -40,15 +46,15 @@ ll_push_back (Linked_List *list, void *val)
       return;
     }
 
-  HT_Node *current = list->tail;
-  HT_Node *new = malloc (sizeof (HT_Node));
+  Node *current = list->tail;
+  Node *new = malloc (sizeof (Node));
   if (!new)
     {
       perror ("ll_add_to_end: couldn't alloc memory for new node!");
       exit (EXIT_FAILURE);
     }
 
-  new->pair = val;
+  new->value = val;
 
   current->next = new;
   list->tail = current->next;
@@ -85,7 +91,7 @@ ll_front (const Linked_List *list)
 {
   if (list != NULL && list->head != NULL)
     {
-      return list->head->pair;
+      return list->head->value;
     }
   return NULL;
 }
@@ -95,7 +101,7 @@ ll_back (const Linked_List *list)
 {
   if (list != NULL && list->tail != NULL)
     {
-      return list->tail->pair;
+      return list->tail->value;
     }
   return NULL;
 }
@@ -104,7 +110,7 @@ ll_back (const Linked_List *list)
 void
 ll_print (const Linked_List *list)
 {
-  HT_Node *current = list->head;
+  Node *current = list->head;
   int len = list->length;
 
   if (len == 0 || !list->head || !list)
@@ -113,12 +119,14 @@ ll_print (const Linked_List *list)
     }
   do
     {
-      printf ("[%s]->", (char *)current->pair);
-      if (current->next == NULL)
-        printf ("%p", (void *)current->next);
-      current = current->next;
+      if (current)
+        {
+          printf ("[%s]->", (char *)ht_get_node (current)->pair->Value);
+          current = current->next;
+        }
     }
   while (--len);
+  printf ("(null)");
 }
 
 void
@@ -126,13 +134,13 @@ ll_delete (Linked_List *list, const int index)
 {
   if (index == 0)
     {
-      HT_Node *new_head = list->head->next;
+      Node *new_head = list->head->next;
       free (list->head);
       list->head = new_head;
     }
   else
     {
-      HT_Node *current = list->head;
+      Node *current = list->head;
       int i = 0;
       while (current != list->tail || i++ < index)
         {
@@ -155,12 +163,12 @@ ll_delete (Linked_List *list, const int index)
 void *
 ll_get_key (Linked_List *list, void *value)
 {
-  HT_Node *current = list->head;
+  Node *current = list->head;
 
   while (current->next != NULL)
     {
-      if (compare_key (current, value) == 0)
-        return current->pair->Value;
+      if (compare_key (current->value, value) == 0)
+        return current->value;
       current = current->next;
     }
   return NULL;
