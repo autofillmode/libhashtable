@@ -79,22 +79,8 @@ ht_put (void *key, void *value, Hash_Table *ht)
   newNode->key_type = infer_type (key);
   newNode->pair = malloc (sizeof (Pair));
 
-  if (newNode->key_type == STRING)
-    {
-      newNode->pair->Key = strdup (key);
-    }
-  else
-    {
-      newNode->pair->Key = key;
-    }
-  if (infer_type (value) == STRING)
-    {
-      newNode->pair->Value = strdup (value);
-    }
-  else
-    {
-      newNode->pair->Value = value;
-    }
+  newNode->pair->Key = key;
+  newNode->pair->Value = value;
 
   hash_and_add (newNode, ht->array, ht->capacity, ht);
 
@@ -105,13 +91,13 @@ void
 ht_reallocate (Hash_Table *ht)
 {
   int newCapacity = ht->capacity * 2;
-  Linked_List **newArr = calloc (ht->capacity, sizeof (Linked_List));
+  Linked_List **newArr = calloc (newCapacity, sizeof (Linked_List *));
   if (!newArr)
     {
       perror ("ht_reallocate: failed to allocate memory for new array!");
     }
 
-  for (int i = 0; i < ht->capacity; i++)
+  for (int i = 0; i <= ht->capacity; i++)
     {
       if (ht->array[i] != NULL)
         {
@@ -119,7 +105,6 @@ ht_reallocate (Hash_Table *ht)
 
           do
             {
-              /* FIXME: this alloc isn't free'd!!*/
               HT_Node *newNode = calloc (1, sizeof (HT_Node));
 
               if (!newNode)
@@ -127,30 +112,14 @@ ht_reallocate (Hash_Table *ht)
                   perror ("ht_add: failed to allocate memory for new Node!");
                   exit (EXIT_FAILURE);
                 }
-              newNode->pair = calloc (1, sizeof (Pair));
 
               newNode->key_type
                   = infer_type (ht_get_node (current)->pair->Key);
-              newNode->pair = malloc (sizeof (Pair));
+              newNode->pair = calloc (1, sizeof (Pair));
 
-              if (newNode->key_type == STRING)
-                {
-                  newNode->pair->Key
-                      = strdup (ht_get_node (current)->pair->Key);
-                }
-              else
-                {
-                  newNode->pair->Key = ht_get_node (current)->pair->Key;
-                }
-              if (infer_type (ht_get_node (current)->pair->Value) == STRING)
-                {
-                  newNode->pair->Value
-                      = strdup (ht_get_node (current)->pair->Value);
-                }
-              else
-                {
-                  newNode->pair->Value = ht_get_node (current)->pair->Value;
-                }
+              newNode->pair->Key = ht_get_node (current)->pair->Key;
+              newNode->pair->Value = ht_get_node (current)->pair->Value;
+
               hash_and_add (newNode, newArr, newCapacity, ht);
 
               current = current->next;
@@ -183,8 +152,7 @@ hash_and_add (HT_Node *src, Linked_List **dst, int capacity, Hash_Table *ht)
       if (compare_key (dst[index]->head->value, src->pair->Key)
           == 0) /* if the keys match... */
         {
-          ht_get_node (dst[index]->head)->pair->Value
-              = strdup (src->pair->Value);
+          ht_get_node (dst[index]->head)->pair->Value = src->pair->Value;
           free (src->pair);
           free (src);
           return;
