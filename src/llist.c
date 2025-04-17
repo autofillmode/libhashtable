@@ -132,30 +132,33 @@ ll_print (const Linked_List *list)
 void
 ll_delete (Linked_List *list, const int index)
 {
+
+  Node *to_delete;
+
   if (index == 0)
     {
-      Node *new_head = list->head->next;
-      free (list->head);
-      list->head = new_head;
+      to_delete = list->head;
+      list->head = list->head->next;
+
+      if (list->head == NULL)
+        list->tail = NULL;
+
+      free (to_delete);
     }
   else
     {
       Node *current = list->head;
-      int i = 0;
-      while (current != list->tail || i++ < index)
+      for (int i = 0; i < index - 1; i++)
         {
-          if (current->next == list->tail || i == index - 1)
-            {
-              if (i == index)
-                {
-                  current->next = current->next->next;
-                  free (current->next);
-                }
-              free (list->tail);
-              list->tail = NULL;
-              current->next = NULL;
-            }
+          current = current->next;
         }
+      to_delete = current->next;
+      current->next = current->next->next;
+
+      if (to_delete == list->tail)
+        list->tail = current;
+
+      free (to_delete);
     }
   list->length--;
 }
@@ -182,15 +185,15 @@ ll_free_list (Linked_List *list)
     {
       return;
     }
-  if (list && !list->head)
-    {
-      free (list);
-      return;
-    }
 
-  for (int len = list->length; len > 0; len--)
+  Node *current = list->head;
+  while (current != NULL)
     {
-      ll_delete (list, 0);
+      Node *next = current->next;
+      free (ht_get_node (current)->pair);
+      free (current->value);
+      free (current);
+      current = next;
     }
   free (list);
 }
