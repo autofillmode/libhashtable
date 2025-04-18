@@ -11,6 +11,10 @@
 
 static void hash_and_add (HT_Node *, Linked_List **, int, Hash_Table *);
 static HT_Node *ht_get_node (Node *);
+static void ht_free_node_final (void *); /* free's values too. */
+static void
+ht_free_node_realloc (void *); /* free's only the HT_Node and Pair, leaving
+                                  values intact. Use only while realloc'ing. */
 
 Hash_Table *
 ht_init ()
@@ -79,8 +83,8 @@ ht_put (void *key, void *value, Hash_Table *ht)
   newNode->key_type = infer_type (key);
   newNode->pair = malloc (sizeof (Pair));
 
-  newNode->pair->Key = key;
-  newNode->pair->Value = value;
+  newNode->pair->Key = strdup (key);
+  newNode->pair->Value = strdup (value);
 
   hash_and_add (newNode, ht->array, ht->capacity, ht);
 
@@ -97,7 +101,7 @@ ht_reallocate (Hash_Table *ht)
       perror ("ht_reallocate: failed to allocate memory for new array!");
     }
 
-  for (int i = 0; i <= ht->capacity; i++)
+  for (int i = 0; i < ht->capacity; i++)
     {
       if (ht->array[i] != NULL)
         {
@@ -125,7 +129,7 @@ ht_reallocate (Hash_Table *ht)
               current = current->next;
             }
           while (current != NULL);
-          ll_free_list (ht->array[i]);
+          ll_free_list (ht->array[i], ht_free_node_realloc);
         }
     }
 
@@ -153,8 +157,6 @@ hash_and_add (HT_Node *src, Linked_List **dst, int capacity, Hash_Table *ht)
           == 0) /* if the keys match... */
         {
           ht_get_node (dst[index]->head)->pair->Value = src->pair->Value;
-          free (src->pair);
-          free (src);
           return;
         }
       ht->collisions++;
@@ -166,6 +168,34 @@ static HT_Node *
 ht_get_node (Node *node)
 {
   return node->value;
+}
+
+static void
+ht_free_node_final (void *node)
+{
+  HT_Node *to_free = (HT_Node *)node;
+
+  if (!node)
+    return;
+
+  if (to_free->pair->Key && infer_type (to_free->pair->Key) == STRING)
+    free (to_free->pair->Key);
+  if (to_free->pair->Value && infer_type (to_free->pair->Value) == STRING)
+    free (to_free->pair->Value);
+
+  free (to_free->pair);
+  free (to_free);
+}
+
+static void
+ht_free_node_realloc (void *node)
+{
+  HT_Node *to_free = (HT_Node *)node;
+
+  if (!node)
+    return;
+  free (to_free->pair);
+  free (to_free);
 }
 
 void
@@ -188,7 +218,7 @@ ht_free (Hash_Table *ht)
     {
       if (ht->array[i] != NULL)
         {
-          ll_free_list (ht->array[i]);
+          ll_free_list (ht->array[i], ht_free_node_final);
         }
     }
   free (ht->array);
