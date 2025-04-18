@@ -179,7 +179,7 @@ ll_get_key (Linked_List *list, void *value)
 
 /* Free the whole linked list */
 void
-ll_free_list (Linked_List *list)
+ll_free_list (Linked_List *list, void (*free_with) (void *))
 {
   if (!list)
     {
@@ -190,8 +190,10 @@ ll_free_list (Linked_List *list)
   while (current != NULL)
     {
       Node *next = current->next;
-      free (ht_get_node (current)->pair);
-      free (current->value);
+      if (free_with)
+        {
+          free_with (current->value);
+        }
       free (current);
       current = next;
     }

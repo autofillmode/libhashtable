@@ -21,6 +21,6 @@ void *ll_back(const Linked_List *);
 void *ll_get_key(Linked_List *, void *);
 void ll_delete(Linked_List *, const int);
 void ll_print(const Linked_List *);
-void ll_free_list(Linked_List *);
+void ll_free_list(Linked_List *, void (*)(void *));
 
 #endif
