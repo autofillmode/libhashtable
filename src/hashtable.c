@@ -184,7 +184,7 @@ ht_print (Hash_Table *ht)
 void
 ht_free (Hash_Table *ht)
 {
-  for (int i = 0; i <= ht->capacity; i++)
+  for (int i = 0; i < ht->capacity; i++)
     {
       if (ht->array[i] != NULL)
         {
