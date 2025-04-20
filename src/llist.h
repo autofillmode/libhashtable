@@ -1,6 +1,5 @@
 #ifndef LLIST_H
 #define LLIST_H
-#include "structs.h"
 
 typedef struct Node {
   void *value;
@@ -13,14 +12,13 @@ typedef struct Linked_List {
   int length;
 } Linked_List;
 
+Linked_List *ll_init(void);
 void ll_push_front(Linked_List *, void *);
 void ll_push_back(Linked_List *, void *);
-Linked_List *ll_init(void);
 void *ll_front(const Linked_List *);
 void *ll_back(const Linked_List *);
-void *ll_get_key(Linked_List *, void *);
-void ll_delete(Linked_List *, const int);
-void ll_print(const Linked_List *);
-void ll_free_list(Linked_List *, void (*)(void *));
+void ll_print(const Linked_List *, char *(*print_with)(void *));
+void ll_delete(Linked_List *, const int, void (*free_with)(void *));
+void ll_free_list(Linked_List *, void (*free_with)(void *));
 
 #endif

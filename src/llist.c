@@ -1,15 +1,7 @@
 #include "llist.h"
-#include "compare.h"
-#include "structs.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-
-static HT_Node *
-ht_get_node (Node *node)
-{
-  return node->value;
-}
 
 /* Add a node to the head of the linked list. */
 void
@@ -34,7 +26,7 @@ ll_push_front (Linked_List *list, void *val)
   list->length++;
 }
 
-/* Add a node to the tail of the linked list. If list is empty, calls
+/* Add a Node to the tail of the linked list. If list is empty, calls
  * ll_push_front().
  */
 void
@@ -64,7 +56,7 @@ ll_push_back (Linked_List *list, void *val)
   list->length++;
 }
 
-/* Initialize a new linked list */
+/* Initializes a new linked list */
 Linked_List *
 ll_init (void)
 {
@@ -86,6 +78,7 @@ ll_init (void)
   return list;
 }
 
+/* returns the head of the list. */
 void *
 ll_front (const Linked_List *list)
 {
@@ -96,6 +89,7 @@ ll_front (const Linked_List *list)
   return NULL;
 }
 
+/* returns the tail element of the list. */
 void *
 ll_back (const Linked_List *list)
 {
@@ -106,31 +100,38 @@ ll_back (const Linked_List *list)
   return NULL;
 }
 
-/* Print the whole linked list */
+/* Print the whole linked list. If need be, pass a callback as print_with. */
 void
-ll_print (const Linked_List *list)
+ll_print (const Linked_List *list, char *(*print_with) (void *))
 {
-  Node *current = list->head;
-  int len = list->length;
-
-  if (len == 0 || !list->head || !list)
+  if (!list || list->length == 0 || !list->head)
     {
       return;
     }
+  Node *current = list->head;
+  int len = list->length;
+
   do
     {
-      if (current)
+      if (print_with)
         {
-          printf ("[%s]->", (char *)ht_get_node (current)->pair->Value);
-          current = current->next;
+          char *member = print_with (current->value);
+          printf ("[%s]->", member);
+          free (member);
         }
+      else
+        printf ("[Node %p]->", current);
+      current = current->next;
     }
   while (--len);
   printf ("(null)");
 }
 
+/* Delete a single item at index from the list.  If the index contains a heap
+ * alloc'd value, pass a callback as free_with. If not, pass NULL as free_with.
+ */
 void
-ll_delete (Linked_List *list, const int index)
+ll_delete (Linked_List *list, const int index, void (*free_with) (void *))
 {
 
   Node *to_delete;
@@ -142,8 +143,6 @@ ll_delete (Linked_List *list, const int index)
 
       if (list->head == NULL)
         list->tail = NULL;
-
-      free (to_delete);
     }
   else
     {
@@ -157,27 +156,20 @@ ll_delete (Linked_List *list, const int index)
 
       if (to_delete == list->tail)
         list->tail = current;
-
-      free (to_delete);
     }
+
+  if (free_with)
+    {
+      free_with (to_delete->value);
+    }
+  free (to_delete);
+
   list->length--;
 }
 
-void *
-ll_get_key (Linked_List *list, void *value)
-{
-  Node *current = list->head;
-
-  while (current->next != NULL)
-    {
-      if (compare_key (current->value, value) == 0)
-        return current->value;
-      current = current->next;
-    }
-  return NULL;
-}
-
-/* Free the whole linked list */
+/* Free the whole linked list. If the list contains heap alloc'd values, pass a
+ * callback as free_with(). If there are only stack-allocs pass NULL.
+ */
 void
 ll_free_list (Linked_List *list, void (*free_with) (void *))
 {
@@ -194,8 +186,6 @@ ll_free_list (Linked_List *list, void (*free_with) (void *))
         {
           free_with (current->value);
         }
-      if (!free_with)
-        free (current->value);
       free (current);
       current = next;
     }
