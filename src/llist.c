@@ -1,4 +1,5 @@
 #include "llist.h"
+#include "compare.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -96,6 +97,20 @@ ll_back (const Linked_List *list)
   if (list != NULL && list->tail != NULL)
     {
       return list->tail->value;
+    }
+  return NULL;
+}
+
+void *
+ll_get_key (const Linked_List *list, void *key)
+{
+  Node *current = list->head;
+
+  for (int i = 0; i < list->length; i++)
+    {
+      if (!compare_key (current->value, key)) /* key is found*/
+        return key;
+      current = current->next;
     }
   return NULL;
 }
