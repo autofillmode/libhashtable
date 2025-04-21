@@ -4,9 +4,9 @@
 #include <string.h>
 
 int
-compare_key (HT_Node *node, void *value)
+compare_key (HT_Node *node, HT_TYPE key_type, void *value)
 {
-  switch (node->key_type)
+  switch (key_type)
     {
     case STRING:
       return strcmp (node->pair->Key, value);
