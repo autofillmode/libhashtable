@@ -19,7 +19,7 @@ main (int argc, char *argv[])
 void
 read_from_file (const char *filename)
 {
-  Hash_Table *ht = ht_init ();
+  Hash_Table *ht = ht_init (STRING, STRING);
   FILE *fp = fopen (filename, "r");
   if (!fp)
     {
