@@ -210,7 +210,7 @@ ht_print (Hash_Table *ht)
     {
       if (ht->array[i] != NULL)
         {
-          ll_print (ht->array[i]);
+          ll_print (ht->array[i], NULL);
           printf ("\n");
         }
     }
