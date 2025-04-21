@@ -8,6 +8,8 @@ compare_key (HT_Node *node, HT_TYPE key_type, void *value)
 {
   switch (key_type)
     {
+    case ANY: /* compare pointers if object is any */
+      return (node->pair->Key == value);
     case STRING:
       return strcmp (node->pair->Key, value);
     case INT:
@@ -27,64 +29,4 @@ compare_key (HT_Node *node, HT_TYPE key_type, void *value)
     default:
       return 1;
     }
-}
-
-static int
-is_int (const char *key)
-{
-  if (*key == '-' || *key == '+') /* skip sign */
-    {
-      key++;
-    }
-  if (*key == '\0')
-    return 0;
-
-  while (*key)
-    {
-      if (!isdigit (*key))
-        return 0;
-      key++;
-    }
-  return 1;
-}
-
-static int
-is_float (const char *key)
-{
-  int has_dot = 0;
-  if (*key == '-' || *key == '+') /* skip sign */
-    {
-      key++;
-    }
-  if (*key == '\0') /* skip empty strings */
-    return 0;
-
-  while (*key)
-    {
-      if (*key == '.')
-        {
-          if (has_dot)
-            return 0; /* can't have more than one dot! */
-          has_dot = 1;
-        }
-      else if (!isdigit (*key)) /* only digits in floats! */
-        {
-          return 0;
-        }
-      key++;
-    }
-  return has_dot; /* has to have 1 dot to be a float */
-}
-
-HT_TYPE
-infer_type (void *key)
-{
-  const char *key_string = (const char *)key;
-
-  if (is_int (key_string))
-    return INT;
-  else if (is_float (key_string))
-    return FLOAT;
-  else
-    return STRING;
 }
