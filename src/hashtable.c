@@ -83,8 +83,13 @@ ht_put (void *key, void *value, Hash_Table *ht)
   newNode->key_type = infer_type (key);
   newNode->pair = malloc (sizeof (Pair));
 
-  newNode->pair->Key = strdup (key);
-  newNode->pair->Value = strdup (value);
+  if (newNode->key_type == STRING)
+    newNode->pair->Key = strdup (key);
+  else
+    newNode->pair->Key = key;
+  if (infer_type (newNode->pair->Value) == STRING)
+    newNode->pair->Value = strdup (value);
+  newNode->pair->Value = value;
 
   hash_and_add (newNode, ht->array, ht->capacity, ht);
 
