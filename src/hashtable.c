@@ -181,10 +181,8 @@ ht_free_node_final (void *node)
   if (!node)
     return;
 
-  if (to_free->pair->Key && infer_type (to_free->pair->Key) == STRING)
-    free (to_free->pair->Key);
-  if (to_free->pair->Value && infer_type (to_free->pair->Value) == STRING)
-    free (to_free->pair->Value);
+  free (to_free->pair->Key);
+  free (to_free->pair->Value);
 
   free (to_free->pair);
   free (to_free);
