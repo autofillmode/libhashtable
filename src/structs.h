@@ -12,7 +12,6 @@ typedef struct Pair {
 typedef struct HT_Node {
   struct Pair *pair;
   struct HT_Node *next;
-  enum HT_TYPE key_type;
 } HT_Node;
 
 typedef struct HashTable {
@@ -21,6 +20,8 @@ typedef struct HashTable {
   int reallocs;
   int capacity;
   struct Linked_List **array;
+  HT_TYPE key_type;
+  HT_TYPE value_type;
 } Hash_Table;
 
 #endif
