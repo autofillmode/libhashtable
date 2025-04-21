@@ -9,7 +9,7 @@
 #define DEFAULT_SIZE 32
 #define LOAD_FACTOR 0.60
 
-Hash_Table *ht_init();
+Hash_Table *ht_init(HT_TYPE, HT_TYPE);
 void *ht_get(void *key, Hash_Table *ht);
 void ht_put(void *key, void *value, Hash_Table *ht);
 void ht_ensure_capacity(int capacity, Hash_Table *ht);

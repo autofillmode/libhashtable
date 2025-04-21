@@ -17,7 +17,7 @@ ht_free_node_realloc (void *); /* free's only the HT_Node and Pair, leaving
                                   values intact. Use only while realloc'ing. */
 
 Hash_Table *
-ht_init ()
+ht_init (HT_TYPE key_type, HT_TYPE value_type)
 {
   Hash_Table *ht = calloc (1, sizeof (Hash_Table));
   if (!ht)
@@ -51,14 +51,14 @@ ht_get (void *key, Hash_Table *ht)
 
   Node *current = ht->array[index]->head;
 
-  if (compare_key (current->value, key) == 0)
+  if (compare_key (current->value, ht->value_type, key) == 0)
     {
       return ht_get_node (current)->pair->Value;
     }
 
-  if (compare_key (ht_get_node (current)->pair->Key, key) != 0)
+  if (compare_key (ht_get_node (current)->pair->Key, ht->key_type, key) != 0)
     {
-      return ll_get_key (ht->array[index], key);
+      return ll_get_key (ht->array[index], ht->key_type, key);
     }
   return NULL;
 }
@@ -80,16 +80,16 @@ ht_put (void *key, void *value, Hash_Table *ht)
       exit (EXIT_FAILURE);
     }
 
-  newNode->key_type = infer_type (key);
   newNode->pair = malloc (sizeof (Pair));
 
-  if (newNode->key_type == STRING)
+  if (ht->key_type == STRING)
     newNode->pair->Key = strdup (key);
   else
     newNode->pair->Key = key;
-  if (infer_type (newNode->pair->Value) == STRING)
+  if (ht->value_type == STRING)
     newNode->pair->Value = strdup (value);
-  newNode->pair->Value = value;
+  else
+    newNode->pair->Value = value;
 
   hash_and_add (newNode, ht->array, ht->capacity, ht);
 
@@ -122,8 +122,6 @@ ht_reallocate (Hash_Table *ht)
                   exit (EXIT_FAILURE);
                 }
 
-              newNode->key_type
-                  = infer_type (ht_get_node (current)->pair->Key);
               newNode->pair = calloc (1, sizeof (Pair));
 
               newNode->pair->Key = ht_get_node (current)->pair->Key;
@@ -158,7 +156,7 @@ hash_and_add (HT_Node *src, Linked_List **dst, int capacity, Hash_Table *ht)
   else
     {
       /* Update a Value */
-      if (compare_key (dst[index]->head->value, src->pair->Key)
+      if (compare_key (dst[index]->head->value, ht->key_type, src->pair->Key)
           == 0) /* if the keys match... */
         {
           ht_get_node (dst[index]->head)->pair->Value = src->pair->Value;
