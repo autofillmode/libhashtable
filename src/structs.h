@@ -1,7 +1,7 @@
 #ifndef STRUCTS_H
 #define STRUCTS_H
 
-typedef enum HT_TYPE { STRING, INT, FLOAT } HT_TYPE;
+typedef enum HT_TYPE { STRING, INT, FLOAT, ANY } HT_TYPE;
 
 typedef struct Pair {
   void *Key;
