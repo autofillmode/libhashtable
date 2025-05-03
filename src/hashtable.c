@@ -56,7 +56,7 @@ ht_get (void *key, Hash_Table *ht)
       return ht_get_node (current)->pair->Value;
     }
 
-  if (compare_key (ht_get_node (current)->pair->Key, ht->key_type, key) != 0)
+  if (compare_key (current->value, ht->key_type, key) != 0)
     {
       return ll_get_key (ht->array[index], ht->key_type, key);
     }

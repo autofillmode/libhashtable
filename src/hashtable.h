@@ -1,4 +1,3 @@
-#include "compare.h"
 #include "llist.h"
 #include "murmur.h"
 #include "structs.h"
