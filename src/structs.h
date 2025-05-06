@@ -6,7 +6,6 @@ typedef enum HT_TYPE { STRING, INT, FLOAT, ANY } HT_TYPE;
 typedef struct Pair {
   void *Key;
   void *Value;
-  int deleted;
 } Pair;
 
 typedef struct HT_Node {

@@ -9,13 +9,13 @@
 void
 ll_push_front (Linked_List *list, void *val)
 {
-  Node *new = malloc (sizeof (Node));
+  HT_Node *new = malloc (sizeof (HT_Node));
   if (!new)
     {
       perror ("ll_add_: couldn't alloc memory for new node!");
       exit (EXIT_FAILURE);
     }
-  new->value = val;
+  new = val;
 
   new->next = list->head;
   list->head = new;
@@ -40,15 +40,15 @@ ll_push_back (Linked_List *list, void *val)
       return;
     }
 
-  Node *current = list->tail;
-  Node *new = malloc (sizeof (Node));
+  HT_Node *current = list->tail;
+  HT_Node *new = malloc (sizeof (HT_Node));
   if (!new)
     {
       perror ("ll_add_to_end: couldn't alloc memory for new node!");
       exit (EXIT_FAILURE);
     }
 
-  new->value = val;
+  new = val;
 
   current->next = new;
   list->tail = current->next;
@@ -80,37 +80,15 @@ ll_init (void)
   return list;
 }
 
-/* returns the head of the list. */
-void *
-ll_front (const Linked_List *list)
-{
-  if (list != NULL && list->head != NULL)
-    {
-      return list->head->value;
-    }
-  return NULL;
-}
-
-/* returns the tail element of the list. */
-void *
-ll_back (const Linked_List *list)
-{
-  if (list != NULL && list->tail != NULL)
-    {
-      return list->tail->value;
-    }
-  return NULL;
-}
-
 void *
 ll_get_key (const Linked_List *list, HT_TYPE key_type, void *key)
 {
-  Node *current = list->head;
+  HT_Node *current = list->head;
 
   for (int i = 0; i < list->length; i++)
     {
-      if (!compare_key (current->value, key_type, key)) /* key is found*/
-        return key;
+      if (!compare_key (current, key_type, key)) /* key is found*/
+        return current->pair->Value;
       current = current->next;
     }
   return NULL;
@@ -124,14 +102,14 @@ ll_print (const Linked_List *list, char *(*print_with) (void *))
     {
       return;
     }
-  Node *current = list->head;
+  HT_Node *current = list->head;
   int len = list->length;
 
   do
     {
       if (print_with)
         {
-          char *member = print_with (current->value);
+          char *member = print_with (current);
           printf ("[%s]->", member);
           free (member);
         }
@@ -150,7 +128,7 @@ void
 ll_delete (Linked_List *list, const int index, void (*free_with) (void *))
 {
 
-  Node *to_delete;
+  HT_Node *to_delete;
 
   if (index == 0)
     {
@@ -162,7 +140,7 @@ ll_delete (Linked_List *list, const int index, void (*free_with) (void *))
     }
   else
     {
-      Node *current = list->head;
+      HT_Node *current = list->head;
       for (int i = 0; i < index - 1; i++)
         {
           current = current->next;
@@ -176,9 +154,8 @@ ll_delete (Linked_List *list, const int index, void (*free_with) (void *))
 
   if (free_with)
     {
-      free_with (to_delete->value);
+      free_with (to_delete);
     }
-  free (to_delete);
 
   list->length--;
 }
@@ -194,15 +171,14 @@ ll_free_list (Linked_List *list, void (*free_with) (void *))
       return;
     }
 
-  Node *current = list->head;
+  HT_Node *current = list->head;
   while (current != NULL)
     {
-      Node *next = current->next;
+      HT_Node *next = current->next;
       if (free_with)
         {
-          free_with (current->value);
+          free_with (current);
         }
-      free (current);
       current = next;
     }
   free (list);

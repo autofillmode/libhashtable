@@ -2,14 +2,10 @@
 #define LLIST_H
 
 #include "structs.h"
-typedef struct Node {
-  void *value;
-  struct Node *next;
-} Node;
 
 typedef struct Linked_List {
-  Node *head;
-  Node *tail;
+  HT_Node *head;
+  HT_Node *tail;
   int length;
 } Linked_List;
 

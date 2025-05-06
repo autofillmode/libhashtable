@@ -10,7 +10,6 @@
 #include <string.h>
 
 static void hash_and_add (HT_Node *, Linked_List **, int, Hash_Table *);
-static HT_Node *ht_get_node (Node *);
 static void ht_free_node_final (void *); /* free's values too. */
 static void
 ht_free_node_realloc (void *); /* free's only the HT_Node and Pair, leaving
@@ -49,14 +48,14 @@ ht_get (void *key, Hash_Table *ht)
       return NULL;
     }
 
-  Node *current = ht->array[index]->head;
+  HT_Node *current = ht->array[index]->head;
 
-  if (compare_key (current->value, ht->value_type, key) == 0)
+  if (compare_key (current, ht->value_type, key) == 0)
     {
-      return ht_get_node (current)->pair->Value;
+      return current->pair->Value;
     }
 
-  if (compare_key (current->value, ht->key_type, key) != 0)
+  if (compare_key (current, ht->key_type, key) != 0)
     {
       return ll_get_key (ht->array[index], ht->key_type, key);
     }
@@ -110,7 +109,7 @@ ht_reallocate (Hash_Table *ht)
     {
       if (ht->array[i] != NULL)
         {
-          Node *current = ht->array[i]->head;
+          HT_Node *current = ht->array[i]->head;
 
           do
             {
@@ -124,8 +123,8 @@ ht_reallocate (Hash_Table *ht)
 
               newNode->pair = calloc (1, sizeof (Pair));
 
-              newNode->pair->Key = ht_get_node (current)->pair->Key;
-              newNode->pair->Value = ht_get_node (current)->pair->Value;
+              newNode->pair->Key = current->pair->Key;
+              newNode->pair->Value = current->pair->Value;
 
               hash_and_add (newNode, newArr, newCapacity, ht);
 
@@ -156,21 +155,15 @@ hash_and_add (HT_Node *src, Linked_List **dst, int capacity, Hash_Table *ht)
   else
     {
       /* Update a Value */
-      if (compare_key (dst[index]->head->value, ht->key_type, src->pair->Key)
+      if (compare_key (dst[index]->head, ht->key_type, src->pair->Key)
           == 0) /* if the keys match... */
         {
-          ht_get_node (dst[index]->head)->pair->Value = src->pair->Value;
+          dst[index]->head->pair->Value = src->pair->Value;
           return;
         }
       ht->collisions++;
       ll_push_back (dst[index], src);
     }
-}
-
-static HT_Node *
-ht_get_node (Node *node)
-{
-  return node->value;
 }
 
 static void
