@@ -33,6 +33,8 @@ ht_init (HT_TYPE key_type, HT_TYPE value_type)
   ht->size = 0;
   ht->collisions = 0;
   ht->capacity = (int)(DEFAULT_SIZE * LOAD_FACTOR);
+  ht->key_type = key_type;
+  ht->value_type = value_type;
   return ht;
 }
 
