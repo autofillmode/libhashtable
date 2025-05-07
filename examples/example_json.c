@@ -84,13 +84,13 @@ read_from_file (const char *filename)
   printf ("%d collisions, %d reallocs, %d elements.\n", ht->collisions,
           ht->reallocs, ht->size);
 
-  ht_print (ht);
+  // ht_print (ht);
 
-  if (!strcmp (filename, "json/5000-town-coders.json\n"))
+  if (!strcmp (filename, "json/5000-town-coders.json"))
     printf ("key \"%s\" has value of \"%s\"",
             "508650bd-992e-41ce-a325-57000de1f5d9",
             (char *)ht_get ("508650bd-992e-41ce-a325-57000de1f5d9", ht));
-  if (!strcmp (filename, "json/10-village-coders.json\n"))
+  if (!strcmp (filename, "json/10-village-coders.json"))
     printf ("key \"%s\" has value of \"%s\"",
             "3da3a779-f566-4562-bf8b-d7fff8736031",
             (char *)ht_get ("3da3a779-f566-4562-bf8b-d7fff8736031", ht));
