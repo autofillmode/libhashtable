@@ -10,7 +10,6 @@
 #include <string.h>
 
 static void hash_and_add (HT_Node *, Linked_List **, int, Hash_Table *);
-static void ht_free_node_final (void *); /* free's values too. */
 static void
 ht_free_node_realloc (void *); /* free's only the HT_Node and Pair, leaving
                                   values intact. Use only while realloc'ing. */
@@ -83,14 +82,8 @@ ht_put (void *key, void *value, Hash_Table *ht)
 
   newNode->pair = malloc (sizeof (Pair));
 
-  if (ht->key_type == STRING)
-    newNode->pair->Key = strdup (key);
-  else
-    newNode->pair->Key = key;
-  if (ht->value_type == STRING)
-    newNode->pair->Value = strdup (value);
-  else
-    newNode->pair->Value = value;
+  newNode->pair->Key = key;
+  newNode->pair->Value = value;
 
   hash_and_add (newNode, ht->array, ht->capacity, ht);
 
@@ -164,23 +157,8 @@ hash_and_add (HT_Node *src, Linked_List **dst, int capacity, Hash_Table *ht)
           return;
         }
       ht->collisions++;
-      ll_push_back (dst[index], src);
+      ll_push_front (dst[index], src);
     }
-}
-
-static void
-ht_free_node_final (void *node)
-{
-  HT_Node *to_free = (HT_Node *)node;
-
-  if (!node)
-    return;
-
-  free (to_free->pair->Key);
-  free (to_free->pair->Value);
-
-  free (to_free->pair);
-  free (to_free);
 }
 
 static void
@@ -208,13 +186,13 @@ ht_print (Hash_Table *ht)
 }
 
 void
-ht_free (Hash_Table *ht)
+ht_free (Hash_Table *ht, void (*free_with) (void *pair))
 {
   for (int i = 0; i < ht->capacity; i++)
     {
       if (ht->array[i] != NULL)
         {
-          ll_free_list (ht->array[i], ht_free_node_final);
+          ll_free_list (ht->array[i], free_with);
         }
     }
   free (ht->array);

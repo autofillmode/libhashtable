@@ -141,6 +141,8 @@ ll_free_list (Linked_List *list, void (*free_with) (void *))
       if (free_with)
         {
           free_with (current);
+          free (current->pair);
+          free (current);
         }
       current = next;
     }
