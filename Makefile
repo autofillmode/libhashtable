@@ -6,7 +6,7 @@ BIN = example_json example_types
 
 default: examples
 
-examples: example_json.o example_types.o
+examples: example_json.o 
 	$(CC) $(OPTS) example_json.o libhashtable.a -o example_json $(LIB)
 
 example_json.o: libhashtable.a
