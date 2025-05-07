@@ -8,10 +8,6 @@ default: examples
 
 examples: example_json.o example_types.o
 	$(CC) $(OPTS) example_json.o libhashtable.a -o example_json $(LIB)
-	$(CC) $(OPTS) example_types.o libhashtable.a -o example_types
-
-example_types.o:
-	$(CC) $(OPTS) -c examples/example_types.c
 
 example_json.o: libhashtable.a
 	$(CC) $(OPTS) -c examples/example_json.c libhashtable.a $(LIB)
