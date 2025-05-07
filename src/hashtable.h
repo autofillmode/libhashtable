@@ -13,7 +13,7 @@ void *ht_get(void *key, Hash_Table *ht);
 void ht_put(void *key, void *value, Hash_Table *ht);
 void ht_ensure_capacity(int capacity, Hash_Table *ht);
 void ht_reallocate(Hash_Table *ht);
-void ht_free(Hash_Table *ht);
+void ht_free(Hash_Table *ht, void (*free_with)(void *pair));
 void ht_print(Hash_Table *ht);
 
 #endif
