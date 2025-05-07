@@ -7,53 +7,16 @@
 
 /* Add a node to the head of the linked list. */
 void
-ll_push_front (Linked_List *list, void *val)
+ll_push_front (Linked_List *list, HT_Node *val)
 {
-  HT_Node *new = malloc (sizeof (HT_Node));
-  if (!new)
-    {
-      perror ("ll_add_: couldn't alloc memory for new node!");
-      exit (EXIT_FAILURE);
-    }
-  new = val;
 
-  new->next = list->head;
-  list->head = new;
+  val->next = list->head;
+  list->head = val;
 
   if (list->length == 0)
     {
       list->tail = list->head;
     }
-
-  list->length++;
-}
-
-/* Add a Node to the tail of the linked list. If list is empty, calls
- * ll_push_front().
- */
-void
-ll_push_back (Linked_List *list, void *val)
-{
-  if (list->length == 0)
-    {
-      ll_push_front (list, val);
-      return;
-    }
-
-  HT_Node *current = list->tail;
-  HT_Node *new = malloc (sizeof (HT_Node));
-  if (!new)
-    {
-      perror ("ll_add_to_end: couldn't alloc memory for new node!");
-      exit (EXIT_FAILURE);
-    }
-
-  new = val;
-
-  current->next = new;
-  list->tail = current->next;
-
-  current->next->next = NULL;
 
   list->length++;
 }
