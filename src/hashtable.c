@@ -10,9 +10,6 @@
 #include <string.h>
 
 static void hash_and_add (HT_Node *, Linked_List **, int, Hash_Table *);
-static void
-ht_free_node_realloc (void *); /* free's only the HT_Node and Pair, leaving
-                                  values intact. Use only while realloc'ing. */
 
 Hash_Table *
 ht_init (HT_TYPE key_type, HT_TYPE value_type)
@@ -126,7 +123,7 @@ ht_reallocate (Hash_Table *ht)
               current = current->next;
             }
           while (current != NULL);
-          ll_free_list (ht->array[i], ht_free_node_realloc);
+          ll_free_list (ht->array[i], NULL);
         }
     }
 
@@ -159,17 +156,6 @@ hash_and_add (HT_Node *src, Linked_List **dst, int capacity, Hash_Table *ht)
       ht->collisions++;
       ll_push_front (dst[index], src);
     }
-}
-
-static void
-ht_free_node_realloc (void *node)
-{
-  HT_Node *to_free = (HT_Node *)node;
-
-  if (!node)
-    return;
-  free (to_free->pair);
-  free (to_free);
 }
 
 void
