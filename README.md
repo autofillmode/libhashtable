@@ -1,6 +1,6 @@
 # A simple hashtable
 
-ATTENTION: Incomplete, (please) DON'T USE IN PRODUCTION!!
+ATTENTION: Stable and mostly tested, but (please) DON'T USE IN PRODUCTION!!
 
 This is a simple hashtable. Uses the murmur32 reference implementation for hashing, and a self-rolled linked list for chaining.
 Keys and Values are void pointers. 
