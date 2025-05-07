@@ -18,6 +18,15 @@ main (int argc, char *argv[])
 }
 
 void
+free_pair (void *pair)
+{
+  HT_Node *to_free = (HT_Node *)pair;
+
+  free (to_free->pair->Key);
+  free (to_free->pair->Value);
+}
+
+void
 read_from_file (const char *filename)
 {
   Hash_Table *ht = ht_init (STRING, STRING);
@@ -51,7 +60,8 @@ read_from_file (const char *filename)
           json_fname = cJSON_GetObjectItem (json, "firstName");
           if (json_id && json_fname)
             {
-              ht_put (json_id->valuestring, json_fname->valuestring, ht);
+              ht_put (strdup (json_id->valuestring),
+                      strdup (json_fname->valuestring), ht);
             }
         }
       cJSON_Delete (json);
@@ -85,5 +95,5 @@ read_from_file (const char *filename)
             "3da3a779-f566-4562-bf8b-d7fff8736031",
             (char *)ht_get ("3da3a779-f566-4562-bf8b-d7fff8736031", ht));
 
-  ht_free (ht);
+  ht_free (ht, free_pair);
 }
