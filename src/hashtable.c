@@ -52,12 +52,10 @@ ht_get (void *key, Hash_Table *ht)
     {
       return current->pair->Value;
     }
-
-  if (compare_key (current, ht->key_type, key) != 0)
+  else
     {
       return ll_get_key (ht->array[index], ht->key_type, key);
     }
-  return NULL;
 }
 
 void
@@ -146,16 +144,33 @@ hash_and_add (HT_Node *src, Linked_List **dst, int capacity, Hash_Table *ht)
     }
   else
     {
-      /* Update a Value */
-      if (compare_key (dst[index]->head, ht->key_type, src->pair->Key)
-          == 0) /* if the keys match... */
+      HT_Node *current = dst[index]->head;
+      while (current->next != NULL)
         {
-          dst[index]->head->pair->Value = src->pair->Value;
-          return;
+          if (compare_key (current, ht->key_type, src->pair->Key) == 0)
+            {
+              current->pair->Value = src->pair->Value;
+              return;
+            }
+          current = current->next;
         }
       ht->collisions++;
       ll_push_front (dst[index], src);
     }
+}
+
+char *
+print_with (void *node)
+{
+  HT_Node *to_print = (HT_Node *)node;
+
+  int len = strlen (to_print->pair->Key) + strlen (to_print->pair->Value) + 6;
+
+  char *ret = malloc (len + 1);
+  snprintf (ret, len, "K:%s V:%s", (char *)to_print->pair->Key,
+            (char *)to_print->pair->Value);
+
+  return ret;
 }
 
 void
@@ -165,7 +180,7 @@ ht_print (Hash_Table *ht)
     {
       if (ht->array[i] != NULL)
         {
-          ll_print (ht->array[i], NULL);
+          ll_print (ht->array[i], print_with);
           printf ("\n");
         }
     }
