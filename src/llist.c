@@ -12,12 +12,10 @@ ll_push_front (Linked_List *list, HT_Node *val)
   val->next = list->head;
   list->head = val;
 
-  if (list->length == 0)
+  if (list->head->next == NULL)
     {
       list->tail = list->head;
     }
-
-  list->length++;
 }
 
 /* Initializes a new linked list */
@@ -35,7 +33,6 @@ ll_init (void)
     {
       return NULL;
     }
-  list->length = 0;
   list->head = NULL;
   list->tail = list->head;
 
