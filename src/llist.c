@@ -40,7 +40,7 @@ ll_init (void)
 }
 
 void *
-ll_get_key (const Linked_List *list, HT_TYPE key_type, void *key)
+ll_get_key (const Linked_List *list, void *key)
 {
   HT_Node *current = list->head;
 

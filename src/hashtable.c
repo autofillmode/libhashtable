@@ -11,15 +11,15 @@
 static void hash_and_add (HT_Node *, Linked_List **, int, Hash_Table *);
 
 Hash_Table *
-ht_init (HT_TYPE key_type, HT_TYPE value_type)
+ht_init ()
 {
-  Hash_Table *ht = calloc (1, sizeof (Hash_Table));
+  Hash_Table *ht = malloc (sizeof (Hash_Table));
   if (!ht)
     {
       perror ("ht_init: failed to allocate memory for hash table.");
       exit (EXIT_FAILURE);
     }
-  ht->array = calloc (DEFAULT_SIZE, sizeof (Linked_List));
+  ht->array = calloc (DEFAULT_SIZE, sizeof (Linked_List *));
   if (!ht->array)
     {
       perror ("ht_init: failed to allocate memory for internal array!");
@@ -28,8 +28,6 @@ ht_init (HT_TYPE key_type, HT_TYPE value_type)
   ht->size = 0;
   ht->collisions = 0;
   ht->capacity = (int)(DEFAULT_SIZE * LOAD_FACTOR);
-  ht->key_type = key_type;
-  ht->value_type = value_type;
   return ht;
 }
 
@@ -53,7 +51,7 @@ ht_get (void *key, Hash_Table *ht)
     }
   else
     {
-      return ll_get_key (ht->array[index], ht->key_type, key);
+      return ll_get_key (ht->array[index], key);
     }
 }
 
@@ -66,7 +64,7 @@ ht_put (void *key, void *value, Hash_Table *ht)
       ht_reallocate (ht);
     }
 
-  HT_Node *newNode = calloc (1, sizeof (HT_Node));
+  HT_Node *newNode = malloc (sizeof (HT_Node));
 
   if (!newNode)
     {
@@ -102,7 +100,7 @@ ht_reallocate (Hash_Table *ht)
 
           do
             {
-              HT_Node *newNode = calloc (1, sizeof (HT_Node));
+              HT_Node *newNode = malloc (sizeof (HT_Node));
 
               if (!newNode)
                 {

@@ -29,7 +29,7 @@ free_pair (void *pair)
 void
 read_from_file (const char *filename)
 {
-  Hash_Table *ht = ht_init (STRING, STRING);
+  Hash_Table *ht = ht_init ();
   FILE *fp = fopen (filename, "r");
   if (!fp)
     {

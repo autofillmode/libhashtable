@@ -1,0 +1,2775 @@
+desc: (none)
+cmd: ./a.out json/5000-town-coders.json
+time_unit: i
+#-----------
+snapshot=0
+#-----------
+time=0
+mem_heap_B=0
+mem_heap_extra_B=0
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=1
+#-----------
+time=1604141
+mem_heap_B=17368
+mem_heap_extra_B=5560
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=2
+#-----------
+time=3031614
+mem_heap_B=27568
+mem_heap_extra_B=10864
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=3
+#-----------
+time=4014703
+mem_heap_B=32377
+mem_heap_extra_B=14527
+mem_stacks_B=0
+heap_tree=detailed
+n13: 32377 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n2: 10715 0x491158E: strdup (strdup.c:42)
+  n1: 7807 0x10951E: read_from_file (example_json.c:63)
+   n0: 7807 0x10938E: main (example_json.c:15)
+  n1: 2908 0x10950B: read_from_file (example_json.c:64)
+   n0: 2908 0x10938E: main (example_json.c:15)
+ n1: 5120 0x48E7BA3: _IO_file_doallocate (filedoalloc.c:101)
+  n2: 5120 0x48F6CDF: _IO_doallocbuf (genops.c:347)
+   n1: 4096 0x48F5CDB: _IO_file_underflow@@GLIBC_2.2.5 (fileops.c:485)
+    n1: 4096 0x48E9307: getdelim (iogetdelim.c:73)
+     n1: 4096 0x10955A: read_from_file (example_json.c:50)
+      n0: 4096 0x10938E: main (example_json.c:15)
+   n1: 1024 0x48F5F5F: _IO_file_overflow@@GLIBC_2.2.5 (fileops.c:744)
+    n1: 1024 0x48F46D4: _IO_new_file_xsputn (fileops.c:1243)
+     n1: 1024 0x48F46D4: _IO_file_xsputn@@GLIBC_2.2.5 (fileops.c:1196)
+      n1: 1024 0x48DE14C: outstring_func (vfprintf-internal.c:239)
+       n1: 1024 0x48DE14C: __vfprintf_internal (vfprintf-internal.c:1263)
+        n1: 1024 0x48C979E: printf (printf.c:33)
+         n1: 1024 0x1094B7: read_from_file (example_json.c:55)
+          n0: 1024 0x10938E: main (example_json.c:15)
+ n1: 3576 0x109F2D: ll_init (llist.c:28)
+  n2: 3576 0x109CE3: hash_and_add (hashtable.c:144)
+   n1: 2856 0x109BBF: ht_reallocate (hashtable.c:121)
+    n1: 2856 0x109A0B: ht_put (hashtable.c:69)
+     n1: 2856 0x109533: read_from_file (example_json.c:63)
+      n0: 2856 0x10938E: main (example_json.c:15)
+   n1: 720 0x109A8E: ht_put (hashtable.c:85)
+    n1: 720 0x109533: read_from_file (example_json.c:63)
+     n0: 720 0x10938E: main (example_json.c:15)
+ n1: 2432 0x109ACE: ht_reallocate (hashtable.c:94)
+  n1: 2432 0x109A0B: ht_put (hashtable.c:69)
+   n1: 2432 0x109533: read_from_file (example_json.c:63)
+    n0: 2432 0x10938E: main (example_json.c:15)
+ n1: 2432 0x109B41: ht_reallocate (hashtable.c:108)
+  n1: 2432 0x109A0B: ht_put (hashtable.c:69)
+   n1: 2432 0x109533: read_from_file (example_json.c:63)
+    n0: 2432 0x10938E: main (example_json.c:15)
+ n1: 2432 0x109B74: ht_reallocate (hashtable.c:116)
+  n1: 2432 0x109A0B: ht_put (hashtable.c:69)
+   n1: 2432 0x109533: read_from_file (example_json.c:63)
+    n0: 2432 0x10938E: main (example_json.c:15)
+ n1: 1384 0x48E917D: getdelim (iogetdelim.c:102)
+  n1: 1384 0x10955A: read_from_file (example_json.c:50)
+   n0: 1384 0x10938E: main (example_json.c:15)
+ n1: 944 0x109A1A: ht_put (hashtable.c:72)
+  n1: 944 0x109533: read_from_file (example_json.c:63)
+   n0: 944 0x10938E: main (example_json.c:15)
+ n1: 944 0x109A48: ht_put (hashtable.c:80)
+  n1: 944 0x109533: read_from_file (example_json.c:63)
+   n0: 944 0x10938E: main (example_json.c:15)
+ n2: 896 0x4862AAC: ??? (in /usr/lib/x86_64-linux-gnu/libcjson.so.1.7.15)
+  n1: 896 0x4862863: ??? (in /usr/lib/x86_64-linux-gnu/libcjson.so.1.7.15)
+   n1: 896 0x4862C9F: cJSON_ParseWithLengthOpts (in /usr/lib/x86_64-linux-gnu/libcjson.so.1.7.15)
+    n1: 896 0x109493: read_from_file (example_json.c:52)
+     n0: 896 0x10938E: main (example_json.c:15)
+  n0: 0 in 1 place, below massif's threshold (1.00%)
+ n0: 544 in 5 places, all below massif's threshold (1.00%)
+ n1: 486 0x4861361: ??? (in /usr/lib/x86_64-linux-gnu/libcjson.so.1.7.15)
+  n0: 486 in 3 places, all below massif's threshold (1.00%)
+ n1: 472 0x48E864D: __fopen_internal (iofopen.c:65)
+  n1: 472 0x48E864D: fopen@@GLIBC_2.2.5 (iofopen.c:86)
+   n1: 472 0x109427: read_from_file (example_json.c:33)
+    n0: 472 0x10938E: main (example_json.c:15)
+#-----------
+snapshot=4
+#-----------
+time=5417907
+mem_heap_B=40495
+mem_heap_extra_B=19433
+mem_stacks_B=0
+heap_tree=detailed
+n12: 40495 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n2: 14857 0x491158E: strdup (strdup.c:42)
+  n1: 10804 0x10951E: read_from_file (example_json.c:63)
+   n0: 10804 0x10938E: main (example_json.c:15)
+  n1: 4053 0x10950B: read_from_file (example_json.c:64)
+   n0: 4053 0x10938E: main (example_json.c:15)
+ n1: 5120 0x48E7BA3: _IO_file_doallocate (filedoalloc.c:101)
+  n2: 5120 0x48F6CDF: _IO_doallocbuf (genops.c:347)
+   n1: 4096 0x48F5CDB: _IO_file_underflow@@GLIBC_2.2.5 (fileops.c:485)
+    n1: 4096 0x48E9307: getdelim (iogetdelim.c:73)
+     n1: 4096 0x10955A: read_from_file (example_json.c:50)
+      n0: 4096 0x10938E: main (example_json.c:15)
+   n1: 1024 0x48F5F5F: _IO_file_overflow@@GLIBC_2.2.5 (fileops.c:744)
+    n1: 1024 0x48F46D4: _IO_new_file_xsputn (fileops.c:1243)
+     n1: 1024 0x48F46D4: _IO_file_xsputn@@GLIBC_2.2.5 (fileops.c:1196)
+      n1: 1024 0x48DE14C: outstring_func (vfprintf-internal.c:239)
+       n1: 1024 0x48DE14C: __vfprintf_internal (vfprintf-internal.c:1263)
+        n1: 1024 0x48C979E: printf (printf.c:33)
+         n1: 1024 0x1094B7: read_from_file (example_json.c:55)
+          n0: 1024 0x10938E: main (example_json.c:15)
+ n1: 4440 0x109F2D: ll_init (llist.c:28)
+  n2: 4440 0x109CE3: hash_and_add (hashtable.c:144)
+   n1: 2856 0x109BBF: ht_reallocate (hashtable.c:121)
+    n1: 2856 0x109A0B: ht_put (hashtable.c:69)
+     n1: 2856 0x109533: read_from_file (example_json.c:63)
+      n0: 2856 0x10938E: main (example_json.c:15)
+   n1: 1584 0x109A8E: ht_put (hashtable.c:85)
+    n1: 1584 0x109533: read_from_file (example_json.c:63)
+     n0: 1584 0x10938E: main (example_json.c:15)
+ n1: 2432 0x109ACE: ht_reallocate (hashtable.c:94)
+  n1: 2432 0x109A0B: ht_put (hashtable.c:69)
+   n1: 2432 0x109533: read_from_file (example_json.c:63)
+    n0: 2432 0x10938E: main (example_json.c:15)
+ n1: 2432 0x109B41: ht_reallocate (hashtable.c:108)
+  n1: 2432 0x109A0B: ht_put (hashtable.c:69)
+   n1: 2432 0x109533: read_from_file (example_json.c:63)
+    n0: 2432 0x10938E: main (example_json.c:15)
+ n1: 2432 0x109B74: ht_reallocate (hashtable.c:116)
+  n1: 2432 0x109A0B: ht_put (hashtable.c:69)
+   n1: 2432 0x109533: read_from_file (example_json.c:63)
+    n0: 2432 0x10938E: main (example_json.c:15)
+ n1: 2240 0x109A1A: ht_put (hashtable.c:72)
+  n1: 2240 0x109533: read_from_file (example_json.c:63)
+   n0: 2240 0x10938E: main (example_json.c:15)
+ n1: 2240 0x109A48: ht_put (hashtable.c:80)
+  n1: 2240 0x109533: read_from_file (example_json.c:63)
+   n0: 2240 0x10938E: main (example_json.c:15)
+ n1: 1384 0x48E917D: getdelim (iogetdelim.c:102)
+  n1: 1384 0x10955A: read_from_file (example_json.c:50)
+   n0: 1384 0x10938E: main (example_json.c:15)
+ n2: 1280 0x4862AAC: ??? (in /usr/lib/x86_64-linux-gnu/libcjson.so.1.7.15)
+  n1: 1280 0x4862863: ??? (in /usr/lib/x86_64-linux-gnu/libcjson.so.1.7.15)
+   n1: 1280 0x4862C9F: cJSON_ParseWithLengthOpts (in /usr/lib/x86_64-linux-gnu/libcjson.so.1.7.15)
+    n1: 1280 0x109493: read_from_file (example_json.c:52)
+     n0: 1280 0x10938E: main (example_json.c:15)
+  n0: 0 in 1 place, below massif's threshold (1.00%)
+ n0: 1016 in 6 places, all below massif's threshold (1.00%)
+ n1: 622 0x4861361: ??? (in /usr/lib/x86_64-linux-gnu/libcjson.so.1.7.15)
+  n0: 622 in 3 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=5
+#-----------
+time=6390975
+mem_heap_B=47870
+mem_heap_extra_B=23258
+mem_stacks_B=0
+heap_tree=detailed
+n9: 47870 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n2: 16988 0x491158E: strdup (strdup.c:42)
+  n1: 12358 0x10951E: read_from_file (example_json.c:63)
+   n0: 12358 0x10938E: main (example_json.c:15)
+  n1: 4630 0x10950B: read_from_file (example_json.c:64)
+   n0: 4630 0x10938E: main (example_json.c:15)
+ n1: 6168 0x109F2D: ll_init (llist.c:28)
+  n2: 6168 0x109CE3: hash_and_add (hashtable.c:144)
+   n1: 5712 0x109BBF: ht_reallocate (hashtable.c:121)
+    n1: 5712 0x109A0B: ht_put (hashtable.c:69)
+     n1: 5712 0x109533: read_from_file (example_json.c:63)
+      n0: 5712 0x10938E: main (example_json.c:15)
+   n0: 456 in 1 place, below massif's threshold (1.00%)
+ n1: 5120 0x48E7BA3: _IO_file_doallocate (filedoalloc.c:101)
+  n2: 5120 0x48F6CDF: _IO_doallocbuf (genops.c:347)
+   n1: 4096 0x48F5CDB: _IO_file_underflow@@GLIBC_2.2.5 (fileops.c:485)
+    n1: 4096 0x48E9307: getdelim (iogetdelim.c:73)
+     n1: 4096 0x10955A: read_from_file (example_json.c:50)
+      n0: 4096 0x10938E: main (example_json.c:15)
+   n1: 1024 0x48F5F5F: _IO_file_overflow@@GLIBC_2.2.5 (fileops.c:744)
+    n1: 1024 0x48F46D4: _IO_new_file_xsputn (fileops.c:1243)
+     n1: 1024 0x48F46D4: _IO_file_xsputn@@GLIBC_2.2.5 (fileops.c:1196)
+      n1: 1024 0x48DE14C: outstring_func (vfprintf-internal.c:239)
+       n1: 1024 0x48DE14C: __vfprintf_internal (vfprintf-internal.c:1263)
+        n1: 1024 0x48C979E: printf (printf.c:33)
+         n1: 1024 0x1094B7: read_from_file (example_json.c:55)
+          n0: 1024 0x10938E: main (example_json.c:15)
+ n1: 4864 0x109ACE: ht_reallocate (hashtable.c:94)
+  n1: 4864 0x109A0B: ht_put (hashtable.c:69)
+   n1: 4864 0x109533: read_from_file (example_json.c:63)
+    n0: 4864 0x10938E: main (example_json.c:15)
+ n1: 4864 0x109B41: ht_reallocate (hashtable.c:108)
+  n1: 4864 0x109A0B: ht_put (hashtable.c:69)
+   n1: 4864 0x109533: read_from_file (example_json.c:63)
+    n0: 4864 0x10938E: main (example_json.c:15)
+ n1: 4864 0x109B74: ht_reallocate (hashtable.c:116)
+  n1: 4864 0x109A0B: ht_put (hashtable.c:69)
+   n1: 4864 0x109533: read_from_file (example_json.c:63)
+    n0: 4864 0x10938E: main (example_json.c:15)
+ n0: 2594 in 9 places, all below massif's threshold (1.00%)
+ n1: 1384 0x48E917D: getdelim (iogetdelim.c:102)
+  n1: 1384 0x10955A: read_from_file (example_json.c:50)
+   n0: 1384 0x10938E: main (example_json.c:15)
+ n2: 1024 0x4862AAC: ??? (in /usr/lib/x86_64-linux-gnu/libcjson.so.1.7.15)
+  n1: 1024 0x4862863: ??? (in /usr/lib/x86_64-linux-gnu/libcjson.so.1.7.15)
+   n1: 1024 0x4862C9F: cJSON_ParseWithLengthOpts (in /usr/lib/x86_64-linux-gnu/libcjson.so.1.7.15)
+    n1: 1024 0x109493: read_from_file (example_json.c:52)
+     n0: 1024 0x10938E: main (example_json.c:15)
+  n0: 0 in 1 place, below massif's threshold (1.00%)
+#-----------
+snapshot=6
+#-----------
+time=7975287
+mem_heap_B=55938
+mem_heap_extra_B=28526
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=7
+#-----------
+time=9895687
+mem_heap_B=67077
+mem_heap_extra_B=35419
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=8
+#-----------
+time=11078676
+mem_heap_B=83524
+mem_heap_extra_B=39940
+mem_stacks_B=0
+heap_tree=detailed
+n10: 83524 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n2: 30977 0x491158E: strdup (strdup.c:42)
+  n1: 22533 0x10951E: read_from_file (example_json.c:63)
+   n0: 22533 0x10938E: main (example_json.c:15)
+  n1: 8444 0x10950B: read_from_file (example_json.c:64)
+   n0: 8444 0x10938E: main (example_json.c:15)
+ n1: 14592 0x109ACE: ht_reallocate (hashtable.c:94)
+  n1: 14592 0x109A0B: ht_put (hashtable.c:69)
+   n1: 14592 0x109533: read_from_file (example_json.c:63)
+    n0: 14592 0x10938E: main (example_json.c:15)
+ n1: 9888 0x109F2D: ll_init (llist.c:28)
+  n2: 9888 0x109CE3: hash_and_add (hashtable.c:144)
+   n1: 7080 0x109BBF: ht_reallocate (hashtable.c:121)
+    n1: 7080 0x109A0B: ht_put (hashtable.c:69)
+     n1: 7080 0x109533: read_from_file (example_json.c:63)
+      n0: 7080 0x10938E: main (example_json.c:15)
+   n1: 2808 0x109A8E: ht_put (hashtable.c:85)
+    n1: 2808 0x109533: read_from_file (example_json.c:63)
+     n0: 2808 0x10938E: main (example_json.c:15)
+ n1: 6080 0x109B41: ht_reallocate (hashtable.c:108)
+  n1: 6080 0x109A0B: ht_put (hashtable.c:69)
+   n1: 6080 0x109533: read_from_file (example_json.c:63)
+    n0: 6080 0x10938E: main (example_json.c:15)
+ n1: 6080 0x109B74: ht_reallocate (hashtable.c:116)
+  n1: 6080 0x109A0B: ht_put (hashtable.c:69)
+   n1: 6080 0x109533: read_from_file (example_json.c:63)
+    n0: 6080 0x10938E: main (example_json.c:15)
+ n1: 5120 0x48E7BA3: _IO_file_doallocate (filedoalloc.c:101)
+  n2: 5120 0x48F6CDF: _IO_doallocbuf (genops.c:347)
+   n1: 4096 0x48F5CDB: _IO_file_underflow@@GLIBC_2.2.5 (fileops.c:485)
+    n1: 4096 0x48E9307: getdelim (iogetdelim.c:73)
+     n1: 4096 0x10955A: read_from_file (example_json.c:50)
+      n0: 4096 0x10938E: main (example_json.c:15)
+   n0: 1024 in 1 place, below massif's threshold (1.00%)
+ n1: 3696 0x109A1A: ht_put (hashtable.c:72)
+  n1: 3696 0x109533: read_from_file (example_json.c:63)
+   n0: 3696 0x10938E: main (example_json.c:15)
+ n1: 3696 0x109A48: ht_put (hashtable.c:80)
+  n1: 3696 0x109533: read_from_file (example_json.c:63)
+   n0: 3696 0x10938E: main (example_json.c:15)
+ n0: 2011 in 8 places, all below massif's threshold (1.00%)
+ n1: 1384 0x48E917D: getdelim (iogetdelim.c:102)
+  n1: 1384 0x10955A: read_from_file (example_json.c:50)
+   n0: 1384 0x10938E: main (example_json.c:15)
+#-----------
+snapshot=9
+#-----------
+time=12166796
+mem_heap_B=84675
+mem_heap_extra_B=44541
+mem_stacks_B=0
+heap_tree=detailed
+n8: 84675 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n2: 33233 0x491158E: strdup (strdup.c:42)
+  n1: 24161 0x10951E: read_from_file (example_json.c:63)
+   n0: 24161 0x10938E: main (example_json.c:15)
+  n1: 9072 0x10950B: read_from_file (example_json.c:64)
+   n0: 9072 0x10938E: main (example_json.c:15)
+ n1: 12240 0x109F2D: ll_init (llist.c:28)
+  n2: 12240 0x109CE3: hash_and_add (hashtable.c:144)
+   n1: 11664 0x109BBF: ht_reallocate (hashtable.c:121)
+    n1: 11664 0x109A0B: ht_put (hashtable.c:69)
+     n1: 11664 0x109533: read_from_file (example_json.c:63)
+      n0: 11664 0x10938E: main (example_json.c:15)
+   n0: 576 in 1 place, below massif's threshold (1.00%)
+ n1: 9728 0x109ACE: ht_reallocate (hashtable.c:94)
+  n1: 9728 0x109A0B: ht_put (hashtable.c:69)
+   n1: 9728 0x109533: read_from_file (example_json.c:63)
+    n0: 9728 0x10938E: main (example_json.c:15)
+ n1: 9728 0x109B41: ht_reallocate (hashtable.c:108)
+  n1: 9728 0x109A0B: ht_put (hashtable.c:69)
+   n1: 9728 0x109533: read_from_file (example_json.c:63)
+    n0: 9728 0x10938E: main (example_json.c:15)
+ n1: 9728 0x109B74: ht_reallocate (hashtable.c:116)
+  n1: 9728 0x109A0B: ht_put (hashtable.c:69)
+   n1: 9728 0x109533: read_from_file (example_json.c:63)
+    n0: 9728 0x10938E: main (example_json.c:15)
+ n1: 5120 0x48E7BA3: _IO_file_doallocate (filedoalloc.c:101)
+  n2: 5120 0x48F6CDF: _IO_doallocbuf (genops.c:347)
+   n1: 4096 0x48F5CDB: _IO_file_underflow@@GLIBC_2.2.5 (fileops.c:485)
+    n1: 4096 0x48E9307: getdelim (iogetdelim.c:73)
+     n1: 4096 0x10955A: read_from_file (example_json.c:50)
+      n0: 4096 0x10938E: main (example_json.c:15)
+   n0: 1024 in 1 place, below massif's threshold (1.00%)
+ n0: 3514 in 10 places, all below massif's threshold (1.00%)
+ n1: 1384 0x48E917D: getdelim (iogetdelim.c:102)
+  n1: 1384 0x10955A: read_from_file (example_json.c:50)
+   n0: 1384 0x10938E: main (example_json.c:15)
+#-----------
+snapshot=10
+#-----------
+time=13788637
+mem_heap_B=93714
+mem_heap_extra_B=50230
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=11
+#-----------
+time=14868378
+mem_heap_B=99698
+mem_heap_extra_B=53942
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=12
+#-----------
+time=16467580
+mem_heap_B=108350
+mem_heap_extra_B=59554
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=13
+#-----------
+time=17547695
+mem_heap_B=115550
+mem_heap_extra_B=63690
+mem_stacks_B=0
+heap_tree=detailed
+n9: 115550 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n2: 49397 0x491158E: strdup (strdup.c:42)
+  n1: 35890 0x10951E: read_from_file (example_json.c:63)
+   n0: 35890 0x10938E: main (example_json.c:15)
+  n1: 13507 0x10950B: read_from_file (example_json.c:64)
+   n0: 13507 0x10938E: main (example_json.c:15)
+ n1: 16104 0x109F2D: ll_init (llist.c:28)
+  n2: 16104 0x109CE3: hash_and_add (hashtable.c:144)
+   n1: 11664 0x109BBF: ht_reallocate (hashtable.c:121)
+    n1: 11664 0x109A0B: ht_put (hashtable.c:69)
+     n1: 11664 0x109533: read_from_file (example_json.c:63)
+      n0: 11664 0x10938E: main (example_json.c:15)
+   n1: 4440 0x109A8E: ht_put (hashtable.c:85)
+    n1: 4440 0x109533: read_from_file (example_json.c:63)
+     n0: 4440 0x10938E: main (example_json.c:15)
+ n1: 9728 0x109ACE: ht_reallocate (hashtable.c:94)
+  n1: 9728 0x109A0B: ht_put (hashtable.c:69)
+   n1: 9728 0x109533: read_from_file (example_json.c:63)
+    n0: 9728 0x10938E: main (example_json.c:15)
+ n1: 9728 0x109B41: ht_reallocate (hashtable.c:108)
+  n1: 9728 0x109A0B: ht_put (hashtable.c:69)
+   n1: 9728 0x109533: read_from_file (example_json.c:63)
+    n0: 9728 0x10938E: main (example_json.c:15)
+ n1: 9728 0x109B74: ht_reallocate (hashtable.c:116)
+  n1: 9728 0x109A0B: ht_put (hashtable.c:69)
+   n1: 9728 0x109533: read_from_file (example_json.c:63)
+    n0: 9728 0x10938E: main (example_json.c:15)
+ n1: 5792 0x109A1A: ht_put (hashtable.c:72)
+  n1: 5792 0x109533: read_from_file (example_json.c:63)
+   n0: 5792 0x10938E: main (example_json.c:15)
+ n1: 5792 0x109A48: ht_put (hashtable.c:80)
+  n1: 5792 0x109533: read_from_file (example_json.c:63)
+   n0: 5792 0x10938E: main (example_json.c:15)
+ n1: 5120 0x48E7BA3: _IO_file_doallocate (filedoalloc.c:101)
+  n2: 5120 0x48F6CDF: _IO_doallocbuf (genops.c:347)
+   n1: 4096 0x48F5CDB: _IO_file_underflow@@GLIBC_2.2.5 (fileops.c:485)
+    n1: 4096 0x48E9307: getdelim (iogetdelim.c:73)
+     n1: 4096 0x10955A: read_from_file (example_json.c:50)
+      n0: 4096 0x10938E: main (example_json.c:15)
+   n0: 1024 in 1 place, below massif's threshold (1.00%)
+ n0: 4161 in 9 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=14
+#-----------
+time=19039766
+mem_heap_B=123732
+mem_heap_extra_B=68676
+mem_stacks_B=0
+heap_tree=detailed
+n9: 123732 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n2: 53879 0x491158E: strdup (strdup.c:42)
+  n1: 39146 0x10951E: read_from_file (example_json.c:63)
+   n0: 39146 0x10938E: main (example_json.c:15)
+  n1: 14733 0x10950B: read_from_file (example_json.c:64)
+   n0: 14733 0x10938E: main (example_json.c:15)
+ n1: 16920 0x109F2D: ll_init (llist.c:28)
+  n2: 16920 0x109CE3: hash_and_add (hashtable.c:144)
+   n1: 11664 0x109BBF: ht_reallocate (hashtable.c:121)
+    n1: 11664 0x109A0B: ht_put (hashtable.c:69)
+     n1: 11664 0x109533: read_from_file (example_json.c:63)
+      n0: 11664 0x10938E: main (example_json.c:15)
+   n1: 5256 0x109A8E: ht_put (hashtable.c:85)
+    n1: 5256 0x109533: read_from_file (example_json.c:63)
+     n0: 5256 0x10938E: main (example_json.c:15)
+ n1: 9728 0x109ACE: ht_reallocate (hashtable.c:94)
+  n1: 9728 0x109A0B: ht_put (hashtable.c:69)
+   n1: 9728 0x109533: read_from_file (example_json.c:63)
+    n0: 9728 0x10938E: main (example_json.c:15)
+ n1: 9728 0x109B41: ht_reallocate (hashtable.c:108)
+  n1: 9728 0x109A0B: ht_put (hashtable.c:69)
+   n1: 9728 0x109533: read_from_file (example_json.c:63)
+    n0: 9728 0x10938E: main (example_json.c:15)
+ n1: 9728 0x109B74: ht_reallocate (hashtable.c:116)
+  n1: 9728 0x109A0B: ht_put (hashtable.c:69)
+   n1: 9728 0x109533: read_from_file (example_json.c:63)
+    n0: 9728 0x10938E: main (example_json.c:15)
+ n1: 7200 0x109A1A: ht_put (hashtable.c:72)
+  n1: 7200 0x109533: read_from_file (example_json.c:63)
+   n0: 7200 0x10938E: main (example_json.c:15)
+ n1: 7200 0x109A48: ht_put (hashtable.c:80)
+  n1: 7200 0x109533: read_from_file (example_json.c:63)
+   n0: 7200 0x10938E: main (example_json.c:15)
+ n1: 5120 0x48E7BA3: _IO_file_doallocate (filedoalloc.c:101)
+  n2: 5120 0x48F6CDF: _IO_doallocbuf (genops.c:347)
+   n1: 4096 0x48F5CDB: _IO_file_underflow@@GLIBC_2.2.5 (fileops.c:485)
+    n1: 4096 0x48E9307: getdelim (iogetdelim.c:73)
+     n1: 4096 0x10955A: read_from_file (example_json.c:50)
+      n0: 4096 0x10938E: main (example_json.c:15)
+   n0: 1024 in 1 place, below massif's threshold (1.00%)
+ n0: 4229 in 9 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=15
+#-----------
+time=20284326
+mem_heap_B=129166
+mem_heap_extra_B=72450
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=16
+#-----------
+time=21307252
+mem_heap_B=133955
+mem_heap_extra_B=75661
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=17
+#-----------
+time=22439074
+mem_heap_B=160884
+mem_heap_extra_B=81476
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=18
+#-----------
+time=23827923
+mem_heap_B=158583
+mem_heap_extra_B=86977
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=19
+#-----------
+time=24970668
+mem_heap_B=165301
+mem_heap_extra_B=91275
+mem_stacks_B=0
+heap_tree=detailed
+n7: 165301 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n2: 68771 0x491158E: strdup (strdup.c:42)
+  n1: 49913 0x10951E: read_from_file (example_json.c:63)
+   n0: 49913 0x10938E: main (example_json.c:15)
+  n1: 18858 0x10950B: read_from_file (example_json.c:64)
+   n0: 18858 0x10938E: main (example_json.c:15)
+ n1: 24720 0x109F2D: ll_init (llist.c:28)
+  n2: 24720 0x109CE3: hash_and_add (hashtable.c:144)
+   n1: 22968 0x109BBF: ht_reallocate (hashtable.c:121)
+    n1: 22968 0x109A0B: ht_put (hashtable.c:69)
+     n1: 22968 0x109533: read_from_file (example_json.c:63)
+      n0: 22968 0x10938E: main (example_json.c:15)
+   n0: 1752 in 1 place, below massif's threshold (1.00%)
+ n1: 19456 0x109ACE: ht_reallocate (hashtable.c:94)
+  n1: 19456 0x109A0B: ht_put (hashtable.c:69)
+   n1: 19456 0x109533: read_from_file (example_json.c:63)
+    n0: 19456 0x10938E: main (example_json.c:15)
+ n1: 19456 0x109B41: ht_reallocate (hashtable.c:108)
+  n1: 19456 0x109A0B: ht_put (hashtable.c:69)
+   n1: 19456 0x109533: read_from_file (example_json.c:63)
+    n0: 19456 0x10938E: main (example_json.c:15)
+ n1: 19456 0x109B74: ht_reallocate (hashtable.c:116)
+  n1: 19456 0x109A0B: ht_put (hashtable.c:69)
+   n1: 19456 0x109533: read_from_file (example_json.c:63)
+    n0: 19456 0x10938E: main (example_json.c:15)
+ n0: 8322 in 11 places, all below massif's threshold (1.00%)
+ n1: 5120 0x48E7BA3: _IO_file_doallocate (filedoalloc.c:101)
+  n2: 5120 0x48F6CDF: _IO_doallocbuf (genops.c:347)
+   n1: 4096 0x48F5CDB: _IO_file_underflow@@GLIBC_2.2.5 (fileops.c:485)
+    n1: 4096 0x48E9307: getdelim (iogetdelim.c:73)
+     n1: 4096 0x10955A: read_from_file (example_json.c:50)
+      n0: 4096 0x10938E: main (example_json.c:15)
+   n0: 1024 in 1 place, below massif's threshold (1.00%)
+#-----------
+snapshot=20
+#-----------
+time=25819393
+mem_heap_B=170431
+mem_heap_extra_B=94497
+mem_stacks_B=0
+heap_tree=detailed
+n9: 170431 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n2: 71438 0x491158E: strdup (strdup.c:42)
+  n1: 51837 0x10951E: read_from_file (example_json.c:63)
+   n0: 51837 0x10938E: main (example_json.c:15)
+  n1: 19601 0x10950B: read_from_file (example_json.c:64)
+   n0: 19601 0x10938E: main (example_json.c:15)
+ n1: 25344 0x109F2D: ll_init (llist.c:28)
+  n2: 25344 0x109CE3: hash_and_add (hashtable.c:144)
+   n1: 22968 0x109BBF: ht_reallocate (hashtable.c:121)
+    n1: 22968 0x109A0B: ht_put (hashtable.c:69)
+     n1: 22968 0x109533: read_from_file (example_json.c:63)
+      n0: 22968 0x10938E: main (example_json.c:15)
+   n0: 2376 in 1 place, below massif's threshold (1.00%)
+ n1: 19456 0x109ACE: ht_reallocate (hashtable.c:94)
+  n1: 19456 0x109A0B: ht_put (hashtable.c:69)
+   n1: 19456 0x109533: read_from_file (example_json.c:63)
+    n0: 19456 0x10938E: main (example_json.c:15)
+ n1: 19456 0x109B41: ht_reallocate (hashtable.c:108)
+  n1: 19456 0x109A0B: ht_put (hashtable.c:69)
+   n1: 19456 0x109533: read_from_file (example_json.c:63)
+    n0: 19456 0x10938E: main (example_json.c:15)
+ n1: 19456 0x109B74: ht_reallocate (hashtable.c:116)
+  n1: 19456 0x109A0B: ht_put (hashtable.c:69)
+   n1: 19456 0x109533: read_from_file (example_json.c:63)
+    n0: 19456 0x10938E: main (example_json.c:15)
+ n1: 5120 0x48E7BA3: _IO_file_doallocate (filedoalloc.c:101)
+  n2: 5120 0x48F6CDF: _IO_doallocbuf (genops.c:347)
+   n1: 4096 0x48F5CDB: _IO_file_underflow@@GLIBC_2.2.5 (fileops.c:485)
+    n1: 4096 0x48E9307: getdelim (iogetdelim.c:73)
+     n1: 4096 0x10955A: read_from_file (example_json.c:50)
+      n0: 4096 0x10938E: main (example_json.c:15)
+   n0: 1024 in 1 place, below massif's threshold (1.00%)
+ n0: 4241 in 9 places, all below massif's threshold (1.00%)
+ n1: 2960 0x109A1A: ht_put (hashtable.c:72)
+  n1: 2960 0x109533: read_from_file (example_json.c:63)
+   n0: 2960 0x10938E: main (example_json.c:15)
+ n1: 2960 0x109A48: ht_put (hashtable.c:80)
+  n1: 2960 0x109533: read_from_file (example_json.c:63)
+   n0: 2960 0x10938E: main (example_json.c:15)
+#-----------
+snapshot=21
+#-----------
+time=27412818
+mem_heap_B=177968
+mem_heap_extra_B=99880
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=22
+#-----------
+time=28796775
+mem_heap_B=185431
+mem_heap_extra_B=104561
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=23
+#-----------
+time=30636561
+mem_heap_B=195137
+mem_heap_extra_B=111007
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=24
+#-----------
+time=32166272
+mem_heap_B=205637
+mem_heap_extra_B=117115
+mem_stacks_B=0
+heap_tree=detailed
+n9: 205637 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n2: 90625 0x491158E: strdup (strdup.c:42)
+  n1: 65786 0x10951E: read_from_file (example_json.c:63)
+   n0: 65786 0x10938E: main (example_json.c:15)
+  n1: 24839 0x10950B: read_from_file (example_json.c:64)
+   n0: 24839 0x10938E: main (example_json.c:15)
+ n1: 29808 0x109F2D: ll_init (llist.c:28)
+  n2: 29808 0x109CE3: hash_and_add (hashtable.c:144)
+   n1: 22968 0x109BBF: ht_reallocate (hashtable.c:121)
+    n1: 22968 0x109A0B: ht_put (hashtable.c:69)
+     n1: 22968 0x109533: read_from_file (example_json.c:63)
+      n0: 22968 0x10938E: main (example_json.c:15)
+   n1: 6840 0x109A8E: ht_put (hashtable.c:85)
+    n1: 6840 0x109533: read_from_file (example_json.c:63)
+     n0: 6840 0x10938E: main (example_json.c:15)
+ n1: 19456 0x109ACE: ht_reallocate (hashtable.c:94)
+  n1: 19456 0x109A0B: ht_put (hashtable.c:69)
+   n1: 19456 0x109533: read_from_file (example_json.c:63)
+    n0: 19456 0x10938E: main (example_json.c:15)
+ n1: 19456 0x109B41: ht_reallocate (hashtable.c:108)
+  n1: 19456 0x109A0B: ht_put (hashtable.c:69)
+   n1: 19456 0x109533: read_from_file (example_json.c:63)
+    n0: 19456 0x10938E: main (example_json.c:15)
+ n1: 19456 0x109B74: ht_reallocate (hashtable.c:116)
+  n1: 19456 0x109A0B: ht_put (hashtable.c:69)
+   n1: 19456 0x109533: read_from_file (example_json.c:63)
+    n0: 19456 0x10938E: main (example_json.c:15)
+ n1: 8992 0x109A1A: ht_put (hashtable.c:72)
+  n1: 8992 0x109533: read_from_file (example_json.c:63)
+   n0: 8992 0x10938E: main (example_json.c:15)
+ n1: 8992 0x109A48: ht_put (hashtable.c:80)
+  n1: 8992 0x109533: read_from_file (example_json.c:63)
+   n0: 8992 0x10938E: main (example_json.c:15)
+ n1: 5120 0x48E7BA3: _IO_file_doallocate (filedoalloc.c:101)
+  n2: 5120 0x48F6CDF: _IO_doallocbuf (genops.c:347)
+   n1: 4096 0x48F5CDB: _IO_file_underflow@@GLIBC_2.2.5 (fileops.c:485)
+    n1: 4096 0x48E9307: getdelim (iogetdelim.c:73)
+     n1: 4096 0x10955A: read_from_file (example_json.c:50)
+      n0: 4096 0x10938E: main (example_json.c:15)
+   n0: 1024 in 1 place, below massif's threshold (1.00%)
+ n0: 3732 in 9 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=25
+#-----------
+time=33237073
+mem_heap_B=210853
+mem_heap_extra_B=120579
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=26
+#-----------
+time=34990585
+mem_heap_B=221601
+mem_heap_extra_B=126991
+mem_stacks_B=0
+heap_tree=detailed
+n9: 221601 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n2: 99216 0x491158E: strdup (strdup.c:42)
+  n1: 72002 0x10951E: read_from_file (example_json.c:63)
+   n0: 72002 0x10938E: main (example_json.c:15)
+  n1: 27214 0x10950B: read_from_file (example_json.c:64)
+   n0: 27214 0x10938E: main (example_json.c:15)
+ n1: 31776 0x109F2D: ll_init (llist.c:28)
+  n2: 31776 0x109CE3: hash_and_add (hashtable.c:144)
+   n1: 22968 0x109BBF: ht_reallocate (hashtable.c:121)
+    n1: 22968 0x109A0B: ht_put (hashtable.c:69)
+     n1: 22968 0x109533: read_from_file (example_json.c:63)
+      n0: 22968 0x10938E: main (example_json.c:15)
+   n1: 8808 0x109A8E: ht_put (hashtable.c:85)
+    n1: 8808 0x109533: read_from_file (example_json.c:63)
+     n0: 8808 0x10938E: main (example_json.c:15)
+ n1: 19456 0x109ACE: ht_reallocate (hashtable.c:94)
+  n1: 19456 0x109A0B: ht_put (hashtable.c:69)
+   n1: 19456 0x109533: read_from_file (example_json.c:63)
+    n0: 19456 0x10938E: main (example_json.c:15)
+ n1: 19456 0x109B41: ht_reallocate (hashtable.c:108)
+  n1: 19456 0x109A0B: ht_put (hashtable.c:69)
+   n1: 19456 0x109533: read_from_file (example_json.c:63)
+    n0: 19456 0x10938E: main (example_json.c:15)
+ n1: 19456 0x109B74: ht_reallocate (hashtable.c:116)
+  n1: 19456 0x109A0B: ht_put (hashtable.c:69)
+   n1: 19456 0x109533: read_from_file (example_json.c:63)
+    n0: 19456 0x10938E: main (example_json.c:15)
+ n1: 11680 0x109A1A: ht_put (hashtable.c:72)
+  n1: 11680 0x109533: read_from_file (example_json.c:63)
+   n0: 11680 0x10938E: main (example_json.c:15)
+ n1: 11680 0x109A48: ht_put (hashtable.c:80)
+  n1: 11680 0x109533: read_from_file (example_json.c:63)
+   n0: 11680 0x10938E: main (example_json.c:15)
+ n1: 5120 0x48E7BA3: _IO_file_doallocate (filedoalloc.c:101)
+  n2: 5120 0x48F6CDF: _IO_doallocbuf (genops.c:347)
+   n1: 4096 0x48F5CDB: _IO_file_underflow@@GLIBC_2.2.5 (fileops.c:485)
+    n1: 4096 0x48E9307: getdelim (iogetdelim.c:73)
+     n1: 4096 0x10955A: read_from_file (example_json.c:50)
+      n0: 4096 0x10938E: main (example_json.c:15)
+   n0: 1024 in 1 place, below massif's threshold (1.00%)
+ n0: 3761 in 9 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=27
+#-----------
+time=36297359
+mem_heap_B=229144
+mem_heap_extra_B=131560
+mem_stacks_B=0
+heap_tree=detailed
+n9: 229144 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n2: 103168 0x491158E: strdup (strdup.c:42)
+  n1: 74851 0x10951E: read_from_file (example_json.c:63)
+   n0: 74851 0x10938E: main (example_json.c:15)
+  n1: 28317 0x10950B: read_from_file (example_json.c:64)
+   n0: 28317 0x10938E: main (example_json.c:15)
+ n1: 32592 0x109F2D: ll_init (llist.c:28)
+  n2: 32592 0x109CE3: hash_and_add (hashtable.c:144)
+   n1: 22968 0x109BBF: ht_reallocate (hashtable.c:121)
+    n1: 22968 0x109A0B: ht_put (hashtable.c:69)
+     n1: 22968 0x109533: read_from_file (example_json.c:63)
+      n0: 22968 0x10938E: main (example_json.c:15)
+   n1: 9624 0x109A8E: ht_put (hashtable.c:85)
+    n1: 9624 0x109533: read_from_file (example_json.c:63)
+     n0: 9624 0x10938E: main (example_json.c:15)
+ n1: 19456 0x109ACE: ht_reallocate (hashtable.c:94)
+  n1: 19456 0x109A0B: ht_put (hashtable.c:69)
+   n1: 19456 0x109533: read_from_file (example_json.c:63)
+    n0: 19456 0x10938E: main (example_json.c:15)
+ n1: 19456 0x109B41: ht_reallocate (hashtable.c:108)
+  n1: 19456 0x109A0B: ht_put (hashtable.c:69)
+   n1: 19456 0x109533: read_from_file (example_json.c:63)
+    n0: 19456 0x10938E: main (example_json.c:15)
+ n1: 19456 0x109B74: ht_reallocate (hashtable.c:116)
+  n1: 19456 0x109A0B: ht_put (hashtable.c:69)
+   n1: 19456 0x109533: read_from_file (example_json.c:63)
+    n0: 19456 0x10938E: main (example_json.c:15)
+ n1: 12912 0x109A1A: ht_put (hashtable.c:72)
+  n1: 12912 0x109533: read_from_file (example_json.c:63)
+   n0: 12912 0x10938E: main (example_json.c:15)
+ n1: 12912 0x109A48: ht_put (hashtable.c:80)
+  n1: 12912 0x109533: read_from_file (example_json.c:63)
+   n0: 12912 0x10938E: main (example_json.c:15)
+ n1: 5120 0x48E7BA3: _IO_file_doallocate (filedoalloc.c:101)
+  n2: 5120 0x48F6CDF: _IO_doallocbuf (genops.c:347)
+   n1: 4096 0x48F5CDB: _IO_file_underflow@@GLIBC_2.2.5 (fileops.c:485)
+    n1: 4096 0x48E9307: getdelim (iogetdelim.c:73)
+     n1: 4096 0x10955A: read_from_file (example_json.c:50)
+      n0: 4096 0x10938E: main (example_json.c:15)
+   n0: 1024 in 1 place, below massif's threshold (1.00%)
+ n0: 4072 in 9 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=28
+#-----------
+time=37704280
+mem_heap_B=236885
+mem_heap_extra_B=136387
+mem_stacks_B=0
+heap_tree=detailed
+n9: 236885 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n2: 107369 0x491158E: strdup (strdup.c:42)
+  n1: 77922 0x10951E: read_from_file (example_json.c:63)
+   n0: 77922 0x10938E: main (example_json.c:15)
+  n1: 29447 0x10950B: read_from_file (example_json.c:64)
+   n0: 29447 0x10938E: main (example_json.c:15)
+ n1: 33384 0x109F2D: ll_init (llist.c:28)
+  n2: 33384 0x109CE3: hash_and_add (hashtable.c:144)
+   n1: 22968 0x109BBF: ht_reallocate (hashtable.c:121)
+    n1: 22968 0x109A0B: ht_put (hashtable.c:69)
+     n1: 22968 0x109533: read_from_file (example_json.c:63)
+      n0: 22968 0x10938E: main (example_json.c:15)
+   n1: 10416 0x109A8E: ht_put (hashtable.c:85)
+    n1: 10416 0x109533: read_from_file (example_json.c:63)
+     n0: 10416 0x10938E: main (example_json.c:15)
+ n1: 19456 0x109ACE: ht_reallocate (hashtable.c:94)
+  n1: 19456 0x109A0B: ht_put (hashtable.c:69)
+   n1: 19456 0x109533: read_from_file (example_json.c:63)
+    n0: 19456 0x10938E: main (example_json.c:15)
+ n1: 19456 0x109B41: ht_reallocate (hashtable.c:108)
+  n1: 19456 0x109A0B: ht_put (hashtable.c:69)
+   n1: 19456 0x109533: read_from_file (example_json.c:63)
+    n0: 19456 0x10938E: main (example_json.c:15)
+ n1: 19456 0x109B74: ht_reallocate (hashtable.c:116)
+  n1: 19456 0x109A0B: ht_put (hashtable.c:69)
+   n1: 19456 0x109533: read_from_file (example_json.c:63)
+    n0: 19456 0x10938E: main (example_json.c:15)
+ n1: 14240 0x109A1A: ht_put (hashtable.c:72)
+  n1: 14240 0x109533: read_from_file (example_json.c:63)
+   n0: 14240 0x10938E: main (example_json.c:15)
+ n1: 14240 0x109A48: ht_put (hashtable.c:80)
+  n1: 14240 0x109533: read_from_file (example_json.c:63)
+   n0: 14240 0x10938E: main (example_json.c:15)
+ n1: 5120 0x48E7BA3: _IO_file_doallocate (filedoalloc.c:101)
+  n2: 5120 0x48F6CDF: _IO_doallocbuf (genops.c:347)
+   n1: 4096 0x48F5CDB: _IO_file_underflow@@GLIBC_2.2.5 (fileops.c:485)
+    n1: 4096 0x48E9307: getdelim (iogetdelim.c:73)
+     n1: 4096 0x10955A: read_from_file (example_json.c:50)
+      n0: 4096 0x10938E: main (example_json.c:15)
+   n0: 1024 in 1 place, below massif's threshold (1.00%)
+ n0: 4164 in 9 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=29
+#-----------
+time=39103151
+mem_heap_B=243119
+mem_heap_extra_B=140849
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=30
+#-----------
+time=40061521
+mem_heap_B=249598
+mem_heap_extra_B=144626
+mem_stacks_B=0
+heap_tree=detailed
+n9: 249598 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n2: 114393 0x491158E: strdup (strdup.c:42)
+  n1: 83028 0x10951E: read_from_file (example_json.c:63)
+   n0: 83028 0x10938E: main (example_json.c:15)
+  n1: 31365 0x10950B: read_from_file (example_json.c:64)
+   n0: 31365 0x10938E: main (example_json.c:15)
+ n1: 34848 0x109F2D: ll_init (llist.c:28)
+  n2: 34848 0x109CE3: hash_and_add (hashtable.c:144)
+   n1: 22968 0x109BBF: ht_reallocate (hashtable.c:121)
+    n1: 22968 0x109A0B: ht_put (hashtable.c:69)
+     n1: 22968 0x109533: read_from_file (example_json.c:63)
+      n0: 22968 0x10938E: main (example_json.c:15)
+   n1: 11880 0x109A8E: ht_put (hashtable.c:85)
+    n1: 11880 0x109533: read_from_file (example_json.c:63)
+     n0: 11880 0x10938E: main (example_json.c:15)
+ n1: 19456 0x109ACE: ht_reallocate (hashtable.c:94)
+  n1: 19456 0x109A0B: ht_put (hashtable.c:69)
+   n1: 19456 0x109533: read_from_file (example_json.c:63)
+    n0: 19456 0x10938E: main (example_json.c:15)
+ n1: 19456 0x109B41: ht_reallocate (hashtable.c:108)
+  n1: 19456 0x109A0B: ht_put (hashtable.c:69)
+   n1: 19456 0x109533: read_from_file (example_json.c:63)
+    n0: 19456 0x10938E: main (example_json.c:15)
+ n1: 19456 0x109B74: ht_reallocate (hashtable.c:116)
+  n1: 19456 0x109A0B: ht_put (hashtable.c:69)
+   n1: 19456 0x109533: read_from_file (example_json.c:63)
+    n0: 19456 0x10938E: main (example_json.c:15)
+ n1: 16448 0x109A1A: ht_put (hashtable.c:72)
+  n1: 16448 0x109533: read_from_file (example_json.c:63)
+   n0: 16448 0x10938E: main (example_json.c:15)
+ n1: 16448 0x109A48: ht_put (hashtable.c:80)
+  n1: 16448 0x109533: read_from_file (example_json.c:63)
+   n0: 16448 0x10938E: main (example_json.c:15)
+ n1: 5120 0x48E7BA3: _IO_file_doallocate (filedoalloc.c:101)
+  n2: 5120 0x48F6CDF: _IO_doallocbuf (genops.c:347)
+   n1: 4096 0x48F5CDB: _IO_file_underflow@@GLIBC_2.2.5 (fileops.c:485)
+    n1: 4096 0x48E9307: getdelim (iogetdelim.c:73)
+     n1: 4096 0x10955A: read_from_file (example_json.c:50)
+      n0: 4096 0x10938E: main (example_json.c:15)
+   n0: 1024 in 1 place, below massif's threshold (1.00%)
+ n0: 3973 in 9 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=31
+#-----------
+time=41799865
+mem_heap_B=259583
+mem_heap_extra_B=150977
+mem_stacks_B=0
+heap_tree=detailed
+n9: 259583 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n2: 119749 0x491158E: strdup (strdup.c:42)
+  n1: 86913 0x10951E: read_from_file (example_json.c:63)
+   n0: 86913 0x10938E: main (example_json.c:15)
+  n1: 32836 0x10950B: read_from_file (example_json.c:64)
+   n0: 32836 0x10938E: main (example_json.c:15)
+ n1: 35952 0x109F2D: ll_init (llist.c:28)
+  n2: 35952 0x109CE3: hash_and_add (hashtable.c:144)
+   n1: 22968 0x109BBF: ht_reallocate (hashtable.c:121)
+    n1: 22968 0x109A0B: ht_put (hashtable.c:69)
+     n1: 22968 0x109533: read_from_file (example_json.c:63)
+      n0: 22968 0x10938E: main (example_json.c:15)
+   n1: 12984 0x109A8E: ht_put (hashtable.c:85)
+    n1: 12984 0x109533: read_from_file (example_json.c:63)
+     n0: 12984 0x10938E: main (example_json.c:15)
+ n1: 19456 0x109ACE: ht_reallocate (hashtable.c:94)
+  n1: 19456 0x109A0B: ht_put (hashtable.c:69)
+   n1: 19456 0x109533: read_from_file (example_json.c:63)
+    n0: 19456 0x10938E: main (example_json.c:15)
+ n1: 19456 0x109B41: ht_reallocate (hashtable.c:108)
+  n1: 19456 0x109A0B: ht_put (hashtable.c:69)
+   n1: 19456 0x109533: read_from_file (example_json.c:63)
+    n0: 19456 0x10938E: main (example_json.c:15)
+ n1: 19456 0x109B74: ht_reallocate (hashtable.c:116)
+  n1: 19456 0x109A0B: ht_put (hashtable.c:69)
+   n1: 19456 0x109533: read_from_file (example_json.c:63)
+    n0: 19456 0x10938E: main (example_json.c:15)
+ n1: 18128 0x109A1A: ht_put (hashtable.c:72)
+  n1: 18128 0x109533: read_from_file (example_json.c:63)
+   n0: 18128 0x10938E: main (example_json.c:15)
+ n1: 18128 0x109A48: ht_put (hashtable.c:80)
+  n1: 18128 0x109533: read_from_file (example_json.c:63)
+   n0: 18128 0x10938E: main (example_json.c:15)
+ n1: 5120 0x48E7BA3: _IO_file_doallocate (filedoalloc.c:101)
+  n1: 5120 0x48F6CDF: _IO_doallocbuf (genops.c:347)
+   n0: 5120 in 2 places, all below massif's threshold (1.00%)
+ n0: 4138 in 9 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=32
+#-----------
+time=43674932
+mem_heap_B=307946
+mem_heap_extra_B=157982
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=33
+#-----------
+time=44733313
+mem_heap_B=312674
+mem_heap_extra_B=163086
+mem_stacks_B=0
+heap_tree=detailed
+n7: 312674 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n2: 124004 0x491158E: strdup (strdup.c:42)
+  n1: 90021 0x10951E: read_from_file (example_json.c:63)
+   n0: 90021 0x10938E: main (example_json.c:15)
+  n1: 33983 0x10950B: read_from_file (example_json.c:64)
+   n0: 33983 0x10938E: main (example_json.c:15)
+ n1: 58368 0x109ACE: ht_reallocate (hashtable.c:94)
+  n1: 58368 0x109A0B: ht_put (hashtable.c:69)
+   n1: 58368 0x109533: read_from_file (example_json.c:63)
+    n0: 58368 0x10938E: main (example_json.c:15)
+ n1: 43464 0x109F2D: ll_init (llist.c:28)
+  n2: 43464 0x109CE3: hash_and_add (hashtable.c:144)
+   n1: 40080 0x109BBF: ht_reallocate (hashtable.c:121)
+    n1: 40080 0x109A0B: ht_put (hashtable.c:69)
+     n1: 40080 0x109533: read_from_file (example_json.c:63)
+      n0: 40080 0x10938E: main (example_json.c:15)
+   n0: 3384 in 1 place, below massif's threshold (1.00%)
+ n1: 34336 0x109B41: ht_reallocate (hashtable.c:108)
+  n1: 34336 0x109A0B: ht_put (hashtable.c:69)
+   n1: 34336 0x109533: read_from_file (example_json.c:63)
+    n0: 34336 0x10938E: main (example_json.c:15)
+ n1: 34336 0x109B74: ht_reallocate (hashtable.c:116)
+  n1: 34336 0x109A0B: ht_put (hashtable.c:69)
+   n1: 34336 0x109533: read_from_file (example_json.c:63)
+    n0: 34336 0x10938E: main (example_json.c:15)
+ n0: 13046 in 11 places, all below massif's threshold (1.00%)
+ n1: 5120 0x48E7BA3: _IO_file_doallocate (filedoalloc.c:101)
+  n1: 5120 0x48F6CDF: _IO_doallocbuf (genops.c:347)
+   n0: 5120 in 2 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=34
+#-----------
+time=46446368
+mem_heap_B=302199
+mem_heap_extra_B=169697
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=35
+#-----------
+time=47789383
+mem_heap_B=311167
+mem_heap_extra_B=175097
+mem_stacks_B=0
+heap_tree=detailed
+n7: 311167 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n2: 132037 0x491158E: strdup (strdup.c:42)
+  n1: 95830 0x10951E: read_from_file (example_json.c:63)
+   n0: 95830 0x10938E: main (example_json.c:15)
+  n1: 36207 0x10950B: read_from_file (example_json.c:64)
+   n0: 36207 0x10938E: main (example_json.c:15)
+ n1: 48024 0x109F2D: ll_init (llist.c:28)
+  n2: 48024 0x109CE3: hash_and_add (hashtable.c:144)
+   n1: 45720 0x109BBF: ht_reallocate (hashtable.c:121)
+    n1: 45720 0x109A0B: ht_put (hashtable.c:69)
+     n1: 45720 0x109533: read_from_file (example_json.c:63)
+      n0: 45720 0x10938E: main (example_json.c:15)
+   n0: 2304 in 1 place, below massif's threshold (1.00%)
+ n1: 38912 0x109ACE: ht_reallocate (hashtable.c:94)
+  n1: 38912 0x109A0B: ht_put (hashtable.c:69)
+   n1: 38912 0x109533: read_from_file (example_json.c:63)
+    n0: 38912 0x10938E: main (example_json.c:15)
+ n1: 38912 0x109B41: ht_reallocate (hashtable.c:108)
+  n1: 38912 0x109A0B: ht_put (hashtable.c:69)
+   n1: 38912 0x109533: read_from_file (example_json.c:63)
+    n0: 38912 0x10938E: main (example_json.c:15)
+ n1: 38912 0x109B74: ht_reallocate (hashtable.c:116)
+  n1: 38912 0x109A0B: ht_put (hashtable.c:69)
+   n1: 38912 0x109533: read_from_file (example_json.c:63)
+    n0: 38912 0x10938E: main (example_json.c:15)
+ n0: 9250 in 11 places, all below massif's threshold (1.00%)
+ n1: 5120 0x48E7BA3: _IO_file_doallocate (filedoalloc.c:101)
+  n1: 5120 0x48F6CDF: _IO_doallocbuf (genops.c:347)
+   n0: 5120 in 2 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=36
+#-----------
+time=49411045
+mem_heap_B=320640
+mem_heap_extra_B=181056
+mem_stacks_B=0
+heap_tree=detailed
+n7: 320640 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n2: 137054 0x491158E: strdup (strdup.c:42)
+  n1: 99456 0x10951E: read_from_file (example_json.c:63)
+   n0: 99456 0x10938E: main (example_json.c:15)
+  n1: 37598 0x10950B: read_from_file (example_json.c:64)
+   n0: 37598 0x10938E: main (example_json.c:15)
+ n1: 49296 0x109F2D: ll_init (llist.c:28)
+  n2: 49296 0x109CE3: hash_and_add (hashtable.c:144)
+   n1: 45720 0x109BBF: ht_reallocate (hashtable.c:121)
+    n1: 45720 0x109A0B: ht_put (hashtable.c:69)
+     n1: 45720 0x109533: read_from_file (example_json.c:63)
+      n0: 45720 0x10938E: main (example_json.c:15)
+   n0: 3576 in 1 place, below massif's threshold (1.00%)
+ n1: 38912 0x109ACE: ht_reallocate (hashtable.c:94)
+  n1: 38912 0x109A0B: ht_put (hashtable.c:69)
+   n1: 38912 0x109533: read_from_file (example_json.c:63)
+    n0: 38912 0x10938E: main (example_json.c:15)
+ n1: 38912 0x109B41: ht_reallocate (hashtable.c:108)
+  n1: 38912 0x109A0B: ht_put (hashtable.c:69)
+   n1: 38912 0x109533: read_from_file (example_json.c:63)
+    n0: 38912 0x10938E: main (example_json.c:15)
+ n1: 38912 0x109B74: ht_reallocate (hashtable.c:116)
+  n1: 38912 0x109A0B: ht_put (hashtable.c:69)
+   n1: 38912 0x109533: read_from_file (example_json.c:63)
+    n0: 38912 0x10938E: main (example_json.c:15)
+ n0: 12434 in 11 places, all below massif's threshold (1.00%)
+ n1: 5120 0x48E7BA3: _IO_file_doallocate (filedoalloc.c:101)
+  n1: 5120 0x48F6CDF: _IO_doallocbuf (genops.c:347)
+   n0: 5120 in 2 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=37
+#-----------
+time=51232796
+mem_heap_B=330361
+mem_heap_extra_B=187367
+mem_stacks_B=0
+heap_tree=detailed
+n8: 330361 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n2: 142324 0x491158E: strdup (strdup.c:42)
+  n1: 103304 0x10951E: read_from_file (example_json.c:63)
+   n0: 103304 0x10938E: main (example_json.c:15)
+  n1: 39020 0x10950B: read_from_file (example_json.c:64)
+   n0: 39020 0x10938E: main (example_json.c:15)
+ n1: 50640 0x109F2D: ll_init (llist.c:28)
+  n2: 50640 0x109CE3: hash_and_add (hashtable.c:144)
+   n1: 45720 0x109BBF: ht_reallocate (hashtable.c:121)
+    n1: 45720 0x109A0B: ht_put (hashtable.c:69)
+     n1: 45720 0x109533: read_from_file (example_json.c:63)
+      n0: 45720 0x10938E: main (example_json.c:15)
+   n0: 4920 in 1 place, below massif's threshold (1.00%)
+ n1: 38912 0x109ACE: ht_reallocate (hashtable.c:94)
+  n1: 38912 0x109A0B: ht_put (hashtable.c:69)
+   n1: 38912 0x109533: read_from_file (example_json.c:63)
+    n0: 38912 0x10938E: main (example_json.c:15)
+ n1: 38912 0x109B41: ht_reallocate (hashtable.c:108)
+  n1: 38912 0x109A0B: ht_put (hashtable.c:69)
+   n1: 38912 0x109533: read_from_file (example_json.c:63)
+    n0: 38912 0x10938E: main (example_json.c:15)
+ n1: 38912 0x109B74: ht_reallocate (hashtable.c:116)
+  n1: 38912 0x109A0B: ht_put (hashtable.c:69)
+   n1: 38912 0x109533: read_from_file (example_json.c:63)
+    n0: 38912 0x10938E: main (example_json.c:15)
+ n0: 9141 in 10 places, all below massif's threshold (1.00%)
+ n1: 5760 0x109A1A: ht_put (hashtable.c:72)
+  n1: 5760 0x109533: read_from_file (example_json.c:63)
+   n0: 5760 0x10938E: main (example_json.c:15)
+ n1: 5760 0x109A48: ht_put (hashtable.c:80)
+  n1: 5760 0x109533: read_from_file (example_json.c:63)
+   n0: 5760 0x10938E: main (example_json.c:15)
+#-----------
+snapshot=38
+#-----------
+time=52363881
+mem_heap_B=335626
+mem_heap_extra_B=191158
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=39
+#-----------
+time=53655944
+mem_heap_B=344410
+mem_heap_extra_B=196326
+mem_stacks_B=0
+heap_tree=detailed
+n8: 344410 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n2: 149581 0x491158E: strdup (strdup.c:42)
+  n1: 108595 0x10951E: read_from_file (example_json.c:63)
+   n0: 108595 0x10938E: main (example_json.c:15)
+  n1: 40986 0x10950B: read_from_file (example_json.c:64)
+   n0: 40986 0x10938E: main (example_json.c:15)
+ n1: 52560 0x109F2D: ll_init (llist.c:28)
+  n2: 52560 0x109CE3: hash_and_add (hashtable.c:144)
+   n1: 45720 0x109BBF: ht_reallocate (hashtable.c:121)
+    n1: 45720 0x109A0B: ht_put (hashtable.c:69)
+     n1: 45720 0x109533: read_from_file (example_json.c:63)
+      n0: 45720 0x10938E: main (example_json.c:15)
+   n1: 6840 0x109A8E: ht_put (hashtable.c:85)
+    n1: 6840 0x109533: read_from_file (example_json.c:63)
+     n0: 6840 0x10938E: main (example_json.c:15)
+ n1: 38912 0x109ACE: ht_reallocate (hashtable.c:94)
+  n1: 38912 0x109A0B: ht_put (hashtable.c:69)
+   n1: 38912 0x109533: read_from_file (example_json.c:63)
+    n0: 38912 0x10938E: main (example_json.c:15)
+ n1: 38912 0x109B41: ht_reallocate (hashtable.c:108)
+  n1: 38912 0x109A0B: ht_put (hashtable.c:69)
+   n1: 38912 0x109533: read_from_file (example_json.c:63)
+    n0: 38912 0x10938E: main (example_json.c:15)
+ n1: 38912 0x109B74: ht_reallocate (hashtable.c:116)
+  n1: 38912 0x109A0B: ht_put (hashtable.c:69)
+   n1: 38912 0x109533: read_from_file (example_json.c:63)
+    n0: 38912 0x10938E: main (example_json.c:15)
+ n0: 9437 in 10 places, all below massif's threshold (1.00%)
+ n1: 8048 0x109A1A: ht_put (hashtable.c:72)
+  n1: 8048 0x109533: read_from_file (example_json.c:63)
+   n0: 8048 0x10938E: main (example_json.c:15)
+ n1: 8048 0x109A48: ht_put (hashtable.c:80)
+  n1: 8048 0x109533: read_from_file (example_json.c:63)
+   n0: 8048 0x10938E: main (example_json.c:15)
+#-----------
+snapshot=40
+#-----------
+time=54829207
+mem_heap_B=350152
+mem_heap_extra_B=200208
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=41
+#-----------
+time=56256434
+mem_heap_B=358870
+mem_heap_extra_B=205530
+mem_stacks_B=0
+heap_tree=detailed
+n8: 358870 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n2: 157490 0x491158E: strdup (strdup.c:42)
+  n1: 114330 0x10951E: read_from_file (example_json.c:63)
+   n0: 114330 0x10938E: main (example_json.c:15)
+  n1: 43160 0x10950B: read_from_file (example_json.c:64)
+   n0: 43160 0x10938E: main (example_json.c:15)
+ n1: 54432 0x109F2D: ll_init (llist.c:28)
+  n2: 54432 0x109CE3: hash_and_add (hashtable.c:144)
+   n1: 45720 0x109BBF: ht_reallocate (hashtable.c:121)
+    n1: 45720 0x109A0B: ht_put (hashtable.c:69)
+     n1: 45720 0x109533: read_from_file (example_json.c:63)
+      n0: 45720 0x10938E: main (example_json.c:15)
+   n1: 8712 0x109A8E: ht_put (hashtable.c:85)
+    n1: 8712 0x109533: read_from_file (example_json.c:63)
+     n0: 8712 0x10938E: main (example_json.c:15)
+ n1: 38912 0x109ACE: ht_reallocate (hashtable.c:94)
+  n1: 38912 0x109A0B: ht_put (hashtable.c:69)
+   n1: 38912 0x109533: read_from_file (example_json.c:63)
+    n0: 38912 0x10938E: main (example_json.c:15)
+ n1: 38912 0x109B41: ht_reallocate (hashtable.c:108)
+  n1: 38912 0x109A0B: ht_put (hashtable.c:69)
+   n1: 38912 0x109533: read_from_file (example_json.c:63)
+    n0: 38912 0x10938E: main (example_json.c:15)
+ n1: 38912 0x109B74: ht_reallocate (hashtable.c:116)
+  n1: 38912 0x109A0B: ht_put (hashtable.c:69)
+   n1: 38912 0x109533: read_from_file (example_json.c:63)
+    n0: 38912 0x10938E: main (example_json.c:15)
+ n1: 10528 0x109A1A: ht_put (hashtable.c:72)
+  n1: 10528 0x109533: read_from_file (example_json.c:63)
+   n0: 10528 0x10938E: main (example_json.c:15)
+ n1: 10528 0x109A48: ht_put (hashtable.c:80)
+  n1: 10528 0x109533: read_from_file (example_json.c:63)
+   n0: 10528 0x10938E: main (example_json.c:15)
+ n0: 9156 in 10 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=42
+#-----------
+time=57377956
+mem_heap_B=363496
+mem_heap_extra_B=209064
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=43
+#-----------
+time=58797679
+mem_heap_B=371968
+mem_heap_extra_B=214296
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=44
+#-----------
+time=60298406
+mem_heap_B=382002
+mem_heap_extra_B=220150
+mem_stacks_B=0
+heap_tree=detailed
+n8: 382002 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n2: 169639 0x491158E: strdup (strdup.c:42)
+  n1: 123210 0x10951E: read_from_file (example_json.c:63)
+   n0: 123210 0x10938E: main (example_json.c:15)
+  n1: 46429 0x10950B: read_from_file (example_json.c:64)
+   n0: 46429 0x10938E: main (example_json.c:15)
+ n1: 57720 0x109F2D: ll_init (llist.c:28)
+  n2: 57720 0x109CE3: hash_and_add (hashtable.c:144)
+   n1: 45720 0x109BBF: ht_reallocate (hashtable.c:121)
+    n1: 45720 0x109A0B: ht_put (hashtable.c:69)
+     n1: 45720 0x109533: read_from_file (example_json.c:63)
+      n0: 45720 0x10938E: main (example_json.c:15)
+   n1: 12000 0x109A8E: ht_put (hashtable.c:85)
+    n1: 12000 0x109533: read_from_file (example_json.c:63)
+     n0: 12000 0x10938E: main (example_json.c:15)
+ n1: 38912 0x109ACE: ht_reallocate (hashtable.c:94)
+  n1: 38912 0x109A0B: ht_put (hashtable.c:69)
+   n1: 38912 0x109533: read_from_file (example_json.c:63)
+    n0: 38912 0x10938E: main (example_json.c:15)
+ n1: 38912 0x109B41: ht_reallocate (hashtable.c:108)
+  n1: 38912 0x109A0B: ht_put (hashtable.c:69)
+   n1: 38912 0x109533: read_from_file (example_json.c:63)
+    n0: 38912 0x10938E: main (example_json.c:15)
+ n1: 38912 0x109B74: ht_reallocate (hashtable.c:116)
+  n1: 38912 0x109A0B: ht_put (hashtable.c:69)
+   n1: 38912 0x109533: read_from_file (example_json.c:63)
+    n0: 38912 0x10938E: main (example_json.c:15)
+ n1: 14368 0x109A1A: ht_put (hashtable.c:72)
+  n1: 14368 0x109533: read_from_file (example_json.c:63)
+   n0: 14368 0x10938E: main (example_json.c:15)
+ n1: 14368 0x109A48: ht_put (hashtable.c:80)
+  n1: 14368 0x109533: read_from_file (example_json.c:63)
+   n0: 14368 0x10938E: main (example_json.c:15)
+ n0: 9171 in 10 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=45
+#-----------
+time=61709545
+mem_heap_B=390249
+mem_heap_extra_B=225335
+mem_stacks_B=0
+heap_tree=detailed
+n8: 390249 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n2: 173914 0x491158E: strdup (strdup.c:42)
+  n1: 126318 0x10951E: read_from_file (example_json.c:63)
+   n0: 126318 0x10938E: main (example_json.c:15)
+  n1: 47596 0x10950B: read_from_file (example_json.c:64)
+   n0: 47596 0x10938E: main (example_json.c:15)
+ n1: 58656 0x109F2D: ll_init (llist.c:28)
+  n2: 58656 0x109CE3: hash_and_add (hashtable.c:144)
+   n1: 45720 0x109BBF: ht_reallocate (hashtable.c:121)
+    n1: 45720 0x109A0B: ht_put (hashtable.c:69)
+     n1: 45720 0x109533: read_from_file (example_json.c:63)
+      n0: 45720 0x10938E: main (example_json.c:15)
+   n1: 12936 0x109A8E: ht_put (hashtable.c:85)
+    n1: 12936 0x109533: read_from_file (example_json.c:63)
+     n0: 12936 0x10938E: main (example_json.c:15)
+ n1: 38912 0x109ACE: ht_reallocate (hashtable.c:94)
+  n1: 38912 0x109A0B: ht_put (hashtable.c:69)
+   n1: 38912 0x109533: read_from_file (example_json.c:63)
+    n0: 38912 0x10938E: main (example_json.c:15)
+ n1: 38912 0x109B41: ht_reallocate (hashtable.c:108)
+  n1: 38912 0x109A0B: ht_put (hashtable.c:69)
+   n1: 38912 0x109533: read_from_file (example_json.c:63)
+    n0: 38912 0x10938E: main (example_json.c:15)
+ n1: 38912 0x109B74: ht_reallocate (hashtable.c:116)
+  n1: 38912 0x109A0B: ht_put (hashtable.c:69)
+   n1: 38912 0x109533: read_from_file (example_json.c:63)
+    n0: 38912 0x10938E: main (example_json.c:15)
+ n1: 15712 0x109A1A: ht_put (hashtable.c:72)
+  n1: 15712 0x109533: read_from_file (example_json.c:63)
+   n0: 15712 0x10938E: main (example_json.c:15)
+ n1: 15712 0x109A48: ht_put (hashtable.c:80)
+  n1: 15712 0x109533: read_from_file (example_json.c:63)
+   n0: 15712 0x10938E: main (example_json.c:15)
+ n0: 9519 in 10 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=46
+#-----------
+time=62571568
+mem_heap_B=393899
+mem_heap_extra_B=227901
+mem_stacks_B=0
+heap_tree=detailed
+n8: 393899 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n2: 176447 0x491158E: strdup (strdup.c:42)
+  n1: 128131 0x10951E: read_from_file (example_json.c:63)
+   n0: 128131 0x10938E: main (example_json.c:15)
+  n1: 48316 0x10950B: read_from_file (example_json.c:64)
+   n0: 48316 0x10938E: main (example_json.c:15)
+ n1: 59208 0x109F2D: ll_init (llist.c:28)
+  n2: 59208 0x109CE3: hash_and_add (hashtable.c:144)
+   n1: 45720 0x109BBF: ht_reallocate (hashtable.c:121)
+    n1: 45720 0x109A0B: ht_put (hashtable.c:69)
+     n1: 45720 0x109533: read_from_file (example_json.c:63)
+      n0: 45720 0x10938E: main (example_json.c:15)
+   n1: 13488 0x109A8E: ht_put (hashtable.c:85)
+    n1: 13488 0x109533: read_from_file (example_json.c:63)
+     n0: 13488 0x10938E: main (example_json.c:15)
+ n1: 38912 0x109ACE: ht_reallocate (hashtable.c:94)
+  n1: 38912 0x109A0B: ht_put (hashtable.c:69)
+   n1: 38912 0x109533: read_from_file (example_json.c:63)
+    n0: 38912 0x10938E: main (example_json.c:15)
+ n1: 38912 0x109B41: ht_reallocate (hashtable.c:108)
+  n1: 38912 0x109A0B: ht_put (hashtable.c:69)
+   n1: 38912 0x109533: read_from_file (example_json.c:63)
+    n0: 38912 0x10938E: main (example_json.c:15)
+ n1: 38912 0x109B74: ht_reallocate (hashtable.c:116)
+  n1: 38912 0x109A0B: ht_put (hashtable.c:69)
+   n1: 38912 0x109533: read_from_file (example_json.c:63)
+    n0: 38912 0x10938E: main (example_json.c:15)
+ n1: 16496 0x109A1A: ht_put (hashtable.c:72)
+  n1: 16496 0x109533: read_from_file (example_json.c:63)
+   n0: 16496 0x10938E: main (example_json.c:15)
+ n1: 16496 0x109A48: ht_put (hashtable.c:80)
+  n1: 16496 0x109533: read_from_file (example_json.c:63)
+   n0: 16496 0x10938E: main (example_json.c:15)
+ n0: 8516 in 10 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=47
+#-----------
+time=63869026
+mem_heap_B=401993
+mem_heap_extra_B=232815
+mem_stacks_B=0
+heap_tree=detailed
+n8: 401993 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n2: 180596 0x491158E: strdup (strdup.c:42)
+  n1: 131128 0x10951E: read_from_file (example_json.c:63)
+   n0: 131128 0x10938E: main (example_json.c:15)
+  n1: 49468 0x10950B: read_from_file (example_json.c:64)
+   n0: 49468 0x10938E: main (example_json.c:15)
+ n1: 60168 0x109F2D: ll_init (llist.c:28)
+  n2: 60168 0x109CE3: hash_and_add (hashtable.c:144)
+   n1: 45720 0x109BBF: ht_reallocate (hashtable.c:121)
+    n1: 45720 0x109A0B: ht_put (hashtable.c:69)
+     n1: 45720 0x109533: read_from_file (example_json.c:63)
+      n0: 45720 0x10938E: main (example_json.c:15)
+   n1: 14448 0x109A8E: ht_put (hashtable.c:85)
+    n1: 14448 0x109533: read_from_file (example_json.c:63)
+     n0: 14448 0x10938E: main (example_json.c:15)
+ n1: 38912 0x109ACE: ht_reallocate (hashtable.c:94)
+  n1: 38912 0x109A0B: ht_put (hashtable.c:69)
+   n1: 38912 0x109533: read_from_file (example_json.c:63)
+    n0: 38912 0x10938E: main (example_json.c:15)
+ n1: 38912 0x109B41: ht_reallocate (hashtable.c:108)
+  n1: 38912 0x109A0B: ht_put (hashtable.c:69)
+   n1: 38912 0x109533: read_from_file (example_json.c:63)
+    n0: 38912 0x10938E: main (example_json.c:15)
+ n1: 38912 0x109B74: ht_reallocate (hashtable.c:116)
+  n1: 38912 0x109A0B: ht_put (hashtable.c:69)
+   n1: 38912 0x109533: read_from_file (example_json.c:63)
+    n0: 38912 0x10938E: main (example_json.c:15)
+ n1: 17792 0x109A1A: ht_put (hashtable.c:72)
+  n1: 17792 0x109533: read_from_file (example_json.c:63)
+   n0: 17792 0x10938E: main (example_json.c:15)
+ n1: 17792 0x109A48: ht_put (hashtable.c:80)
+  n1: 17792 0x109533: read_from_file (example_json.c:63)
+   n0: 17792 0x10938E: main (example_json.c:15)
+ n0: 8909 in 10 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=48
+#-----------
+time=65318893
+mem_heap_B=409958
+mem_heap_extra_B=237778
+mem_stacks_B=0
+heap_tree=detailed
+n8: 409958 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n2: 184918 0x491158E: strdup (strdup.c:42)
+  n1: 134273 0x10951E: read_from_file (example_json.c:63)
+   n0: 134273 0x10938E: main (example_json.c:15)
+  n1: 50645 0x10950B: read_from_file (example_json.c:64)
+   n0: 50645 0x10938E: main (example_json.c:15)
+ n1: 61032 0x109F2D: ll_init (llist.c:28)
+  n2: 61032 0x109CE3: hash_and_add (hashtable.c:144)
+   n1: 45720 0x109BBF: ht_reallocate (hashtable.c:121)
+    n1: 45720 0x109A0B: ht_put (hashtable.c:69)
+     n1: 45720 0x109533: read_from_file (example_json.c:63)
+      n0: 45720 0x10938E: main (example_json.c:15)
+   n1: 15312 0x109A8E: ht_put (hashtable.c:85)
+    n1: 15312 0x109533: read_from_file (example_json.c:63)
+     n0: 15312 0x10938E: main (example_json.c:15)
+ n1: 38912 0x109ACE: ht_reallocate (hashtable.c:94)
+  n1: 38912 0x109A0B: ht_put (hashtable.c:69)
+   n1: 38912 0x109533: read_from_file (example_json.c:63)
+    n0: 38912 0x10938E: main (example_json.c:15)
+ n1: 38912 0x109B41: ht_reallocate (hashtable.c:108)
+  n1: 38912 0x109A0B: ht_put (hashtable.c:69)
+   n1: 38912 0x109533: read_from_file (example_json.c:63)
+    n0: 38912 0x10938E: main (example_json.c:15)
+ n1: 38912 0x109B74: ht_reallocate (hashtable.c:116)
+  n1: 38912 0x109A0B: ht_put (hashtable.c:69)
+   n1: 38912 0x109533: read_from_file (example_json.c:63)
+    n0: 38912 0x10938E: main (example_json.c:15)
+ n1: 19152 0x109A1A: ht_put (hashtable.c:72)
+  n1: 19152 0x109533: read_from_file (example_json.c:63)
+   n0: 19152 0x10938E: main (example_json.c:15)
+ n1: 19152 0x109A48: ht_put (hashtable.c:80)
+  n1: 19152 0x109533: read_from_file (example_json.c:63)
+   n0: 19152 0x10938E: main (example_json.c:15)
+ n0: 8968 in 10 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=49
+#-----------
+time=65854590
+mem_heap_B=411622
+mem_heap_extra_B=239258
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=50
+#-----------
+time=66088060
+mem_heap_B=413862
+mem_heap_extra_B=240386
+mem_stacks_B=0
+heap_tree=detailed
+n8: 413862 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n2: 187258 0x491158E: strdup (strdup.c:42)
+  n1: 135975 0x10951E: read_from_file (example_json.c:63)
+   n0: 135975 0x10938E: main (example_json.c:15)
+  n1: 51283 0x10950B: read_from_file (example_json.c:64)
+   n0: 51283 0x10938E: main (example_json.c:15)
+ n1: 61560 0x109F2D: ll_init (llist.c:28)
+  n2: 61560 0x109CE3: hash_and_add (hashtable.c:144)
+   n1: 45720 0x109BBF: ht_reallocate (hashtable.c:121)
+    n1: 45720 0x109A0B: ht_put (hashtable.c:69)
+     n1: 45720 0x109533: read_from_file (example_json.c:63)
+      n0: 45720 0x10938E: main (example_json.c:15)
+   n1: 15840 0x109A8E: ht_put (hashtable.c:85)
+    n1: 15840 0x109533: read_from_file (example_json.c:63)
+     n0: 15840 0x10938E: main (example_json.c:15)
+ n1: 38912 0x109ACE: ht_reallocate (hashtable.c:94)
+  n1: 38912 0x109A0B: ht_put (hashtable.c:69)
+   n1: 38912 0x109533: read_from_file (example_json.c:63)
+    n0: 38912 0x10938E: main (example_json.c:15)
+ n1: 38912 0x109B41: ht_reallocate (hashtable.c:108)
+  n1: 38912 0x109A0B: ht_put (hashtable.c:69)
+   n1: 38912 0x109533: read_from_file (example_json.c:63)
+    n0: 38912 0x10938E: main (example_json.c:15)
+ n1: 38912 0x109B74: ht_reallocate (hashtable.c:116)
+  n1: 38912 0x109A0B: ht_put (hashtable.c:69)
+   n1: 38912 0x109533: read_from_file (example_json.c:63)
+    n0: 38912 0x10938E: main (example_json.c:15)
+ n1: 19888 0x109A1A: ht_put (hashtable.c:72)
+  n1: 19888 0x109533: read_from_file (example_json.c:63)
+   n0: 19888 0x10938E: main (example_json.c:15)
+ n1: 19888 0x109A48: ht_put (hashtable.c:80)
+  n1: 19888 0x109533: read_from_file (example_json.c:63)
+   n0: 19888 0x10938E: main (example_json.c:15)
+ n0: 8532 in 10 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=51
+#-----------
+time=66748065
+mem_heap_B=418078
+mem_heap_extra_B=242858
+mem_stacks_B=0
+heap_tree=detailed
+n8: 418078 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n2: 189347 0x491158E: strdup (strdup.c:42)
+  n1: 137492 0x10951E: read_from_file (example_json.c:63)
+   n0: 137492 0x10938E: main (example_json.c:15)
+  n1: 51855 0x10950B: read_from_file (example_json.c:64)
+   n0: 51855 0x10938E: main (example_json.c:15)
+ n1: 61944 0x109F2D: ll_init (llist.c:28)
+  n2: 61944 0x109CE3: hash_and_add (hashtable.c:144)
+   n1: 45720 0x109BBF: ht_reallocate (hashtable.c:121)
+    n1: 45720 0x109A0B: ht_put (hashtable.c:69)
+     n1: 45720 0x109533: read_from_file (example_json.c:63)
+      n0: 45720 0x10938E: main (example_json.c:15)
+   n1: 16224 0x109A8E: ht_put (hashtable.c:85)
+    n1: 16224 0x109533: read_from_file (example_json.c:63)
+     n0: 16224 0x10938E: main (example_json.c:15)
+ n1: 38912 0x109ACE: ht_reallocate (hashtable.c:94)
+  n1: 38912 0x109A0B: ht_put (hashtable.c:69)
+   n1: 38912 0x109533: read_from_file (example_json.c:63)
+    n0: 38912 0x10938E: main (example_json.c:15)
+ n1: 38912 0x109B41: ht_reallocate (hashtable.c:108)
+  n1: 38912 0x109A0B: ht_put (hashtable.c:69)
+   n1: 38912 0x109533: read_from_file (example_json.c:63)
+    n0: 38912 0x10938E: main (example_json.c:15)
+ n1: 38912 0x109B74: ht_reallocate (hashtable.c:116)
+  n1: 38912 0x109A0B: ht_put (hashtable.c:69)
+   n1: 38912 0x109533: read_from_file (example_json.c:63)
+    n0: 38912 0x10938E: main (example_json.c:15)
+ n1: 20544 0x109A1A: ht_put (hashtable.c:72)
+  n1: 20544 0x109533: read_from_file (example_json.c:63)
+   n0: 20544 0x10938E: main (example_json.c:15)
+ n1: 20544 0x109A48: ht_put (hashtable.c:80)
+  n1: 20544 0x109533: read_from_file (example_json.c:63)
+   n0: 20544 0x10938E: main (example_json.c:15)
+ n0: 8963 in 10 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=52
+#-----------
+time=67447308
+mem_heap_B=422478
+mem_heap_extra_B=245506
+mem_stacks_B=0
+heap_tree=detailed
+n8: 422478 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n2: 191425 0x491158E: strdup (strdup.c:42)
+  n1: 139009 0x10951E: read_from_file (example_json.c:63)
+   n0: 139009 0x10938E: main (example_json.c:15)
+  n1: 52416 0x10950B: read_from_file (example_json.c:64)
+   n0: 52416 0x10938E: main (example_json.c:15)
+ n1: 62400 0x109F2D: ll_init (llist.c:28)
+  n2: 62400 0x109CE3: hash_and_add (hashtable.c:144)
+   n1: 45720 0x109BBF: ht_reallocate (hashtable.c:121)
+    n1: 45720 0x109A0B: ht_put (hashtable.c:69)
+     n1: 45720 0x109533: read_from_file (example_json.c:63)
+      n0: 45720 0x10938E: main (example_json.c:15)
+   n1: 16680 0x109A8E: ht_put (hashtable.c:85)
+    n1: 16680 0x109533: read_from_file (example_json.c:63)
+     n0: 16680 0x10938E: main (example_json.c:15)
+ n1: 38912 0x109ACE: ht_reallocate (hashtable.c:94)
+  n1: 38912 0x109A0B: ht_put (hashtable.c:69)
+   n1: 38912 0x109533: read_from_file (example_json.c:63)
+    n0: 38912 0x10938E: main (example_json.c:15)
+ n1: 38912 0x109B41: ht_reallocate (hashtable.c:108)
+  n1: 38912 0x109A0B: ht_put (hashtable.c:69)
+   n1: 38912 0x109533: read_from_file (example_json.c:63)
+    n0: 38912 0x10938E: main (example_json.c:15)
+ n1: 38912 0x109B74: ht_reallocate (hashtable.c:116)
+  n1: 38912 0x109A0B: ht_put (hashtable.c:69)
+   n1: 38912 0x109533: read_from_file (example_json.c:63)
+    n0: 38912 0x10938E: main (example_json.c:15)
+ n1: 21200 0x109A1A: ht_put (hashtable.c:72)
+  n1: 21200 0x109533: read_from_file (example_json.c:63)
+   n0: 21200 0x10938E: main (example_json.c:15)
+ n1: 21200 0x109A48: ht_put (hashtable.c:80)
+  n1: 21200 0x109533: read_from_file (example_json.c:63)
+   n0: 21200 0x10938E: main (example_json.c:15)
+ n0: 9517 in 10 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=53
+#-----------
+time=68296203
+mem_heap_B=424687
+mem_heap_extra_B=247585
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=54
+#-----------
+time=68315723
+mem_heap_B=426773
+mem_heap_extra_B=248299
+mem_stacks_B=0
+heap_tree=detailed
+n8: 426773 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n2: 194035 0x491158E: strdup (strdup.c:42)
+  n1: 140896 0x10951E: read_from_file (example_json.c:63)
+   n0: 140896 0x10938E: main (example_json.c:15)
+  n1: 53139 0x10950B: read_from_file (example_json.c:64)
+   n0: 53139 0x10938E: main (example_json.c:15)
+ n1: 62832 0x109F2D: ll_init (llist.c:28)
+  n2: 62832 0x109CE3: hash_and_add (hashtable.c:144)
+   n1: 45720 0x109BBF: ht_reallocate (hashtable.c:121)
+    n1: 45720 0x109A0B: ht_put (hashtable.c:69)
+     n1: 45720 0x109533: read_from_file (example_json.c:63)
+      n0: 45720 0x10938E: main (example_json.c:15)
+   n1: 17112 0x109A8E: ht_put (hashtable.c:85)
+    n1: 17112 0x109533: read_from_file (example_json.c:63)
+     n0: 17112 0x10938E: main (example_json.c:15)
+ n1: 38912 0x109ACE: ht_reallocate (hashtable.c:94)
+  n1: 38912 0x109A0B: ht_put (hashtable.c:69)
+   n1: 38912 0x109533: read_from_file (example_json.c:63)
+    n0: 38912 0x10938E: main (example_json.c:15)
+ n1: 38912 0x109B41: ht_reallocate (hashtable.c:108)
+  n1: 38912 0x109A0B: ht_put (hashtable.c:69)
+   n1: 38912 0x109533: read_from_file (example_json.c:63)
+    n0: 38912 0x10938E: main (example_json.c:15)
+ n1: 38912 0x109B74: ht_reallocate (hashtable.c:116)
+  n1: 38912 0x109A0B: ht_put (hashtable.c:69)
+   n1: 38912 0x109533: read_from_file (example_json.c:63)
+    n0: 38912 0x10938E: main (example_json.c:15)
+ n1: 22016 0x109A1A: ht_put (hashtable.c:72)
+  n1: 22016 0x109533: read_from_file (example_json.c:63)
+   n0: 22016 0x10938E: main (example_json.c:15)
+ n1: 22016 0x109A48: ht_put (hashtable.c:80)
+  n1: 22016 0x109533: read_from_file (example_json.c:63)
+   n0: 22016 0x10938E: main (example_json.c:15)
+ n0: 9138 in 10 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=55
+#-----------
+time=69051361
+mem_heap_B=431157
+mem_heap_extra_B=251043
+mem_stacks_B=0
+heap_tree=detailed
+n8: 431157 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n2: 196191 0x491158E: strdup (strdup.c:42)
+  n1: 142450 0x10951E: read_from_file (example_json.c:63)
+   n0: 142450 0x10938E: main (example_json.c:15)
+  n1: 53741 0x10950B: read_from_file (example_json.c:64)
+   n0: 53741 0x10938E: main (example_json.c:15)
+ n1: 63480 0x109F2D: ll_init (llist.c:28)
+  n2: 63480 0x109CE3: hash_and_add (hashtable.c:144)
+   n1: 45720 0x109BBF: ht_reallocate (hashtable.c:121)
+    n1: 45720 0x109A0B: ht_put (hashtable.c:69)
+     n1: 45720 0x109533: read_from_file (example_json.c:63)
+      n0: 45720 0x10938E: main (example_json.c:15)
+   n1: 17760 0x109A8E: ht_put (hashtable.c:85)
+    n1: 17760 0x109533: read_from_file (example_json.c:63)
+     n0: 17760 0x10938E: main (example_json.c:15)
+ n1: 38912 0x109ACE: ht_reallocate (hashtable.c:94)
+  n1: 38912 0x109A0B: ht_put (hashtable.c:69)
+   n1: 38912 0x109533: read_from_file (example_json.c:63)
+    n0: 38912 0x10938E: main (example_json.c:15)
+ n1: 38912 0x109B41: ht_reallocate (hashtable.c:108)
+  n1: 38912 0x109A0B: ht_put (hashtable.c:69)
+   n1: 38912 0x109533: read_from_file (example_json.c:63)
+    n0: 38912 0x10938E: main (example_json.c:15)
+ n1: 38912 0x109B74: ht_reallocate (hashtable.c:116)
+  n1: 38912 0x109A0B: ht_put (hashtable.c:69)
+   n1: 38912 0x109533: read_from_file (example_json.c:63)
+    n0: 38912 0x10938E: main (example_json.c:15)
+ n1: 22688 0x109A1A: ht_put (hashtable.c:72)
+  n1: 22688 0x109533: read_from_file (example_json.c:63)
+   n0: 22688 0x10938E: main (example_json.c:15)
+ n1: 22688 0x109A48: ht_put (hashtable.c:80)
+  n1: 22688 0x109533: read_from_file (example_json.c:63)
+   n0: 22688 0x10938E: main (example_json.c:15)
+ n0: 9374 in 10 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=56
+#-----------
+time=69888967
+mem_heap_B=435359
+mem_heap_extra_B=253665
+mem_stacks_B=0
+heap_tree=detailed
+n8: 435359 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n2: 198642 0x491158E: strdup (strdup.c:42)
+  n1: 144226 0x10951E: read_from_file (example_json.c:63)
+   n0: 144226 0x10938E: main (example_json.c:15)
+  n1: 54416 0x10950B: read_from_file (example_json.c:64)
+   n0: 54416 0x10938E: main (example_json.c:15)
+ n1: 63936 0x109F2D: ll_init (llist.c:28)
+  n2: 63936 0x109CE3: hash_and_add (hashtable.c:144)
+   n1: 45720 0x109BBF: ht_reallocate (hashtable.c:121)
+    n1: 45720 0x109A0B: ht_put (hashtable.c:69)
+     n1: 45720 0x109533: read_from_file (example_json.c:63)
+      n0: 45720 0x10938E: main (example_json.c:15)
+   n1: 18216 0x109A8E: ht_put (hashtable.c:85)
+    n1: 18216 0x109533: read_from_file (example_json.c:63)
+     n0: 18216 0x10938E: main (example_json.c:15)
+ n1: 38912 0x109ACE: ht_reallocate (hashtable.c:94)
+  n1: 38912 0x109A0B: ht_put (hashtable.c:69)
+   n1: 38912 0x109533: read_from_file (example_json.c:63)
+    n0: 38912 0x10938E: main (example_json.c:15)
+ n1: 38912 0x109B41: ht_reallocate (hashtable.c:108)
+  n1: 38912 0x109A0B: ht_put (hashtable.c:69)
+   n1: 38912 0x109533: read_from_file (example_json.c:63)
+    n0: 38912 0x10938E: main (example_json.c:15)
+ n1: 38912 0x109B74: ht_reallocate (hashtable.c:116)
+  n1: 38912 0x109A0B: ht_put (hashtable.c:69)
+   n1: 38912 0x109533: read_from_file (example_json.c:63)
+    n0: 38912 0x10938E: main (example_json.c:15)
+ n1: 23456 0x109A1A: ht_put (hashtable.c:72)
+  n1: 23456 0x109533: read_from_file (example_json.c:63)
+   n0: 23456 0x10938E: main (example_json.c:15)
+ n1: 23456 0x109A48: ht_put (hashtable.c:80)
+  n1: 23456 0x109533: read_from_file (example_json.c:63)
+   n0: 23456 0x10938E: main (example_json.c:15)
+ n0: 9133 in 10 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=57
+#-----------
+time=70652170
+mem_heap_B=439720
+mem_heap_extra_B=256400
+mem_stacks_B=0
+heap_tree=detailed
+n8: 439720 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n2: 200848 0x491158E: strdup (strdup.c:42)
+  n1: 145854 0x10951E: read_from_file (example_json.c:63)
+   n0: 145854 0x10938E: main (example_json.c:15)
+  n1: 54994 0x10950B: read_from_file (example_json.c:64)
+   n0: 54994 0x10938E: main (example_json.c:15)
+ n1: 64584 0x109F2D: ll_init (llist.c:28)
+  n2: 64584 0x109CE3: hash_and_add (hashtable.c:144)
+   n1: 45720 0x109BBF: ht_reallocate (hashtable.c:121)
+    n1: 45720 0x109A0B: ht_put (hashtable.c:69)
+     n1: 45720 0x109533: read_from_file (example_json.c:63)
+      n0: 45720 0x10938E: main (example_json.c:15)
+   n1: 18864 0x109A8E: ht_put (hashtable.c:85)
+    n1: 18864 0x109533: read_from_file (example_json.c:63)
+     n0: 18864 0x10938E: main (example_json.c:15)
+ n1: 38912 0x109ACE: ht_reallocate (hashtable.c:94)
+  n1: 38912 0x109A0B: ht_put (hashtable.c:69)
+   n1: 38912 0x109533: read_from_file (example_json.c:63)
+    n0: 38912 0x10938E: main (example_json.c:15)
+ n1: 38912 0x109B41: ht_reallocate (hashtable.c:108)
+  n1: 38912 0x109A0B: ht_put (hashtable.c:69)
+   n1: 38912 0x109533: read_from_file (example_json.c:63)
+    n0: 38912 0x10938E: main (example_json.c:15)
+ n1: 38912 0x109B74: ht_reallocate (hashtable.c:116)
+  n1: 38912 0x109A0B: ht_put (hashtable.c:69)
+   n1: 38912 0x109533: read_from_file (example_json.c:63)
+    n0: 38912 0x10938E: main (example_json.c:15)
+ n1: 24160 0x109A1A: ht_put (hashtable.c:72)
+  n1: 24160 0x109533: read_from_file (example_json.c:63)
+   n0: 24160 0x10938E: main (example_json.c:15)
+ n1: 24160 0x109A48: ht_put (hashtable.c:80)
+  n1: 24160 0x109533: read_from_file (example_json.c:63)
+   n0: 24160 0x10938E: main (example_json.c:15)
+ n0: 9232 in 10 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=58
+#-----------
+time=71501106
+mem_heap_B=443163
+mem_heap_extra_B=258981
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=59
+#-----------
+time=71511627
+mem_heap_B=444165
+mem_heap_extra_B=259275
+mem_stacks_B=0
+heap_tree=detailed
+n8: 444165 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n2: 203470 0x491158E: strdup (strdup.c:42)
+  n1: 147741 0x10951E: read_from_file (example_json.c:63)
+   n0: 147741 0x10938E: main (example_json.c:15)
+  n1: 55729 0x10950B: read_from_file (example_json.c:64)
+   n0: 55729 0x10938E: main (example_json.c:15)
+ n1: 65088 0x109F2D: ll_init (llist.c:28)
+  n2: 65088 0x109CE3: hash_and_add (hashtable.c:144)
+   n1: 45720 0x109BBF: ht_reallocate (hashtable.c:121)
+    n1: 45720 0x109A0B: ht_put (hashtable.c:69)
+     n1: 45720 0x109533: read_from_file (example_json.c:63)
+      n0: 45720 0x10938E: main (example_json.c:15)
+   n1: 19368 0x109A8E: ht_put (hashtable.c:85)
+    n1: 19368 0x109533: read_from_file (example_json.c:63)
+     n0: 19368 0x10938E: main (example_json.c:15)
+ n1: 38912 0x109ACE: ht_reallocate (hashtable.c:94)
+  n1: 38912 0x109A0B: ht_put (hashtable.c:69)
+   n1: 38912 0x109533: read_from_file (example_json.c:63)
+    n0: 38912 0x10938E: main (example_json.c:15)
+ n1: 38912 0x109B41: ht_reallocate (hashtable.c:108)
+  n1: 38912 0x109A0B: ht_put (hashtable.c:69)
+   n1: 38912 0x109533: read_from_file (example_json.c:63)
+    n0: 38912 0x10938E: main (example_json.c:15)
+ n1: 38912 0x109B74: ht_reallocate (hashtable.c:116)
+  n1: 38912 0x109A0B: ht_put (hashtable.c:69)
+   n1: 38912 0x109533: read_from_file (example_json.c:63)
+    n0: 38912 0x10938E: main (example_json.c:15)
+ n1: 24976 0x109A1A: ht_put (hashtable.c:72)
+  n1: 24976 0x109533: read_from_file (example_json.c:63)
+   n0: 24976 0x10938E: main (example_json.c:15)
+ n1: 24976 0x109A48: ht_put (hashtable.c:80)
+  n1: 24976 0x109533: read_from_file (example_json.c:63)
+   n0: 24976 0x10938E: main (example_json.c:15)
+ n0: 8919 in 10 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=60
+#-----------
+time=72279306
+mem_heap_B=448821
+mem_heap_extra_B=262139
+mem_stacks_B=0
+heap_tree=detailed
+n8: 448821 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n2: 205852 0x491158E: strdup (strdup.c:42)
+  n1: 149480 0x10951E: read_from_file (example_json.c:63)
+   n0: 149480 0x10938E: main (example_json.c:15)
+  n1: 56372 0x10950B: read_from_file (example_json.c:64)
+   n0: 56372 0x10938E: main (example_json.c:15)
+ n1: 65616 0x109F2D: ll_init (llist.c:28)
+  n2: 65616 0x109CE3: hash_and_add (hashtable.c:144)
+   n1: 45720 0x109BBF: ht_reallocate (hashtable.c:121)
+    n1: 45720 0x109A0B: ht_put (hashtable.c:69)
+     n1: 45720 0x109533: read_from_file (example_json.c:63)
+      n0: 45720 0x10938E: main (example_json.c:15)
+   n1: 19896 0x109A8E: ht_put (hashtable.c:85)
+    n1: 19896 0x109533: read_from_file (example_json.c:63)
+     n0: 19896 0x10938E: main (example_json.c:15)
+ n1: 38912 0x109ACE: ht_reallocate (hashtable.c:94)
+  n1: 38912 0x109A0B: ht_put (hashtable.c:69)
+   n1: 38912 0x109533: read_from_file (example_json.c:63)
+    n0: 38912 0x10938E: main (example_json.c:15)
+ n1: 38912 0x109B41: ht_reallocate (hashtable.c:108)
+  n1: 38912 0x109A0B: ht_put (hashtable.c:69)
+   n1: 38912 0x109533: read_from_file (example_json.c:63)
+    n0: 38912 0x10938E: main (example_json.c:15)
+ n1: 38912 0x109B74: ht_reallocate (hashtable.c:116)
+  n1: 38912 0x109A0B: ht_put (hashtable.c:69)
+   n1: 38912 0x109533: read_from_file (example_json.c:63)
+    n0: 38912 0x10938E: main (example_json.c:15)
+ n1: 25728 0x109A1A: ht_put (hashtable.c:72)
+  n1: 25728 0x109533: read_from_file (example_json.c:63)
+   n0: 25728 0x10938E: main (example_json.c:15)
+ n1: 25728 0x109A48: ht_put (hashtable.c:80)
+  n1: 25728 0x109533: read_from_file (example_json.c:63)
+   n0: 25728 0x10938E: main (example_json.c:15)
+ n0: 9161 in 10 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=61
+#-----------
+time=73127574
+mem_heap_B=453566
+mem_heap_extra_B=265154
+mem_stacks_B=0
+heap_tree=detailed
+n8: 453566 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n2: 208333 0x491158E: strdup (strdup.c:42)
+  n1: 151293 0x10951E: read_from_file (example_json.c:63)
+   n0: 151293 0x10938E: main (example_json.c:15)
+  n1: 57040 0x10950B: read_from_file (example_json.c:64)
+   n0: 57040 0x10938E: main (example_json.c:15)
+ n1: 66096 0x109F2D: ll_init (llist.c:28)
+  n2: 66096 0x109CE3: hash_and_add (hashtable.c:144)
+   n1: 45720 0x109BBF: ht_reallocate (hashtable.c:121)
+    n1: 45720 0x109A0B: ht_put (hashtable.c:69)
+     n1: 45720 0x109533: read_from_file (example_json.c:63)
+      n0: 45720 0x10938E: main (example_json.c:15)
+   n1: 20376 0x109A8E: ht_put (hashtable.c:85)
+    n1: 20376 0x109533: read_from_file (example_json.c:63)
+     n0: 20376 0x10938E: main (example_json.c:15)
+ n1: 38912 0x109ACE: ht_reallocate (hashtable.c:94)
+  n1: 38912 0x109A0B: ht_put (hashtable.c:69)
+   n1: 38912 0x109533: read_from_file (example_json.c:63)
+    n0: 38912 0x10938E: main (example_json.c:15)
+ n1: 38912 0x109B41: ht_reallocate (hashtable.c:108)
+  n1: 38912 0x109A0B: ht_put (hashtable.c:69)
+   n1: 38912 0x109533: read_from_file (example_json.c:63)
+    n0: 38912 0x10938E: main (example_json.c:15)
+ n1: 38912 0x109B74: ht_reallocate (hashtable.c:116)
+  n1: 38912 0x109A0B: ht_put (hashtable.c:69)
+   n1: 38912 0x109533: read_from_file (example_json.c:63)
+    n0: 38912 0x10938E: main (example_json.c:15)
+ n1: 26512 0x109A1A: ht_put (hashtable.c:72)
+  n1: 26512 0x109533: read_from_file (example_json.c:63)
+   n0: 26512 0x10938E: main (example_json.c:15)
+ n1: 26512 0x109A48: ht_put (hashtable.c:80)
+  n1: 26512 0x109533: read_from_file (example_json.c:63)
+   n0: 26512 0x10938E: main (example_json.c:15)
+ n0: 9377 in 10 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=62
+#-----------
+time=73942786
+mem_heap_B=458061
+mem_heap_extra_B=268115
+mem_stacks_B=0
+heap_tree=detailed
+n8: 458061 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n2: 210847 0x491158E: strdup (strdup.c:42)
+  n1: 153106 0x10951E: read_from_file (example_json.c:63)
+   n0: 153106 0x10938E: main (example_json.c:15)
+  n1: 57741 0x10950B: read_from_file (example_json.c:64)
+   n0: 57741 0x10938E: main (example_json.c:15)
+ n1: 66576 0x109F2D: ll_init (llist.c:28)
+  n2: 66576 0x109CE3: hash_and_add (hashtable.c:144)
+   n1: 45720 0x109BBF: ht_reallocate (hashtable.c:121)
+    n1: 45720 0x109A0B: ht_put (hashtable.c:69)
+     n1: 45720 0x109533: read_from_file (example_json.c:63)
+      n0: 45720 0x10938E: main (example_json.c:15)
+   n1: 20856 0x109A8E: ht_put (hashtable.c:85)
+    n1: 20856 0x109533: read_from_file (example_json.c:63)
+     n0: 20856 0x10938E: main (example_json.c:15)
+ n1: 38912 0x109ACE: ht_reallocate (hashtable.c:94)
+  n1: 38912 0x109A0B: ht_put (hashtable.c:69)
+   n1: 38912 0x109533: read_from_file (example_json.c:63)
+    n0: 38912 0x10938E: main (example_json.c:15)
+ n1: 38912 0x109B41: ht_reallocate (hashtable.c:108)
+  n1: 38912 0x109A0B: ht_put (hashtable.c:69)
+   n1: 38912 0x109533: read_from_file (example_json.c:63)
+    n0: 38912 0x10938E: main (example_json.c:15)
+ n1: 38912 0x109B74: ht_reallocate (hashtable.c:116)
+  n1: 38912 0x109A0B: ht_put (hashtable.c:69)
+   n1: 38912 0x109533: read_from_file (example_json.c:63)
+    n0: 38912 0x10938E: main (example_json.c:15)
+ n1: 27296 0x109A1A: ht_put (hashtable.c:72)
+  n1: 27296 0x109533: read_from_file (example_json.c:63)
+   n0: 27296 0x10938E: main (example_json.c:15)
+ n1: 27296 0x109A48: ht_put (hashtable.c:80)
+  n1: 27296 0x109533: read_from_file (example_json.c:63)
+   n0: 27296 0x10938E: main (example_json.c:15)
+ n0: 9310 in 10 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=63
+#-----------
+time=74745685
+mem_heap_B=462722
+mem_heap_extra_B=270934
+mem_stacks_B=0
+heap_tree=detailed
+n8: 462722 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n2: 213233 0x491158E: strdup (strdup.c:42)
+  n1: 154845 0x10951E: read_from_file (example_json.c:63)
+   n0: 154845 0x10938E: main (example_json.c:15)
+  n1: 58388 0x10950B: read_from_file (example_json.c:64)
+   n0: 58388 0x10938E: main (example_json.c:15)
+ n1: 67128 0x109F2D: ll_init (llist.c:28)
+  n2: 67128 0x109CE3: hash_and_add (hashtable.c:144)
+   n1: 45720 0x109BBF: ht_reallocate (hashtable.c:121)
+    n1: 45720 0x109A0B: ht_put (hashtable.c:69)
+     n1: 45720 0x109533: read_from_file (example_json.c:63)
+      n0: 45720 0x10938E: main (example_json.c:15)
+   n1: 21408 0x109A8E: ht_put (hashtable.c:85)
+    n1: 21408 0x109533: read_from_file (example_json.c:63)
+     n0: 21408 0x10938E: main (example_json.c:15)
+ n1: 38912 0x109ACE: ht_reallocate (hashtable.c:94)
+  n1: 38912 0x109A0B: ht_put (hashtable.c:69)
+   n1: 38912 0x109533: read_from_file (example_json.c:63)
+    n0: 38912 0x10938E: main (example_json.c:15)
+ n1: 38912 0x109B41: ht_reallocate (hashtable.c:108)
+  n1: 38912 0x109A0B: ht_put (hashtable.c:69)
+   n1: 38912 0x109533: read_from_file (example_json.c:63)
+    n0: 38912 0x10938E: main (example_json.c:15)
+ n1: 38912 0x109B74: ht_reallocate (hashtable.c:116)
+  n1: 38912 0x109A0B: ht_put (hashtable.c:69)
+   n1: 38912 0x109533: read_from_file (example_json.c:63)
+    n0: 38912 0x10938E: main (example_json.c:15)
+ n1: 28048 0x109A1A: ht_put (hashtable.c:72)
+  n1: 28048 0x109533: read_from_file (example_json.c:63)
+   n0: 28048 0x10938E: main (example_json.c:15)
+ n1: 28048 0x109A48: ht_put (hashtable.c:80)
+  n1: 28048 0x109533: read_from_file (example_json.c:63)
+   n0: 28048 0x10938E: main (example_json.c:15)
+ n0: 9529 in 10 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=64
+#-----------
+time=75590395
+mem_heap_B=467302
+mem_heap_extra_B=273770
+mem_stacks_B=0
+heap_tree=detailed
+n8: 467302 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n2: 215834 0x491158E: strdup (strdup.c:42)
+  n1: 156732 0x10951E: read_from_file (example_json.c:63)
+   n0: 156732 0x10938E: main (example_json.c:15)
+  n1: 59102 0x10950B: read_from_file (example_json.c:64)
+   n0: 59102 0x10938E: main (example_json.c:15)
+ n1: 67680 0x109F2D: ll_init (llist.c:28)
+  n2: 67680 0x109CE3: hash_and_add (hashtable.c:144)
+   n1: 45720 0x109BBF: ht_reallocate (hashtable.c:121)
+    n1: 45720 0x109A0B: ht_put (hashtable.c:69)
+     n1: 45720 0x109533: read_from_file (example_json.c:63)
+      n0: 45720 0x10938E: main (example_json.c:15)
+   n1: 21960 0x109A8E: ht_put (hashtable.c:85)
+    n1: 21960 0x109533: read_from_file (example_json.c:63)
+     n0: 21960 0x10938E: main (example_json.c:15)
+ n1: 38912 0x109ACE: ht_reallocate (hashtable.c:94)
+  n1: 38912 0x109A0B: ht_put (hashtable.c:69)
+   n1: 38912 0x109533: read_from_file (example_json.c:63)
+    n0: 38912 0x10938E: main (example_json.c:15)
+ n1: 38912 0x109B41: ht_reallocate (hashtable.c:108)
+  n1: 38912 0x109A0B: ht_put (hashtable.c:69)
+   n1: 38912 0x109533: read_from_file (example_json.c:63)
+    n0: 38912 0x10938E: main (example_json.c:15)
+ n1: 38912 0x109B74: ht_reallocate (hashtable.c:116)
+  n1: 38912 0x109A0B: ht_put (hashtable.c:69)
+   n1: 38912 0x109533: read_from_file (example_json.c:63)
+    n0: 38912 0x10938E: main (example_json.c:15)
+ n1: 28864 0x109A1A: ht_put (hashtable.c:72)
+  n1: 28864 0x109533: read_from_file (example_json.c:63)
+   n0: 28864 0x10938E: main (example_json.c:15)
+ n1: 28864 0x109A48: ht_put (hashtable.c:80)
+  n1: 28864 0x109533: read_from_file (example_json.c:63)
+   n0: 28864 0x10938E: main (example_json.c:15)
+ n0: 9324 in 10 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=65
+#-----------
+time=76439223
+mem_heap_B=470551
+mem_heap_extra_B=276305
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=66
+#-----------
+time=76453399
+mem_heap_B=472025
+mem_heap_extra_B=276791
+mem_stacks_B=0
+heap_tree=detailed
+n8: 472025 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n2: 218485 0x491158E: strdup (strdup.c:42)
+  n1: 158656 0x10951E: read_from_file (example_json.c:63)
+   n0: 158656 0x10938E: main (example_json.c:15)
+  n1: 59829 0x10950B: read_from_file (example_json.c:64)
+   n0: 59829 0x10938E: main (example_json.c:15)
+ n1: 68256 0x109F2D: ll_init (llist.c:28)
+  n2: 68256 0x109CE3: hash_and_add (hashtable.c:144)
+   n1: 45720 0x109BBF: ht_reallocate (hashtable.c:121)
+    n1: 45720 0x109A0B: ht_put (hashtable.c:69)
+     n1: 45720 0x109533: read_from_file (example_json.c:63)
+      n0: 45720 0x10938E: main (example_json.c:15)
+   n1: 22536 0x109A8E: ht_put (hashtable.c:85)
+    n1: 22536 0x109533: read_from_file (example_json.c:63)
+     n0: 22536 0x10938E: main (example_json.c:15)
+ n1: 38912 0x109ACE: ht_reallocate (hashtable.c:94)
+  n1: 38912 0x109A0B: ht_put (hashtable.c:69)
+   n1: 38912 0x109533: read_from_file (example_json.c:63)
+    n0: 38912 0x10938E: main (example_json.c:15)
+ n1: 38912 0x109B41: ht_reallocate (hashtable.c:108)
+  n1: 38912 0x109A0B: ht_put (hashtable.c:69)
+   n1: 38912 0x109533: read_from_file (example_json.c:63)
+    n0: 38912 0x10938E: main (example_json.c:15)
+ n1: 38912 0x109B74: ht_reallocate (hashtable.c:116)
+  n1: 38912 0x109A0B: ht_put (hashtable.c:69)
+   n1: 38912 0x109533: read_from_file (example_json.c:63)
+    n0: 38912 0x10938E: main (example_json.c:15)
+ n1: 29696 0x109A1A: ht_put (hashtable.c:72)
+  n1: 29696 0x109533: read_from_file (example_json.c:63)
+   n0: 29696 0x10938E: main (example_json.c:15)
+ n1: 29696 0x109A48: ht_put (hashtable.c:80)
+  n1: 29696 0x109533: read_from_file (example_json.c:63)
+   n0: 29696 0x10938E: main (example_json.c:15)
+ n0: 9156 in 10 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=67
+#-----------
+time=77301230
+mem_heap_B=476754
+mem_heap_extra_B=279782
+mem_stacks_B=0
+heap_tree=detailed
+n8: 476754 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n2: 220962 0x491158E: strdup (strdup.c:42)
+  n1: 160469 0x10951E: read_from_file (example_json.c:63)
+   n0: 160469 0x10938E: main (example_json.c:15)
+  n1: 60493 0x10950B: read_from_file (example_json.c:64)
+   n0: 60493 0x10938E: main (example_json.c:15)
+ n1: 68712 0x109F2D: ll_init (llist.c:28)
+  n2: 68712 0x109CE3: hash_and_add (hashtable.c:144)
+   n1: 45720 0x109BBF: ht_reallocate (hashtable.c:121)
+    n1: 45720 0x109A0B: ht_put (hashtable.c:69)
+     n1: 45720 0x109533: read_from_file (example_json.c:63)
+      n0: 45720 0x10938E: main (example_json.c:15)
+   n1: 22992 0x109A8E: ht_put (hashtable.c:85)
+    n1: 22992 0x109533: read_from_file (example_json.c:63)
+     n0: 22992 0x10938E: main (example_json.c:15)
+ n1: 38912 0x109ACE: ht_reallocate (hashtable.c:94)
+  n1: 38912 0x109A0B: ht_put (hashtable.c:69)
+   n1: 38912 0x109533: read_from_file (example_json.c:63)
+    n0: 38912 0x10938E: main (example_json.c:15)
+ n1: 38912 0x109B41: ht_reallocate (hashtable.c:108)
+  n1: 38912 0x109A0B: ht_put (hashtable.c:69)
+   n1: 38912 0x109533: read_from_file (example_json.c:63)
+    n0: 38912 0x10938E: main (example_json.c:15)
+ n1: 38912 0x109B74: ht_reallocate (hashtable.c:116)
+  n1: 38912 0x109A0B: ht_put (hashtable.c:69)
+   n1: 38912 0x109533: read_from_file (example_json.c:63)
+    n0: 38912 0x10938E: main (example_json.c:15)
+ n1: 30480 0x109A1A: ht_put (hashtable.c:72)
+  n1: 30480 0x109533: read_from_file (example_json.c:63)
+   n0: 30480 0x10938E: main (example_json.c:15)
+ n1: 30480 0x109A48: ht_put (hashtable.c:80)
+  n1: 30480 0x109533: read_from_file (example_json.c:63)
+   n0: 30480 0x10938E: main (example_json.c:15)
+ n0: 9384 in 10 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=68
+#-----------
+time=78150113
+mem_heap_B=479350
+mem_heap_extra_B=281978
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=69
+#-----------
+time=78230536
+mem_heap_B=481402
+mem_heap_extra_B=282790
+mem_stacks_B=0
+heap_tree=detailed
+n8: 481402 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n2: 223682 0x491158E: strdup (strdup.c:42)
+  n1: 162430 0x10951E: read_from_file (example_json.c:63)
+   n0: 162430 0x10938E: main (example_json.c:15)
+  n1: 61252 0x10950B: read_from_file (example_json.c:64)
+   n0: 61252 0x10938E: main (example_json.c:15)
+ n1: 69264 0x109F2D: ll_init (llist.c:28)
+  n2: 69264 0x109CE3: hash_and_add (hashtable.c:144)
+   n1: 45720 0x109BBF: ht_reallocate (hashtable.c:121)
+    n1: 45720 0x109A0B: ht_put (hashtable.c:69)
+     n1: 45720 0x109533: read_from_file (example_json.c:63)
+      n0: 45720 0x10938E: main (example_json.c:15)
+   n1: 23544 0x109A8E: ht_put (hashtable.c:85)
+    n1: 23544 0x109533: read_from_file (example_json.c:63)
+     n0: 23544 0x10938E: main (example_json.c:15)
+ n1: 38912 0x109ACE: ht_reallocate (hashtable.c:94)
+  n1: 38912 0x109A0B: ht_put (hashtable.c:69)
+   n1: 38912 0x109533: read_from_file (example_json.c:63)
+    n0: 38912 0x10938E: main (example_json.c:15)
+ n1: 38912 0x109B41: ht_reallocate (hashtable.c:108)
+  n1: 38912 0x109A0B: ht_put (hashtable.c:69)
+   n1: 38912 0x109533: read_from_file (example_json.c:63)
+    n0: 38912 0x10938E: main (example_json.c:15)
+ n1: 38912 0x109B74: ht_reallocate (hashtable.c:116)
+  n1: 38912 0x109A0B: ht_put (hashtable.c:69)
+   n1: 38912 0x109533: read_from_file (example_json.c:63)
+    n0: 38912 0x10938E: main (example_json.c:15)
+ n1: 31328 0x109A1A: ht_put (hashtable.c:72)
+  n1: 31328 0x109533: read_from_file (example_json.c:63)
+   n0: 31328 0x10938E: main (example_json.c:15)
+ n1: 31328 0x109A48: ht_put (hashtable.c:80)
+  n1: 31328 0x109533: read_from_file (example_json.c:63)
+   n0: 31328 0x10938E: main (example_json.c:15)
+ n0: 9064 in 10 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=70
+#-----------
+time=79079273
+mem_heap_B=484280
+mem_heap_extra_B=285048
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=71
+#-----------
+time=79174731
+mem_heap_B=486255
+mem_heap_extra_B=285809
+mem_stacks_B=0
+heap_tree=detailed
+n8: 486255 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n2: 226406 0x491158E: strdup (strdup.c:42)
+  n1: 164428 0x10951E: read_from_file (example_json.c:63)
+   n0: 164428 0x10938E: main (example_json.c:15)
+  n1: 61978 0x10950B: read_from_file (example_json.c:64)
+   n0: 61978 0x10938E: main (example_json.c:15)
+ n1: 69696 0x109F2D: ll_init (llist.c:28)
+  n2: 69696 0x109CE3: hash_and_add (hashtable.c:144)
+   n1: 45720 0x109BBF: ht_reallocate (hashtable.c:121)
+    n1: 45720 0x109A0B: ht_put (hashtable.c:69)
+     n1: 45720 0x109533: read_from_file (example_json.c:63)
+      n0: 45720 0x10938E: main (example_json.c:15)
+   n1: 23976 0x109A8E: ht_put (hashtable.c:85)
+    n1: 23976 0x109533: read_from_file (example_json.c:63)
+     n0: 23976 0x10938E: main (example_json.c:15)
+ n1: 38912 0x109ACE: ht_reallocate (hashtable.c:94)
+  n1: 38912 0x109A0B: ht_put (hashtable.c:69)
+   n1: 38912 0x109533: read_from_file (example_json.c:63)
+    n0: 38912 0x10938E: main (example_json.c:15)
+ n1: 38912 0x109B41: ht_reallocate (hashtable.c:108)
+  n1: 38912 0x109A0B: ht_put (hashtable.c:69)
+   n1: 38912 0x109533: read_from_file (example_json.c:63)
+    n0: 38912 0x10938E: main (example_json.c:15)
+ n1: 38912 0x109B74: ht_reallocate (hashtable.c:116)
+  n1: 38912 0x109A0B: ht_put (hashtable.c:69)
+   n1: 38912 0x109533: read_from_file (example_json.c:63)
+    n0: 38912 0x10938E: main (example_json.c:15)
+ n1: 32192 0x109A1A: ht_put (hashtable.c:72)
+  n1: 32192 0x109533: read_from_file (example_json.c:63)
+   n0: 32192 0x10938E: main (example_json.c:15)
+ n1: 32192 0x109A48: ht_put (hashtable.c:80)
+  n1: 32192 0x109533: read_from_file (example_json.c:63)
+   n0: 32192 0x10938E: main (example_json.c:15)
+ n0: 9033 in 10 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=72
+#-----------
+time=80023735
+mem_heap_B=490358
+mem_heap_extra_B=288506
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=73
+#-----------
+time=80110897
+mem_heap_B=491626
+mem_heap_extra_B=289014
+mem_stacks_B=0
+heap_tree=detailed
+n8: 491626 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n2: 229214 0x491158E: strdup (strdup.c:42)
+  n1: 166463 0x10951E: read_from_file (example_json.c:63)
+   n0: 166463 0x10938E: main (example_json.c:15)
+  n1: 62751 0x10950B: read_from_file (example_json.c:64)
+   n0: 62751 0x10938E: main (example_json.c:15)
+ n1: 70224 0x109F2D: ll_init (llist.c:28)
+  n2: 70224 0x109CE3: hash_and_add (hashtable.c:144)
+   n1: 45720 0x109BBF: ht_reallocate (hashtable.c:121)
+    n1: 45720 0x109A0B: ht_put (hashtable.c:69)
+     n1: 45720 0x109533: read_from_file (example_json.c:63)
+      n0: 45720 0x10938E: main (example_json.c:15)
+   n1: 24504 0x109A8E: ht_put (hashtable.c:85)
+    n1: 24504 0x109533: read_from_file (example_json.c:63)
+     n0: 24504 0x10938E: main (example_json.c:15)
+ n1: 38912 0x109ACE: ht_reallocate (hashtable.c:94)
+  n1: 38912 0x109A0B: ht_put (hashtable.c:69)
+   n1: 38912 0x109533: read_from_file (example_json.c:63)
+    n0: 38912 0x10938E: main (example_json.c:15)
+ n1: 38912 0x109B41: ht_reallocate (hashtable.c:108)
+  n1: 38912 0x109A0B: ht_put (hashtable.c:69)
+   n1: 38912 0x109533: read_from_file (example_json.c:63)
+    n0: 38912 0x10938E: main (example_json.c:15)
+ n1: 38912 0x109B74: ht_reallocate (hashtable.c:116)
+  n1: 38912 0x109A0B: ht_put (hashtable.c:69)
+   n1: 38912 0x109533: read_from_file (example_json.c:63)
+    n0: 38912 0x10938E: main (example_json.c:15)
+ n1: 33072 0x109A1A: ht_put (hashtable.c:72)
+  n1: 33072 0x109533: read_from_file (example_json.c:63)
+   n0: 33072 0x10938E: main (example_json.c:15)
+ n1: 33072 0x109A48: ht_put (hashtable.c:80)
+  n1: 33072 0x109533: read_from_file (example_json.c:63)
+   n0: 33072 0x10938E: main (example_json.c:15)
+ n0: 9308 in 10 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=74
+#-----------
+time=80959827
+mem_heap_B=495798
+mem_heap_extra_B=292034
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=75
+#-----------
+time=80998499
+mem_heap_B=496623
+mem_heap_extra_B=292305
+mem_stacks_B=0
+heap_tree=detailed
+n8: 496623 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n2: 231912 0x491158E: strdup (strdup.c:42)
+  n1: 168424 0x10951E: read_from_file (example_json.c:63)
+   n0: 168424 0x10938E: main (example_json.c:15)
+  n1: 63488 0x10950B: read_from_file (example_json.c:64)
+   n0: 63488 0x10938E: main (example_json.c:15)
+ n1: 70896 0x109F2D: ll_init (llist.c:28)
+  n2: 70896 0x109CE3: hash_and_add (hashtable.c:144)
+   n1: 45720 0x109BBF: ht_reallocate (hashtable.c:121)
+    n1: 45720 0x109A0B: ht_put (hashtable.c:69)
+     n1: 45720 0x109533: read_from_file (example_json.c:63)
+      n0: 45720 0x10938E: main (example_json.c:15)
+   n1: 25176 0x109A8E: ht_put (hashtable.c:85)
+    n1: 25176 0x109533: read_from_file (example_json.c:63)
+     n0: 25176 0x10938E: main (example_json.c:15)
+ n1: 38912 0x109ACE: ht_reallocate (hashtable.c:94)
+  n1: 38912 0x109A0B: ht_put (hashtable.c:69)
+   n1: 38912 0x109533: read_from_file (example_json.c:63)
+    n0: 38912 0x10938E: main (example_json.c:15)
+ n1: 38912 0x109B41: ht_reallocate (hashtable.c:108)
+  n1: 38912 0x109A0B: ht_put (hashtable.c:69)
+   n1: 38912 0x109533: read_from_file (example_json.c:63)
+    n0: 38912 0x10938E: main (example_json.c:15)
+ n1: 38912 0x109B74: ht_reallocate (hashtable.c:116)
+  n1: 38912 0x109A0B: ht_put (hashtable.c:69)
+   n1: 38912 0x109533: read_from_file (example_json.c:63)
+    n0: 38912 0x10938E: main (example_json.c:15)
+ n1: 33920 0x109A1A: ht_put (hashtable.c:72)
+  n1: 33920 0x109533: read_from_file (example_json.c:63)
+   n0: 33920 0x10938E: main (example_json.c:15)
+ n1: 33920 0x109A48: ht_put (hashtable.c:80)
+  n1: 33920 0x109533: read_from_file (example_json.c:63)
+   n0: 33920 0x10938E: main (example_json.c:15)
+ n0: 9239 in 10 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=76
+#-----------
+time=81847313
+mem_heap_B=499484
+mem_heap_extra_B=294612
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=77
+#-----------
+time=81960902
+mem_heap_B=501671
+mem_heap_extra_B=295497
+mem_stacks_B=0
+heap_tree=detailed
+n8: 501671 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n2: 234686 0x491158E: strdup (strdup.c:42)
+  n1: 170422 0x10951E: read_from_file (example_json.c:63)
+   n0: 170422 0x10938E: main (example_json.c:15)
+  n1: 64264 0x10950B: read_from_file (example_json.c:64)
+   n0: 64264 0x10938E: main (example_json.c:15)
+ n1: 71376 0x109F2D: ll_init (llist.c:28)
+  n2: 71376 0x109CE3: hash_and_add (hashtable.c:144)
+   n1: 45720 0x109BBF: ht_reallocate (hashtable.c:121)
+    n1: 45720 0x109A0B: ht_put (hashtable.c:69)
+     n1: 45720 0x109533: read_from_file (example_json.c:63)
+      n0: 45720 0x10938E: main (example_json.c:15)
+   n1: 25656 0x109A8E: ht_put (hashtable.c:85)
+    n1: 25656 0x109533: read_from_file (example_json.c:63)
+     n0: 25656 0x10938E: main (example_json.c:15)
+ n1: 38912 0x109ACE: ht_reallocate (hashtable.c:94)
+  n1: 38912 0x109A0B: ht_put (hashtable.c:69)
+   n1: 38912 0x109533: read_from_file (example_json.c:63)
+    n0: 38912 0x10938E: main (example_json.c:15)
+ n1: 38912 0x109B41: ht_reallocate (hashtable.c:108)
+  n1: 38912 0x109A0B: ht_put (hashtable.c:69)
+   n1: 38912 0x109533: read_from_file (example_json.c:63)
+    n0: 38912 0x10938E: main (example_json.c:15)
+ n1: 38912 0x109B74: ht_reallocate (hashtable.c:116)
+  n1: 38912 0x109A0B: ht_put (hashtable.c:69)
+   n1: 38912 0x109533: read_from_file (example_json.c:63)
+    n0: 38912 0x10938E: main (example_json.c:15)
+ n1: 34784 0x109A1A: ht_put (hashtable.c:72)
+  n1: 34784 0x109533: read_from_file (example_json.c:63)
+   n0: 34784 0x10938E: main (example_json.c:15)
+ n1: 34784 0x109A48: ht_put (hashtable.c:80)
+  n1: 34784 0x109533: read_from_file (example_json.c:63)
+   n0: 34784 0x10938E: main (example_json.c:15)
+ n0: 9305 in 10 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=78
+#-----------
+time=82810237
+mem_heap_B=505372
+mem_heap_extra_B=298148
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=79
+#-----------
+time=82945972
+mem_heap_B=506652
+mem_heap_extra_B=298732
+mem_stacks_B=0
+heap_tree=detailed
+n8: 506652 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n2: 237631 0x491158E: strdup (strdup.c:42)
+  n1: 172568 0x10951E: read_from_file (example_json.c:63)
+   n0: 172568 0x10938E: main (example_json.c:15)
+  n1: 65063 0x10950B: read_from_file (example_json.c:64)
+   n0: 65063 0x10938E: main (example_json.c:15)
+ n1: 71976 0x109F2D: ll_init (llist.c:28)
+  n2: 71976 0x109CE3: hash_and_add (hashtable.c:144)
+   n1: 45720 0x109BBF: ht_reallocate (hashtable.c:121)
+    n1: 45720 0x109A0B: ht_put (hashtable.c:69)
+     n1: 45720 0x109533: read_from_file (example_json.c:63)
+      n0: 45720 0x10938E: main (example_json.c:15)
+   n1: 26256 0x109A8E: ht_put (hashtable.c:85)
+    n1: 26256 0x109533: read_from_file (example_json.c:63)
+     n0: 26256 0x10938E: main (example_json.c:15)
+ n1: 38912 0x109ACE: ht_reallocate (hashtable.c:94)
+  n1: 38912 0x109A0B: ht_put (hashtable.c:69)
+   n1: 38912 0x109533: read_from_file (example_json.c:63)
+    n0: 38912 0x10938E: main (example_json.c:15)
+ n1: 38912 0x109B41: ht_reallocate (hashtable.c:108)
+  n1: 38912 0x109A0B: ht_put (hashtable.c:69)
+   n1: 38912 0x109533: read_from_file (example_json.c:63)
+    n0: 38912 0x10938E: main (example_json.c:15)
+ n1: 38912 0x109B74: ht_reallocate (hashtable.c:116)
+  n1: 38912 0x109A0B: ht_put (hashtable.c:69)
+   n1: 38912 0x109533: read_from_file (example_json.c:63)
+    n0: 38912 0x10938E: main (example_json.c:15)
+ n1: 35712 0x109A1A: ht_put (hashtable.c:72)
+  n1: 35712 0x109533: read_from_file (example_json.c:63)
+   n0: 35712 0x10938E: main (example_json.c:15)
+ n1: 35712 0x109A48: ht_put (hashtable.c:80)
+  n1: 35712 0x109533: read_from_file (example_json.c:63)
+   n0: 35712 0x10938E: main (example_json.c:15)
+ n0: 8885 in 10 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=80
+#-----------
+time=83794829
+mem_heap_B=509584
+mem_heap_extra_B=301040
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=81
+#-----------
+time=83880599
+mem_heap_B=511633
+mem_heap_extra_B=301831
+mem_stacks_B=0
+heap_tree=detailed
+n8: 511633 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n2: 240322 0x491158E: strdup (strdup.c:42)
+  n1: 174529 0x10951E: read_from_file (example_json.c:63)
+   n0: 174529 0x10938E: main (example_json.c:15)
+  n1: 65793 0x10950B: read_from_file (example_json.c:64)
+   n0: 65793 0x10938E: main (example_json.c:15)
+ n1: 72504 0x109F2D: ll_init (llist.c:28)
+  n2: 72504 0x109CE3: hash_and_add (hashtable.c:144)
+   n1: 45720 0x109BBF: ht_reallocate (hashtable.c:121)
+    n1: 45720 0x109A0B: ht_put (hashtable.c:69)
+     n1: 45720 0x109533: read_from_file (example_json.c:63)
+      n0: 45720 0x10938E: main (example_json.c:15)
+   n1: 26784 0x109A8E: ht_put (hashtable.c:85)
+    n1: 26784 0x109533: read_from_file (example_json.c:63)
+     n0: 26784 0x10938E: main (example_json.c:15)
+ n1: 38912 0x109ACE: ht_reallocate (hashtable.c:94)
+  n1: 38912 0x109A0B: ht_put (hashtable.c:69)
+   n1: 38912 0x109533: read_from_file (example_json.c:63)
+    n0: 38912 0x10938E: main (example_json.c:15)
+ n1: 38912 0x109B41: ht_reallocate (hashtable.c:108)
+  n1: 38912 0x109A0B: ht_put (hashtable.c:69)
+   n1: 38912 0x109533: read_from_file (example_json.c:63)
+    n0: 38912 0x10938E: main (example_json.c:15)
+ n1: 38912 0x109B74: ht_reallocate (hashtable.c:116)
+  n1: 38912 0x109A0B: ht_put (hashtable.c:69)
+   n1: 38912 0x109533: read_from_file (example_json.c:63)
+    n0: 38912 0x10938E: main (example_json.c:15)
+ n1: 36560 0x109A1A: ht_put (hashtable.c:72)
+  n1: 36560 0x109533: read_from_file (example_json.c:63)
+   n0: 36560 0x10938E: main (example_json.c:15)
+ n1: 36560 0x109A48: ht_put (hashtable.c:80)
+  n1: 36560 0x109533: read_from_file (example_json.c:63)
+   n0: 36560 0x10938E: main (example_json.c:15)
+ n0: 8951 in 10 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=82
+#-----------
+time=84729388
+mem_heap_B=515623
+mem_heap_extra_B=304665
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=83
+#-----------
+time=84819592
+mem_heap_B=517008
+mem_heap_extra_B=305160
+mem_stacks_B=0
+heap_tree=detailed
+n8: 517008 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n2: 243282 0x491158E: strdup (strdup.c:42)
+  n1: 176675 0x10951E: read_from_file (example_json.c:63)
+   n0: 176675 0x10938E: main (example_json.c:15)
+  n1: 66607 0x10950B: read_from_file (example_json.c:64)
+   n0: 66607 0x10938E: main (example_json.c:15)
+ n1: 72984 0x109F2D: ll_init (llist.c:28)
+  n2: 72984 0x109CE3: hash_and_add (hashtable.c:144)
+   n1: 45720 0x109BBF: ht_reallocate (hashtable.c:121)
+    n1: 45720 0x109A0B: ht_put (hashtable.c:69)
+     n1: 45720 0x109533: read_from_file (example_json.c:63)
+      n0: 45720 0x10938E: main (example_json.c:15)
+   n1: 27264 0x109A8E: ht_put (hashtable.c:85)
+    n1: 27264 0x109533: read_from_file (example_json.c:63)
+     n0: 27264 0x10938E: main (example_json.c:15)
+ n1: 38912 0x109ACE: ht_reallocate (hashtable.c:94)
+  n1: 38912 0x109A0B: ht_put (hashtable.c:69)
+   n1: 38912 0x109533: read_from_file (example_json.c:63)
+    n0: 38912 0x10938E: main (example_json.c:15)
+ n1: 38912 0x109B41: ht_reallocate (hashtable.c:108)
+  n1: 38912 0x109A0B: ht_put (hashtable.c:69)
+   n1: 38912 0x109533: read_from_file (example_json.c:63)
+    n0: 38912 0x10938E: main (example_json.c:15)
+ n1: 38912 0x109B74: ht_reallocate (hashtable.c:116)
+  n1: 38912 0x109A0B: ht_put (hashtable.c:69)
+   n1: 38912 0x109533: read_from_file (example_json.c:63)
+    n0: 38912 0x10938E: main (example_json.c:15)
+ n1: 37488 0x109A1A: ht_put (hashtable.c:72)
+  n1: 37488 0x109533: read_from_file (example_json.c:63)
+   n0: 37488 0x10938E: main (example_json.c:15)
+ n1: 37488 0x109A48: ht_put (hashtable.c:80)
+  n1: 37488 0x109533: read_from_file (example_json.c:63)
+   n0: 37488 0x10938E: main (example_json.c:15)
+ n0: 9030 in 10 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=84
+#-----------
+time=85668452
+mem_heap_B=519771
+mem_heap_extra_B=307405
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=85
+#-----------
+time=85798672
+mem_heap_B=522423
+mem_heap_extra_B=308505
+mem_stacks_B=0
+heap_tree=detailed
+n8: 522423 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n2: 246307 0x491158E: strdup (strdup.c:42)
+  n1: 178858 0x10951E: read_from_file (example_json.c:63)
+   n0: 178858 0x10938E: main (example_json.c:15)
+  n1: 67449 0x10950B: read_from_file (example_json.c:64)
+   n0: 67449 0x10938E: main (example_json.c:15)
+ n1: 73488 0x109F2D: ll_init (llist.c:28)
+  n2: 73488 0x109CE3: hash_and_add (hashtable.c:144)
+   n1: 45720 0x109BBF: ht_reallocate (hashtable.c:121)
+    n1: 45720 0x109A0B: ht_put (hashtable.c:69)
+     n1: 45720 0x109533: read_from_file (example_json.c:63)
+      n0: 45720 0x10938E: main (example_json.c:15)
+   n1: 27768 0x109A8E: ht_put (hashtable.c:85)
+    n1: 27768 0x109533: read_from_file (example_json.c:63)
+     n0: 27768 0x10938E: main (example_json.c:15)
+ n1: 38912 0x109ACE: ht_reallocate (hashtable.c:94)
+  n1: 38912 0x109A0B: ht_put (hashtable.c:69)
+   n1: 38912 0x109533: read_from_file (example_json.c:63)
+    n0: 38912 0x10938E: main (example_json.c:15)
+ n1: 38912 0x109B41: ht_reallocate (hashtable.c:108)
+  n1: 38912 0x109A0B: ht_put (hashtable.c:69)
+   n1: 38912 0x109533: read_from_file (example_json.c:63)
+    n0: 38912 0x10938E: main (example_json.c:15)
+ n1: 38912 0x109B74: ht_reallocate (hashtable.c:116)
+  n1: 38912 0x109A0B: ht_put (hashtable.c:69)
+   n1: 38912 0x109533: read_from_file (example_json.c:63)
+    n0: 38912 0x10938E: main (example_json.c:15)
+ n1: 38432 0x109A1A: ht_put (hashtable.c:72)
+  n1: 38432 0x109533: read_from_file (example_json.c:63)
+   n0: 38432 0x10938E: main (example_json.c:15)
+ n1: 38432 0x109A48: ht_put (hashtable.c:80)
+  n1: 38432 0x109533: read_from_file (example_json.c:63)
+   n0: 38432 0x10938E: main (example_json.c:15)
+ n0: 9028 in 10 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=86
+#-----------
+time=86333764
+mem_heap_B=602494
+mem_heap_extra_B=310162
+mem_stacks_B=0
+heap_tree=detailed
+n8: 602494 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n2: 247881 0x491158E: strdup (strdup.c:42)
+  n1: 180005 0x10951E: read_from_file (example_json.c:63)
+   n0: 180005 0x10938E: main (example_json.c:15)
+  n1: 67876 0x10950B: read_from_file (example_json.c:64)
+   n0: 67876 0x10938E: main (example_json.c:15)
+ n1: 116736 0x109ACE: ht_reallocate (hashtable.c:94)
+  n1: 116736 0x109A0B: ht_put (hashtable.c:69)
+   n1: 116736 0x109533: read_from_file (example_json.c:63)
+    n0: 116736 0x10938E: main (example_json.c:15)
+ n1: 73704 0x109F2D: ll_init (llist.c:28)
+  n2: 73704 0x109CE3: hash_and_add (hashtable.c:144)
+   n1: 45744 0x109BBF: ht_reallocate (hashtable.c:121)
+    n1: 45744 0x109A0B: ht_put (hashtable.c:69)
+     n1: 45744 0x109533: read_from_file (example_json.c:63)
+      n0: 45744 0x10938E: main (example_json.c:15)
+   n1: 27960 0x109A8E: ht_put (hashtable.c:85)
+    n1: 27960 0x109533: read_from_file (example_json.c:63)
+     n0: 27960 0x10938E: main (example_json.c:15)
+ n1: 38928 0x109B41: ht_reallocate (hashtable.c:108)
+  n1: 38928 0x109A0B: ht_put (hashtable.c:69)
+   n1: 38928 0x109533: read_from_file (example_json.c:63)
+    n0: 38928 0x10938E: main (example_json.c:15)
+ n1: 38928 0x109B74: ht_reallocate (hashtable.c:116)
+  n1: 38928 0x109A0B: ht_put (hashtable.c:69)
+   n1: 38928 0x109533: read_from_file (example_json.c:63)
+    n0: 38928 0x10938E: main (example_json.c:15)
+ n1: 38912 0x109A1A: ht_put (hashtable.c:72)
+  n1: 38912 0x109533: read_from_file (example_json.c:63)
+   n0: 38912 0x10938E: main (example_json.c:15)
+ n1: 38912 0x109A48: ht_put (hashtable.c:80)
+  n1: 38912 0x109533: read_from_file (example_json.c:63)
+   n0: 38912 0x10938E: main (example_json.c:15)
+ n0: 8493 in 10 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=87
+#-----------
+time=87182913
+mem_heap_B=606742
+mem_heap_extra_B=314066
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=88
+#-----------
+time=87291459
+mem_heap_B=607270
+mem_heap_extra_B=314658
+mem_stacks_B=0
+heap_tree=detailed
+n8: 607270 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n2: 247881 0x491158E: strdup (strdup.c:42)
+  n1: 180005 0x10951E: read_from_file (example_json.c:63)
+   n0: 180005 0x10938E: main (example_json.c:15)
+  n1: 67876 0x10950B: read_from_file (example_json.c:64)
+   n0: 67876 0x10938E: main (example_json.c:15)
+ n1: 116736 0x109ACE: ht_reallocate (hashtable.c:94)
+  n1: 116736 0x109A0B: ht_put (hashtable.c:69)
+   n1: 116736 0x109533: read_from_file (example_json.c:63)
+    n0: 116736 0x10938E: main (example_json.c:15)
+ n1: 78384 0x109F2D: ll_init (llist.c:28)
+  n2: 78384 0x109CE3: hash_and_add (hashtable.c:144)
+   n1: 57288 0x109BBF: ht_reallocate (hashtable.c:121)
+    n1: 57288 0x109A0B: ht_put (hashtable.c:69)
+     n1: 57288 0x109533: read_from_file (example_json.c:63)
+      n0: 57288 0x10938E: main (example_json.c:15)
+   n1: 21096 0x109A8E: ht_put (hashtable.c:85)
+    n1: 21096 0x109533: read_from_file (example_json.c:63)
+     n0: 21096 0x10938E: main (example_json.c:15)
+ n1: 48592 0x109B41: ht_reallocate (hashtable.c:108)
+  n1: 48592 0x109A0B: ht_put (hashtable.c:69)
+   n1: 48592 0x109533: read_from_file (example_json.c:63)
+    n0: 48592 0x10938E: main (example_json.c:15)
+ n1: 48592 0x109B74: ht_reallocate (hashtable.c:116)
+  n1: 48592 0x109A0B: ht_put (hashtable.c:69)
+   n1: 48592 0x109533: read_from_file (example_json.c:63)
+    n0: 48592 0x10938E: main (example_json.c:15)
+ n1: 29296 0x109A1A: ht_put (hashtable.c:72)
+  n1: 29296 0x109533: read_from_file (example_json.c:63)
+   n0: 29296 0x10938E: main (example_json.c:15)
+ n1: 29296 0x109A48: ht_put (hashtable.c:80)
+  n1: 29296 0x109533: read_from_file (example_json.c:63)
+   n0: 29296 0x10938E: main (example_json.c:15)
+ n0: 8493 in 10 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=89
+#-----------
+time=88140217
+mem_heap_B=611246
+mem_heap_extra_B=319394
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=90
+#-----------
+time=88176818
+mem_heap_B=611574
+mem_heap_extra_B=319650
+mem_stacks_B=0
+heap_tree=detailed
+n8: 611574 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n2: 247881 0x491158E: strdup (strdup.c:42)
+  n1: 180005 0x10951E: read_from_file (example_json.c:63)
+   n0: 180005 0x10938E: main (example_json.c:15)
+  n1: 67876 0x10950B: read_from_file (example_json.c:64)
+   n0: 67876 0x10938E: main (example_json.c:15)
+ n1: 116736 0x109ACE: ht_reallocate (hashtable.c:94)
+  n1: 116736 0x109A0B: ht_put (hashtable.c:69)
+   n1: 116736 0x109533: read_from_file (example_json.c:63)
+    n0: 116736 0x10938E: main (example_json.c:15)
+ n1: 82656 0x109F2D: ll_init (llist.c:28)
+  n2: 82656 0x109CE3: hash_and_add (hashtable.c:144)
+   n1: 68280 0x109BBF: ht_reallocate (hashtable.c:121)
+    n1: 68280 0x109A0B: ht_put (hashtable.c:69)
+     n1: 68280 0x109533: read_from_file (example_json.c:63)
+      n0: 68280 0x10938E: main (example_json.c:15)
+   n1: 14376 0x109A8E: ht_put (hashtable.c:85)
+    n1: 14376 0x109533: read_from_file (example_json.c:63)
+     n0: 14376 0x10938E: main (example_json.c:15)
+ n1: 57792 0x109B41: ht_reallocate (hashtable.c:108)
+  n1: 57792 0x109A0B: ht_put (hashtable.c:69)
+   n1: 57792 0x109533: read_from_file (example_json.c:63)
+    n0: 57792 0x10938E: main (example_json.c:15)
+ n1: 57792 0x109B74: ht_reallocate (hashtable.c:116)
+  n1: 57792 0x109A0B: ht_put (hashtable.c:69)
+   n1: 57792 0x109533: read_from_file (example_json.c:63)
+    n0: 57792 0x10938E: main (example_json.c:15)
+ n1: 20112 0x109A1A: ht_put (hashtable.c:72)
+  n1: 20112 0x109533: read_from_file (example_json.c:63)
+   n0: 20112 0x10938E: main (example_json.c:15)
+ n1: 20112 0x109A48: ht_put (hashtable.c:80)
+  n1: 20112 0x109533: read_from_file (example_json.c:63)
+   n0: 20112 0x10938E: main (example_json.c:15)
+ n0: 8493 in 10 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=91
+#-----------
+time=89025873
+mem_heap_B=615566
+mem_heap_extra_B=324218
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=92
+#-----------
+time=89110055
+mem_heap_B=615926
+mem_heap_extra_B=324658
+mem_stacks_B=0
+heap_tree=detailed
+n8: 615926 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n2: 247881 0x491158E: strdup (strdup.c:42)
+  n1: 180005 0x10951E: read_from_file (example_json.c:63)
+   n0: 180005 0x10938E: main (example_json.c:15)
+  n1: 67876 0x10950B: read_from_file (example_json.c:64)
+   n0: 67876 0x10938E: main (example_json.c:15)
+ n1: 116736 0x109ACE: ht_reallocate (hashtable.c:94)
+  n1: 116736 0x109A0B: ht_put (hashtable.c:69)
+   n1: 116736 0x109533: read_from_file (example_json.c:63)
+    n0: 116736 0x10938E: main (example_json.c:15)
+ n1: 87072 0x109F2D: ll_init (llist.c:28)
+  n2: 87072 0x109CE3: hash_and_add (hashtable.c:144)
+   n1: 79680 0x109BBF: ht_reallocate (hashtable.c:121)
+    n1: 79680 0x109A0B: ht_put (hashtable.c:69)
+     n1: 79680 0x109533: read_from_file (example_json.c:63)
+      n0: 79680 0x10938E: main (example_json.c:15)
+   n0: 7392 in 1 place, below massif's threshold (1.00%)
+ n1: 67184 0x109B41: ht_reallocate (hashtable.c:108)
+  n1: 67184 0x109A0B: ht_put (hashtable.c:69)
+   n1: 67184 0x109533: read_from_file (example_json.c:63)
+    n0: 67184 0x10938E: main (example_json.c:15)
+ n1: 67184 0x109B74: ht_reallocate (hashtable.c:116)
+  n1: 67184 0x109A0B: ht_put (hashtable.c:69)
+   n1: 67184 0x109533: read_from_file (example_json.c:63)
+    n0: 67184 0x10938E: main (example_json.c:15)
+ n1: 10688 0x109A1A: ht_put (hashtable.c:72)
+  n1: 10688 0x109533: read_from_file (example_json.c:63)
+   n0: 10688 0x10938E: main (example_json.c:15)
+ n1: 10688 0x109A48: ht_put (hashtable.c:80)
+  n1: 10688 0x109533: read_from_file (example_json.c:63)
+   n0: 10688 0x10938E: main (example_json.c:15)
+ n0: 8493 in 10 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=93
+#-----------
+time=89959068
+mem_heap_B=619582
+mem_heap_extra_B=328370
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=94
+#-----------
+time=90135042
+mem_heap_B=620598
+mem_heap_extra_B=329410
+mem_stacks_B=0
+heap_tree=peak
+n6: 620598 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n2: 247881 0x491158E: strdup (strdup.c:42)
+  n1: 180005 0x10951E: read_from_file (example_json.c:63)
+   n0: 180005 0x10938E: main (example_json.c:15)
+  n1: 67876 0x10950B: read_from_file (example_json.c:64)
+   n0: 67876 0x10938E: main (example_json.c:15)
+ n1: 116736 0x109ACE: ht_reallocate (hashtable.c:94)
+  n1: 116736 0x109A0B: ht_put (hashtable.c:69)
+   n1: 116736 0x109533: read_from_file (example_json.c:63)
+    n0: 116736 0x10938E: main (example_json.c:15)
+ n1: 91776 0x109F2D: ll_init (llist.c:28)
+  n2: 91776 0x109CE3: hash_and_add (hashtable.c:144)
+   n1: 91320 0x109BBF: ht_reallocate (hashtable.c:121)
+    n1: 91320 0x109A0B: ht_put (hashtable.c:69)
+     n1: 91320 0x109533: read_from_file (example_json.c:63)
+      n0: 91320 0x10938E: main (example_json.c:15)
+   n0: 456 in 1 place, below massif's threshold (1.00%)
+ n1: 77216 0x109B41: ht_reallocate (hashtable.c:108)
+  n1: 77216 0x109A0B: ht_put (hashtable.c:69)
+   n1: 77216 0x109533: read_from_file (example_json.c:63)
+    n0: 77216 0x10938E: main (example_json.c:15)
+ n1: 77216 0x109B74: ht_reallocate (hashtable.c:116)
+  n1: 77216 0x109A0B: ht_put (hashtable.c:69)
+   n1: 77216 0x109533: read_from_file (example_json.c:63)
+    n0: 77216 0x10938E: main (example_json.c:15)
+ n0: 9773 in 12 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=95
+#-----------
+time=90983844
+mem_heap_B=584914
+mem_heap_extra_B=331982
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=96
+#-----------
+time=91832757
+mem_heap_B=589805
+mem_heap_extra_B=335043
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=97
+#-----------
+time=92681492
+mem_heap_B=538377
+mem_heap_extra_B=305631
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=98
+#-----------
+time=93530235
+mem_heap_B=156651
+mem_heap_extra_B=51701
+mem_stacks_B=0
+heap_tree=empty
