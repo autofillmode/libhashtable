@@ -33,7 +33,7 @@ ht_init ()
 
 /* return null if not found */
 void *
-ht_get (void *key, Hash_Table *ht)
+ht_get (char *key, Hash_Table *ht)
 {
   uint32_t hash = murmur3_32 (key, strlen (key), 0);
   int index = (hash & 0x7fffffff) % ht->capacity;
@@ -56,7 +56,7 @@ ht_get (void *key, Hash_Table *ht)
 }
 
 void
-ht_put (void *key, void *value, Hash_Table *ht)
+ht_put (char *key, void *value, Hash_Table *ht)
 {
 
   if (ht->size == ht->capacity)
