@@ -1,6 +1,6 @@
 CC = /usr/bin/gcc
 OPTS = -Wall -Wpedantic
-OBJS = src/murmur.o src/llist.o src/compare.o src/hashtable.o
+OBJS = src/murmur.o src/llist.o src/hashtable.o
 LIB = -lcjson
 BIN = example_json example_types 
 
@@ -15,14 +15,11 @@ example_json.o: libhashtable.a
 libhashtable.a: $(OBJS)
 	ar cr libhashtable.a $(OBJS)
 
-hashtable.o: murmur.o compare.o llist.o
+hashtable.o: murmur.o llist.o
 	$(CC) $(OPTS) hashtable.c 
 
-llist.o: compare.o
-	$(CC) $(OPTS) llist.c compare.o
-
-compare.o:
-	$(CC) $(OPTS) compare.c
+llist.o:
+	$(CC) $(OPTS) llist.c
 
 murmur.o:
 	$(CC) $(OPTS) murmur.c

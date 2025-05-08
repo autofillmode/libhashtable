@@ -1,5 +1,4 @@
 #include "llist.h"
-#include "compare.h"
 #include "structs.h"
 #include <stdio.h>
 #include <stdlib.h>
@@ -48,12 +47,13 @@ ll_get_key (const Linked_List *list, HT_TYPE key_type, void *key)
 {
   HT_Node *current = list->head;
 
-  for (int i = 0; i < list->length; i++)
+  do
     {
-      if (!compare_key (current, key_type, key)) /* key is found*/
+      if (!strcmp (current->pair->Key, key)) /* key is found*/
         return current->pair->Value;
       current = current->next;
     }
+  while (current->next != NULL);
   return NULL;
 }
 
@@ -61,12 +61,11 @@ ll_get_key (const Linked_List *list, HT_TYPE key_type, void *key)
 void
 ll_print (const Linked_List *list, char *(*print_with) (void *))
 {
-  if (!list || list->length == 0 || !list->head)
+  if (!list || !list->head)
     {
       return;
     }
   HT_Node *current = list->head;
-  int len = list->length;
 
   do
     {
@@ -80,47 +79,8 @@ ll_print (const Linked_List *list, char *(*print_with) (void *))
         printf ("[Node %p]->", current);
       current = current->next;
     }
-  while (--len);
+  while (current != NULL);
   printf ("(null)");
-}
-
-/* Delete a single item at index from the list.  If the index contains a heap
- * alloc'd value, pass a callback as free_with. If not, pass NULL as free_with.
- */
-void
-ll_delete (Linked_List *list, const int index, void (*free_with) (void *))
-{
-
-  HT_Node *to_delete;
-
-  if (index == 0)
-    {
-      to_delete = list->head;
-      list->head = list->head->next;
-
-      if (list->head == NULL)
-        list->tail = NULL;
-    }
-  else
-    {
-      HT_Node *current = list->head;
-      for (int i = 0; i < index - 1; i++)
-        {
-          current = current->next;
-        }
-      to_delete = current->next;
-      current->next = current->next->next;
-
-      if (to_delete == list->tail)
-        list->tail = current;
-    }
-
-  if (free_with)
-    {
-      free_with (to_delete);
-    }
-
-  list->length--;
 }
 
 /* Free the whole linked list. If the list contains heap alloc'd values, pass a

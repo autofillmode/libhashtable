@@ -1,5 +1,4 @@
 #include "hashtable.h"
-#include "compare.h"
 #include "llist.h"
 #include "murmur.h"
 #include "structs.h"
@@ -48,7 +47,7 @@ ht_get (void *key, Hash_Table *ht)
 
   HT_Node *current = ht->array[index]->head;
 
-  if (compare_key (current, ht->value_type, key) == 0)
+  if (strcmp (current->pair->Key, key) == 0)
     {
       return current->pair->Value;
     }
@@ -147,7 +146,7 @@ hash_and_add (HT_Node *src, Linked_List **dst, int capacity, Hash_Table *ht)
       HT_Node *current = dst[index]->head;
       while (current->next != NULL)
         {
-          if (compare_key (current, ht->key_type, src->pair->Key) == 0)
+          if (strcmp (current->pair->Key, src->pair->Key) == 0)
             {
               current->pair->Value = src->pair->Value;
               return;
